@@ -5,6 +5,7 @@
   --color-solid: #ff6a1a;
   --color-solidOne: #cc5415;
   --color-solidTwo: #e6392f;
+  --color-solidThree: #ffc586;
   --color-tertiary: #ff853a;
   --color-textColor: #d6d6d6;
   --color-gray-50: #7b7b7b;
@@ -14,7 +15,7 @@ html,
 body {
   background-color: var(--color-primary);
   scroll-behavior: smooth;
-  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 ::-webkit-scrollbar {

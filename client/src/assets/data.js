@@ -1,4 +1,4 @@
-import logoImg from "./logo.svg";
+import logoImg from "./logo.png";
 import search from "./search.svg";
 import user from "./user.svg";
 import menu from "./menu.svg";
@@ -150,7 +150,6 @@ export const assets = {
   uploadIcon,
 };
 
-
 export const dummyProducts = [
   {
     _id: "1",
@@ -164,7 +163,7 @@ export const dummyProducts = [
     sizes: ["H", "F"],
     date: 1716634345448,
     popular: false,
-    inStock:true,
+    inStock: true,
   },
   {
     _id: "2",
@@ -178,7 +177,7 @@ export const dummyProducts = [
     sizes: ["H", "F"],
     date: 1716634345448,
     popular: true,
-    inStock:true,
+    inStock: true,
   },
   {
     _id: "3",
@@ -192,7 +191,7 @@ export const dummyProducts = [
     sizes: ["H", "F"],
     date: 1716634345448,
     popular: false,
-    inStock:true,
+    inStock: true,
   },
   {
     _id: "4",
@@ -206,7 +205,7 @@ export const dummyProducts = [
     sizes: ["H", "F"],
     date: 1716634345448,
     popular: true,
-    inStock:true,
+    inStock: true,
   },
   {
     _id: "5",
@@ -220,7 +219,7 @@ export const dummyProducts = [
     sizes: ["H", "F"],
     date: 1716634345448,
     popular: false,
-    inStock:true,
+    inStock: true,
   },
   {
     _id: "6",
@@ -234,7 +233,7 @@ export const dummyProducts = [
     sizes: ["H", "F"],
     date: 1716634345448,
     popular: false,
-    inStock:true,
+    inStock: true,
   },
   {
     _id: "7",
@@ -248,7 +247,7 @@ export const dummyProducts = [
     sizes: ["H", "F"],
     date: 1716634345448,
     popular: false,
-    inStock:true,
+    inStock: true,
   },
   {
     _id: "8",
@@ -262,7 +261,7 @@ export const dummyProducts = [
     sizes: ["H", "F"],
     date: 1716634345448,
     popular: false,
-    inStock:true,
+    inStock: true,
   },
 
   // Pizza Products
@@ -278,7 +277,7 @@ export const dummyProducts = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716634345448,
     popular: true,
-    inStock:true,
+    inStock: true,
   },
   {
     _id: "10",
@@ -292,7 +291,7 @@ export const dummyProducts = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716634345448,
     popular: false,
-    inStock:true,
+    inStock: true,
   },
   {
     _id: "11",
@@ -306,7 +305,7 @@ export const dummyProducts = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716634345448,
     popular: false,
-    inStock:true,
+    inStock: true,
   },
   {
     _id: "12",
@@ -320,7 +319,7 @@ export const dummyProducts = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716634345448,
     popular: false,
-    inStock:true,
+    inStock: true,
   },
   {
     _id: "13",
@@ -334,7 +333,7 @@ export const dummyProducts = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716634345448,
     popular: true,
-    inStock:true,
+    inStock: true,
   },
   {
     _id: "14",
@@ -348,7 +347,7 @@ export const dummyProducts = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716634345448,
     popular: false,
-    inStock:true,
+    inStock: true,
   },
   {
     _id: "15",
@@ -362,7 +361,7 @@ export const dummyProducts = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716634345448,
     popular: false,
-    inStock:true,
+    inStock: true,
   },
   {
     _id: "16",
@@ -376,7 +375,7 @@ export const dummyProducts = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716634345448,
     popular: false,
-    inStock:true,
+    inStock: true,
   },
 
   // Rice Products
@@ -392,7 +391,7 @@ export const dummyProducts = [
     sizes: ["H", "F"],
     date: 1716634345448,
     popular: false,
-    inStock:true,
+    inStock: true,
   },
   {
     _id: "18",
@@ -406,7 +405,7 @@ export const dummyProducts = [
     sizes: ["H", "F"],
     date: 1716634345448,
     popular: true,
-    inStock:true,
+    inStock: true,
   },
   {
     _id: "19",
@@ -420,7 +419,7 @@ export const dummyProducts = [
     sizes: ["H", "F"],
     date: 1716634345448,
     popular: false,
-    inStock:true,
+    inStock: true,
   },
   {
     _id: "20",
@@ -434,7 +433,7 @@ export const dummyProducts = [
     sizes: ["H", "F"],
     date: 1716634345448,
     popular: false,
-    inStock:true,
+    inStock: true,
   },
   {
     _id: "21",
@@ -448,7 +447,7 @@ export const dummyProducts = [
     sizes: ["H", "F"],
     date: 1716634345448,
     popular: false,
-    inStock:true,
+    inStock: true,
   },
   {
     _id: "22",
@@ -462,7 +461,7 @@ export const dummyProducts = [
     sizes: ["H", "F"],
     date: 1716634345448,
     popular: false,
-    inStock:true,
+    inStock: true,
   },
   {
     _id: "23",
@@ -476,7 +475,7 @@ export const dummyProducts = [
     sizes: ["H", "F"],
     date: 1716634345448,
     popular: false,
-    inStock:true,
+    inStock: true,
   },
   {
     _id: "24",
@@ -490,7 +489,7 @@ export const dummyProducts = [
     sizes: ["H", "F"],
     date: 1716634345448,
     popular: false,
-    inStock:true,
+    inStock: true,
   },
 
   // Deserts Products
@@ -506,7 +505,7 @@ export const dummyProducts = [
     sizes: ["H", "F"],
     date: 1716634345448,
     popular: true,
-    inStock:true,
+    inStock: true,
   },
   {
     _id: "26",
@@ -520,7 +519,7 @@ export const dummyProducts = [
     sizes: ["H", "F"],
     date: 1716634345448,
     popular: true,
-    inStock:true,
+    inStock: true,
   },
   {
     _id: "27",
@@ -534,7 +533,7 @@ export const dummyProducts = [
     sizes: ["H", "F"],
     date: 1716634345448,
     popular: false,
-    inStock:true,
+    inStock: true,
   },
   {
     _id: "28",
@@ -548,7 +547,7 @@ export const dummyProducts = [
     sizes: ["H", "F"],
     date: 1716634345448,
     popular: false,
-    inStock:true,
+    inStock: true,
   },
   {
     _id: "29",
@@ -562,7 +561,7 @@ export const dummyProducts = [
     sizes: ["H", "F"],
     date: 1716634345448,
     popular: false,
-    inStock:true,
+    inStock: true,
   },
   {
     _id: "30",
@@ -576,7 +575,7 @@ export const dummyProducts = [
     sizes: ["H", "F"],
     date: 1716634345448,
     popular: false,
-    inStock:true,
+    inStock: true,
   },
   {
     _id: "31",
@@ -590,7 +589,7 @@ export const dummyProducts = [
     sizes: ["H", "F"],
     date: 1716634345448,
     popular: false,
-    inStock:true,
+    inStock: true,
   },
   {
     _id: "32",
@@ -604,7 +603,7 @@ export const dummyProducts = [
     sizes: ["H", "F"],
     date: 1716634345448,
     popular: true,
-    inStock:true,
+    inStock: true,
   },
   // Drinks Products
   {
@@ -619,7 +618,7 @@ export const dummyProducts = [
     sizes: ["H", "F"],
     date: 1716634345448,
     popular: false,
-    inStock:true,
+    inStock: true,
   },
   {
     _id: "34",
@@ -633,7 +632,7 @@ export const dummyProducts = [
     sizes: ["H", "F"],
     date: 1716634345448,
     popular: false,
-    inStock:true,
+    inStock: true,
   },
   {
     _id: "35",
@@ -647,7 +646,7 @@ export const dummyProducts = [
     sizes: ["H", "F"],
     date: 1716634345448,
     popular: false,
-    inStock:true,
+    inStock: true,
   },
   {
     _id: "36",
@@ -661,7 +660,7 @@ export const dummyProducts = [
     sizes: ["H", "F"],
     date: 1716634345448,
     popular: true,
-    inStock:true,
+    inStock: true,
   },
   {
     _id: "37",
@@ -675,7 +674,7 @@ export const dummyProducts = [
     sizes: ["H", "F"],
     date: 1716634345448,
     popular: false,
-    inStock:true,
+    inStock: true,
   },
   {
     _id: "38",
@@ -689,7 +688,7 @@ export const dummyProducts = [
     sizes: ["H", "F"],
     date: 1716634345448,
     popular: false,
-    inStock:true,
+    inStock: true,
   },
   {
     _id: "39",
@@ -703,7 +702,7 @@ export const dummyProducts = [
     sizes: ["H", "F"],
     date: 1716634345448,
     popular: false,
-    inStock:true,
+    inStock: true,
   },
   {
     _id: "40",
@@ -717,7 +716,7 @@ export const dummyProducts = [
     sizes: ["H", "F"],
     date: 1716634345448,
     popular: false,
-    inStock:true,
+    inStock: true,
   },
 
   // Fruits Products
@@ -733,7 +732,7 @@ export const dummyProducts = [
     sizes: ["H", "F"],
     date: 1716634345448,
     popular: false,
-    inStock:true,
+    inStock: true,
   },
   {
     _id: "42",
@@ -747,7 +746,7 @@ export const dummyProducts = [
     sizes: ["H", "F"],
     date: 1716634345448,
     popular: false,
-    inStock:true,
+    inStock: true,
   },
   {
     _id: "43",
@@ -761,7 +760,7 @@ export const dummyProducts = [
     sizes: ["H", "F"],
     date: 1716634345448,
     popular: false,
-    inStock:true,
+    inStock: true,
   },
   {
     _id: "44",
@@ -775,7 +774,7 @@ export const dummyProducts = [
     sizes: ["H", "F"],
     date: 1716634345448,
     popular: false,
-    inStock:true,
+    inStock: true,
   },
   {
     _id: "45",
@@ -789,7 +788,7 @@ export const dummyProducts = [
     sizes: ["H", "F"],
     date: 1716634345448,
     popular: false,
-    inStock:true,
+    inStock: true,
   },
   {
     _id: "46",
@@ -803,7 +802,7 @@ export const dummyProducts = [
     sizes: ["H", "F"],
     date: 1716634345448,
     popular: false,
-    inStock:true,
+    inStock: true,
   },
   {
     _id: "47",
@@ -817,7 +816,7 @@ export const dummyProducts = [
     sizes: ["H", "F"],
     date: 1716634345448,
     popular: false,
-    inStock:true,
+    inStock: true,
   },
   {
     _id: "48",
@@ -831,13 +830,11 @@ export const dummyProducts = [
     sizes: ["H", "F"],
     date: 1716634345448,
     popular: false,
-    inStock:true,
+    inStock: true,
   },
 ];
 
-
-
-// Blogs Dummy Data 
+// Blogs Dummy Data
 export const blogs = [
   {
     title: "Top 10 Skincare Must-Haves for 2025",
@@ -897,7 +894,6 @@ export const blogs = [
   },
 ];
 
-
 export const dummyAddress = [
   {
     _id: "67b5b9e54ea97f71bbc196a0",
@@ -913,7 +909,7 @@ export const dummyAddress = [
     phone: "+1-555-123-4567",
   },
   {
-     _id: "67b5b9e54ea97fdfgdbcsd5",
+    _id: "67b5b9e54ea97fdfgdbcsd5",
     userId: "68591d36daf423db94fa8f4f",
     firstName: "Jane",
     lastName: "Smith",
@@ -925,9 +921,7 @@ export const dummyAddress = [
     country: "United States",
     phone: "9876543210",
   },
-
 ];
-
 
 export const dummyOrdersData = [
   {
@@ -984,10 +978,9 @@ export const dummyOrdersData = [
   },
 ];
 
-
 // Dashboard Dummy Data
 export const dummyDashboardData = {
-    "totalOrders": 2,
-    "totalRevenue": 897,
-    "orders": dummyOrdersData
-}
+  totalOrders: 2,
+  totalRevenue: 897,
+  orders: dummyOrdersData,
+};
