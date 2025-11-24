@@ -1,11 +1,12 @@
 import logoImg from "./logo.png";
 import search from "./search.svg";
-import user from "./user.svg";
-import menu from "./menu.svg";
-import menuClose from "./menu-close.svg";
+import user from "./user-profile.png";
+import login from "./login.png";
+import menu from "./menu.png";
+import menuClose from "./menu-close.png";
 import cartAdd from "./cart-add.svg";
 import cartRemove from "./cart-remove.svg";
-import cartAdded from "./cart-added.svg";
+import cartAdded from "./cart-added.png";
 import forward from "./forward.svg";
 import badge from "./badge.svg";
 import heartAdd from "./heart-add.svg";
@@ -106,6 +107,7 @@ export const assets = {
   logoImg,
   search,
   user,
+  login,
   menu,
   menuClose,
   cartAdd,

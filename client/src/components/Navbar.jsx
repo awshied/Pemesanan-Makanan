@@ -17,8 +17,11 @@ const Navbar = ({ containerStyles, setMenuOpened }) => {
           className={({ isActive }) =>
             `${
               isActive ? "active-link" : ""
-            } px-3 py-2 rounded-full uppercase text-sm font-bold`
+            } px-3 py-2 rounded-full text-sm font-bold`
           }
+          style={{
+            fontFamily: "var(--font-sans)",
+          }}
         >
           {link.title}
         </NavLink>

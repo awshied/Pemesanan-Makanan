@@ -1,21 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Mona+Sans:ital,wght@0,200..900;1,200..900&family=Poppins:wght@100;400;500;800&display=swap");
 @import "tailwindcss";
 
 @theme {
+  /* Color */
   --color-primary: #15171c;
   --color-solid: #ff6a1a;
   --color-solidOne: #cc5415;
   --color-solidTwo: #e6392f;
   --color-solidThree: #ffc586;
+  --color-solidFour: #350503;
+  --color-solidFive: #b6452a;
   --color-tertiary: #ff853a;
   --color-textColor: #d6d6d6;
   --color-gray-50: #7b7b7b;
+
+  /* Font */
+  --font-sans: "Mona Sans", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
 }
 
 html,
 body {
   background-color: var(--color-primary);
   scroll-behavior: smooth;
-  font-family: "Poppins", sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -39,13 +46,13 @@ body {
     @apply flex items-center justify-end;
   }
   .btn-solid {
-    @apply px-6 py-3 active:scale-95 transition bg-solid border border-gray-500/20 text-white text-sm font-medium rounded-full cursor-pointer;
+    @apply px-6 py-3 active:scale-95 transition bg-solidThree border border-gray-500/20 text-solidFour text-sm font-medium rounded-full cursor-pointer;
   }
   .btn-dark {
     @apply px-6 py-3 active:scale-95 transition bg-gray-500/10 border border-gray-500/20 text-textColor text-sm font-medium rounded-full cursor-pointer;
   }
   .btn-outline {
-    @apply px-6 py-3 active:scale-95 transition border border-gray-500/20 text-textColor text-sm font-medium rounded-full cursor-pointer;
+    @apply px-6 py-3 active:scale-95 transition border-[1.5px] border-solidThree text-textColor text-sm font-medium rounded-full cursor-pointer;
   }
   .btn-black {
     @apply px-6 py-3 active:scale-95 transition bg-primary text-textColor text-sm font-medium rounded-full cursor-pointer;
@@ -54,7 +61,7 @@ body {
 
 @layer utilities {
   .active-link {
-    @apply relative after:w-2/5 after:h-1 after:rounded-full after:bg-solid after:absolute after:-bottom-0.5 after:right-3;
+    @apply relative after:w-2/5 after:h-1 after:rounded-full after:bg-solidThree after:absolute after:-bottom-0.5 after:right-3;
   }
   h1 {
     @apply text-[41px] md:text-[61px] font-bold;

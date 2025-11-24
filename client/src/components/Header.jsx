@@ -13,12 +13,17 @@ const Header = () => {
         {/* Logo */}
         <div className="flex flex-1">
           <Link to={"/"} className="flex items-center">
-            <img src={assets.logoImg} alt="logoImg" className="h-18" />
-            <div className="flex flex-col justify-center gap-2">
-              <span className="hidden sm:block font-extrabold text-xl relative">
+            <img src={assets.logoImg} alt="logoImg" className="h-16" />
+            <div
+              className="flex flex-col justify-center gap-2"
+              style={{
+                fontFamily: "var(--font-sans)",
+              }}
+            >
+              <span className="hidden sm:block font-extrabold text-md relative">
                 Mang TekTek
               </span>
-              <span className="hidden sm:block font-extrabold text-xs relative uppercase tracking-[4.7px] text-solidThree ">
+              <span className="hidden sm:block font-extrabold text-xs relative lowercase tracking-[2.2px] text-solidThree ">
                 Sedap Malam
               </span>
             </div>
@@ -31,14 +36,14 @@ const Header = () => {
             setMenuOpened={setMenuOpened}
             containerStyles={`${
               menuOpened
-                ? "flex items-start flex-col gap-y-8 fixed top-16 right-6 p-5 bg-white shadow-md w-52 ring-1 ring-slate-900/5 z-50"
+                ? "flex items-start flex-col gap-y-2 fixed top-16 right-6 p-4 rounded-xl shadow-xl w-52 ring-1 ring-slate-900/5 z-50"
                 : "hidden lg:flex gap-x-5 xl:gap-x-1 medium-15 p-1"
             }`}
           />
         </div>
 
         {/* Profil & Tombol */}
-        <div className="flex flex-1 items-center sm:justify-end gap-x-4">
+        <div className="flex flex-1 items-center sm:justify-end gap-x-6">
           {/* Toggle Menu */}
           <div className="relative lg:hidden w-7 h-6">
             <img
@@ -59,21 +64,16 @@ const Header = () => {
             />
           </div>
           {/* Keranjang */}
-          <div className="relative cursor-pointer">
-            <img
-              src={assets.cartAdded}
-              alt=""
-              className="min-w-11 bg-white rounded-full p-2"
-            />
-            <label className="absolute bottom-10 right-1 text-xs font-bold bg-solidThree text-white flexCenter rounded-full w-9">
+          <div className="relative cursor-pointer flex justify-center">
+            <img src={assets.cartAdded} alt="" className="w-6" />
+            <label className="absolute bottom-8 text-xs font-bold bg-solidTwo text-white flexCenter rounded-full w-9">
               0
             </label>
           </div>
           {/* Profil Pengguna */}
           <div>
-            <button className="btn-solid flexCenter gap-2">
-              Login
-              <img src={assets.user} alt="" className="invert w-5" />
+            <button className=" cursor-pointer flexCenter">
+              <img src={assets.login} alt="" className="w-6" />
             </button>
           </div>
         </div>
