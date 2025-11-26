@@ -64,13 +64,13 @@ body {
     @apply relative after:w-2/5 after:h-1 after:rounded-full after:bg-solidThree after:absolute after:-bottom-0.5 after:right-3;
   }
   h1 {
-    @apply text-[41px] md:text-[61px] font-bold;
+    @apply text-[41px] md:text-[45px] font-bold;
   }
   h2 {
-    @apply text-[31px] md:text-[38px] font-bold;
+    @apply text-[31px] md:text-[35px] font-bold;
   }
   h3 {
-    @apply text-[24px] md:text-[31px] font-bold;
+    @apply text-[24px] md:text-[28px] font-bold;
   }
   h4 {
     @apply text-[17px] md:text-[19px] font-bold;

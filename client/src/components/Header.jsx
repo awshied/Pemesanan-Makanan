@@ -8,7 +8,7 @@ const Header = () => {
   const toggleMenu = () => setMenuOpened((prev) => !prev);
 
   return (
-    <header className="absolute top-0 left-0 right-0 z-50 py-3">
+    <header className="fixed top-0 left-0 right-0 z-50 py-3">
       <div className="max-padd-container flexBetween">
         {/* Logo */}
         <div className="flex flex-1">
