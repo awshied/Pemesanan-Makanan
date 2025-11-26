@@ -36,8 +36,8 @@ const Rating = () => {
           <p className="text-textColor font-medium ml-2">5.0</p>
         </div>
         <p className="text-sm text-textColor">
-          Trusted by{" "}
-          <span className="font-medium text-solidThree">100,000+</span> users
+          Dipercaya oleh{" "}
+          <span className="font-medium text-solidThree">20,000+</span> pembeli
         </p>
       </div>
     </div>

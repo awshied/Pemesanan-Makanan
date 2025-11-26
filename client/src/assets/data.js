@@ -4,7 +4,7 @@ import user from "./user-profile.png";
 import login from "./login.png";
 import menu from "./menu.png";
 import menuClose from "./menu-close.png";
-import cartAdd from "./cart-add.svg";
+import cartAdd from "./cart-add.png";
 import cartRemove from "./cart-remove.svg";
 import cartAdded from "./cart-added.png";
 import forward from "./forward.svg";

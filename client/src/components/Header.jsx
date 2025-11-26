@@ -36,7 +36,7 @@ const Header = () => {
             setMenuOpened={setMenuOpened}
             containerStyles={`${
               menuOpened
-                ? "flex items-start flex-col gap-y-2 fixed top-16 right-6 p-4 rounded-xl shadow-xl w-52 ring-1 ring-slate-900/5 z-50"
+                ? "flex items-start flex-col gap-y-2 fixed bg-primary top-16 right-6 p-4 rounded-xl shadow-xl w-52 ring-1 ring-slate-900/5 z-50"
                 : "hidden lg:flex gap-x-5 xl:gap-x-1 medium-15 p-1"
             }`}
           />

@@ -16,7 +16,7 @@ const MenuPremium = () => {
     setPremiumMenu(data);
   }, [dummyProducts]);
   return (
-    <section className="max-padd-container py-22 xl:py-28 bg-transparent">
+    <section className="max-padd-container py-22 xl:py-28 bg-primary">
       <Title title1={"Menu"} title2={"Premium"} titleStyles={"pb-10"} />
       <Swiper
         spaceBetween={30}

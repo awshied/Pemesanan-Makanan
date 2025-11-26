@@ -3,7 +3,8 @@
 
 @theme {
   /* Color */
-  --color-primary: #15171c;
+  --color-primary: #2f363d;
+  --color-secondary: #22272d;
   --color-solid: #ff6a1a;
   --color-solidOne: #cc5415;
   --color-solidTwo: #e6392f;
@@ -46,10 +47,10 @@ body {
     @apply flex items-center justify-end;
   }
   .btn-solid {
-    @apply px-6 py-3 active:scale-95 transition bg-solidThree border border-gray-500/20 text-solidFour text-sm font-medium rounded-full cursor-pointer;
+    @apply px-6 py-3 active:scale-95 transition bg-solidTwo hover:opacity-70 border border-gray-500/20 text-solidFour text-sm font-medium rounded-full cursor-pointer;
   }
   .btn-dark {
-    @apply px-6 py-3 active:scale-95 transition bg-gray-500/10 border border-gray-500/20 text-textColor text-sm font-medium rounded-full cursor-pointer;
+    @apply px-6 py-3 active:scale-95 transition bg-gray-500/10 border border-gray-500/20 text-textColor hover:opacity-50 text-sm font-medium rounded-full cursor-pointer;
   }
   .btn-outline {
     @apply px-6 py-3 active:scale-95 transition border-[1.5px] border-solidThree text-textColor text-sm font-medium rounded-full cursor-pointer;
@@ -67,10 +68,10 @@ body {
     @apply text-[41px] md:text-[45px] font-bold;
   }
   h2 {
-    @apply text-[31px] md:text-[35px] font-bold;
+    @apply text-[28px] md:text-[35px] font-bold;
   }
   h3 {
-    @apply text-[24px] md:text-[28px] font-bold;
+    @apply text-[21px] md:text-[28px] font-bold;
   }
   h4 {
     @apply text-[17px] md:text-[19px] font-bold;
