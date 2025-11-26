@@ -29,7 +29,7 @@ const Hero = () => {
                 <span className="text-2xl text-solidTwo">99 k</span>
               </span>
             </div>
-            <button className="btn-solid rounded-xl p-4 w-52 text-lg font-bold mt-6">
+            <button className="rounded-xl p-4 w-52 active:scale-95 text-lg transition bg-solidThree hover:opacity-70 text-solidFour font-bold mt-6 cursor-pointer">
               Pesan Sekarang
             </button>
           </div>

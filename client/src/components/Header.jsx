@@ -8,11 +8,19 @@ const Header = () => {
   const toggleMenu = () => setMenuOpened((prev) => !prev);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 py-3">
+    <header
+      className="fixed top-0 left-0 right-0 z-50 pt-3 pb-1 "
+      style={{
+        backgroundColor: "rgba(47, 54, 61, 0.8)",
+      }}
+    >
       <div className="max-padd-container flexBetween">
         {/* Logo */}
         <div className="flex flex-1">
-          <Link to={"/"} className="flex items-center">
+          <Link
+            to={"/"}
+            className="flex items-center hover:opacity-80 transition"
+          >
             <img src={assets.logoImg} alt="logoImg" className="h-16" />
             <div
               className="flex flex-col justify-center gap-2"
@@ -36,7 +44,7 @@ const Header = () => {
             setMenuOpened={setMenuOpened}
             containerStyles={`${
               menuOpened
-                ? "flex items-start flex-col gap-y-2 fixed bg-primary top-16 right-6 p-4 rounded-xl shadow-xl w-52 ring-1 ring-slate-900/5 z-50"
+                ? "flex items-start flex-col gap-y-2 fixed bg-secondary top-16 right-6 p-4 rounded-xl w-52 ring-1 ring-slate-900/5 z-50"
                 : "hidden lg:flex gap-x-5 xl:gap-x-1 medium-15 p-1"
             }`}
           />
@@ -65,7 +73,11 @@ const Header = () => {
           </div>
           {/* Keranjang */}
           <div className="relative cursor-pointer flex justify-center">
-            <img src={assets.cartAdded} alt="" className="w-6" />
+            <img
+              src={assets.cartAdded}
+              alt=""
+              className="w-6 icon-filter-yellow"
+            />
             <label className="absolute bottom-8 text-xs font-bold bg-solidTwo text-white flexCenter rounded-full w-9">
               0
             </label>
@@ -73,7 +85,11 @@ const Header = () => {
           {/* Profil Pengguna */}
           <div>
             <button className=" cursor-pointer flexCenter">
-              <img src={assets.login} alt="" className="w-6" />
+              <img
+                src={assets.login}
+                alt=""
+                className="w-6 icon-filter-yellow"
+              />
             </button>
           </div>
         </div>

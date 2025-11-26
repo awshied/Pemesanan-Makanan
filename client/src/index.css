@@ -58,6 +58,10 @@ body {
   .btn-black {
     @apply px-6 py-3 active:scale-95 transition bg-primary text-textColor text-sm font-medium rounded-full cursor-pointer;
   }
+  .icon-filter-yellow:hover {
+    filter: brightness(0) saturate(100%) invert(96%) sepia(84%) saturate(6118%)
+      hue-rotate(302deg) brightness(105%) contrast(101%);
+  }
 }
 
 @layer utilities {

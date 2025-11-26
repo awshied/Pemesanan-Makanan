@@ -17,7 +17,7 @@ const Navbar = ({ containerStyles, setMenuOpened }) => {
           className={({ isActive }) =>
             `${
               isActive ? "active-link" : ""
-            } px-3 py-2 rounded-full text-sm font-bold`
+            } px-3 py-2 rounded-full text-sm font-bold hover:text-solidThree`
           }
           style={{
             fontFamily: "var(--font-sans)",
