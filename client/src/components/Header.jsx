@@ -2,10 +2,35 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { assets } from "../assets/data";
 import Navbar from "./Navbar";
+import { useClerk, UserButton } from "@clerk/clerk-react";
+import { useAppContext } from "../context/AppContext";
 
 const Header = () => {
   const [menuOpened, setMenuOpened] = useState(false);
+  const { openSignIn } = useClerk();
+  const { navigate, isSignedIn } = useAppContext();
+
   const toggleMenu = () => setMenuOpened((prev) => !prev);
+
+  const OrdersIcon = () => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+    >
+      <g
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+      >
+        <path d="M15 12h-5m5-4h-5m9 9V5a2 2 0 0 0-2-2H4" />
+        <path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3" />
+      </g>
+    </svg>
+  );
 
   return (
     <header
@@ -84,13 +109,37 @@ const Header = () => {
           </div>
           {/* Profil Pengguna */}
           <div>
-            <button className=" cursor-pointer flexCenter">
-              <img
-                src={assets.login}
-                alt=""
-                className="w-6 icon-filter-yellow"
-              />
-            </button>
+            {isSignedIn ? (
+              <UserButton
+                appearance={{
+                  elements: {
+                    userButtonAvatarBox: {
+                      width: "36px",
+                      height: "36px",
+                    },
+                  },
+                }}
+              >
+                <UserButton.MenuItems>
+                  <UserButton.Action
+                    label="Pesanan Gue"
+                    labelIcon={<OrdersIcon />}
+                    onClick={() => navigate("/pesanan")}
+                  />
+                </UserButton.MenuItems>
+              </UserButton>
+            ) : (
+              <button
+                onClick={openSignIn}
+                className=" cursor-pointer flexCenter"
+              >
+                <img
+                  src={assets.login}
+                  alt=""
+                  className="w-6 icon-filter-yellow"
+                />
+              </button>
+            )}
           </div>
         </div>
       </div>

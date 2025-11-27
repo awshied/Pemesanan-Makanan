@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { dummyProducts } from "../assets/data";
 import { useNavigate } from "react-router-dom";
+import { useUser } from "@clerk/clerk-react";
 
 const AppContext = createContext();
 
@@ -10,6 +11,8 @@ export const AppContextProvider = ({ children }) => {
   const delivery_charges = 10;
   const navigate = useNavigate();
 
+  const { isSignedIn } = useUser();
+
   const fetchProducts = () => {
     setProducts(dummyProducts);
   };
@@ -18,8 +21,12 @@ export const AppContextProvider = ({ children }) => {
     fetchProducts();
   }, []);
   const value = {
+    isSignedIn,
     products,
     fetchProducts,
+    currency,
+    navigate,
+    delivery_charges,
   };
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };
