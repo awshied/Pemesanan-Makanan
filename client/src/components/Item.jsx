@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { assets } from "../assets/data";
+import { useAppContext } from "../context/AppContext";
 
 const Item = ({ product }) => {
   const [size, setSize] = useState(product.sizes[0]);
-  const currency = "Rp";
+  const { currency } = useAppContext();
 
   return (
     <div className="relative mt-24 group">
@@ -14,14 +15,14 @@ const Item = ({ product }) => {
           alt="productImg"
           height={177}
           width={177}
-          className="absolute inset-0 h-full w-full object-cover opacity-100 group hover:opacity-0 drop-shadow-md"
+          className="absolute inset-0 h-full w-full object-cover opacity-100 group-hover:opacity-0 drop-shadow-md"
         />
         <img
           src={product.images[1] ? product.images[1] : product.images[0]}
           alt="productImg"
           height={177}
           width={177}
-          className="absolute inset-0 h-full w-full object-cover opacity-0 group hover:opacity-100 drop-shadow-md"
+          className="absolute inset-0 h-full w-full object-cover opacity-0 group-hover:opacity-100 drop-shadow-md"
         />
       </div>
 

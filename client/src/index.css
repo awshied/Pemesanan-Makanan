@@ -47,7 +47,7 @@ body {
     @apply flex items-center justify-end;
   }
   .btn-solid {
-    @apply px-6 py-3 active:scale-95 transition bg-solidTwo hover:opacity-70 border border-gray-500/20 text-solidFour text-sm font-medium rounded-full cursor-pointer;
+    @apply px-6 py-3 active:scale-95 transition bg-primary hover:bg-[#47515c] border border-gray-500/20 text-solidFour text-sm font-medium rounded-full cursor-pointer;
   }
   .btn-dark {
     @apply px-6 py-3 active:scale-95 transition bg-gray-500/10 border border-gray-500/20 text-textColor hover:opacity-50 text-sm font-medium rounded-full cursor-pointer;

@@ -25,8 +25,8 @@ const Hero = () => {
               <h3>Mulai Dari</h3>
               <span className="bg-transparent p-1 inline-block -rotate-2 ml-2.5 text-5xl font-extrabold">
                 <span className="text-2xl relative bottom-3">IDR </span>
-                <big className="text-solidTwo">11.</big>
-                <span className="text-2xl text-solidTwo">99 k</span>
+                <big className="text-solidThree">11.</big>
+                <span className="text-2xl text-solidThree">99k</span>
               </span>
             </div>
             <button className="rounded-xl p-4 w-52 active:scale-95 text-lg transition bg-solidThree hover:opacity-70 text-solidFour font-bold mt-6 cursor-pointer">
