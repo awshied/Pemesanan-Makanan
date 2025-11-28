@@ -16,19 +16,18 @@ const MenuPremium = () => {
     const data = products.filter((item) => item.inStock).slice(0, 10);
     setPremiumMenu(data);
   }, [products]);
+
   return (
     <section className="max-padd-container py-22 xl:py-28 bg-primary">
       <Title title1={"Menu"} title2={"Premium"} titleStyles={"pb-10"} />
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
+        centeredSlidesBounds={true}
         autoplay={{
           delay: 3500,
           disableOnInteraction: false,
         }}
-        observer={true}
-        observeParents={true}
-        observeSlideChildren={true}
         onSwiper={(swiper) => {
           setTimeout(() => {
             swiper.update();
