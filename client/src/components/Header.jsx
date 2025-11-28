@@ -76,7 +76,7 @@ const Header = () => {
         </div>
 
         {/* Profil & Tombol */}
-        <div className="flex flex-1 items-center sm:justify-end gap-x-6">
+        <div className="flex flex-1 items-center sm:justify-end gap-x-8">
           {/* Toggle Menu */}
           <div className="relative lg:hidden w-7 h-6">
             <img
@@ -103,7 +103,7 @@ const Header = () => {
               alt=""
               className="w-6 icon-filter-yellow"
             />
-            <label className="absolute bottom-8 text-xs font-bold bg-solidTwo text-white flexCenter rounded-full w-9">
+            <label className="absolute bottom-3 left-3 text-[10px] font-bold bg-solidTwo text-white flexCenter rounded-full px-1.5 py-0.5">
               0
             </label>
           </div>

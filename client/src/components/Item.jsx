@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { assets } from "../assets/data";
 import { useAppContext } from "../context/AppContext";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const Item = ({ product }) => {
   const [size, setSize] = useState(product.sizes[0]);
@@ -79,9 +84,14 @@ const Item = ({ product }) => {
             </div>
           </div>
           <div className="flex flex-col gap-1 pr-5">
-            <button className="btn-solid rounded p-2">
-              <img src={assets.cartAdd} alt="add-to-cart" width={22} />
-            </button>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <button className="btn-solid rounded p-2">
+                  <img src={assets.cartAdd} alt="add-to-cart" width={22} />
+                </button>
+              </TooltipTrigger>
+              <TooltipContent>Tambah Keranjang</TooltipContent>
+            </Tooltip>
           </div>
         </div>
       </div>

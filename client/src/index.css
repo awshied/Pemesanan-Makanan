@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&family=Mona+Sans:ital,wght@0,200..900;1,200..900&family=Poppins:wght@100;400;500;800&display=swap");
 @import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
 
 @theme {
   /* Color */
