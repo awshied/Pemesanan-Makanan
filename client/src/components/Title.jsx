@@ -25,9 +25,7 @@ const Title = ({
           fontFamily: "var(--font-poppins)",
         }}
       >
-        {para
-          ? para
-          : "Cobain dulu menu sedap malam yang menggugah selera dan siap nemenin malam panjangmu dengan kelezatan yang nikmat."}
+        {para}
       </p>
     </div>
   );

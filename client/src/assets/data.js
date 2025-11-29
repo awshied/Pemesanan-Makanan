@@ -16,6 +16,7 @@ import secure from "./secure.svg";
 import right from "./right.svg";
 import pin from "./pin.svg";
 import star from "./star.svg";
+import location from "./location.png";
 import starBlack from "./star-black.svg";
 import facebook from "./facebook.svg";
 import instagram from "./instagram.svg";
@@ -43,6 +44,8 @@ import user1 from "./user1.png";
 import user2 from "./user2.png";
 import user3 from "./user3.png";
 import user4 from "./user4.png";
+import user5 from "./user5.png";
+import user6 from "./user6.png";
 import uploadIcon from "./upload_icon.png";
 // Products
 import product_1 from "./product_1.png";
@@ -122,6 +125,7 @@ export const assets = {
   right,
   pin,
   star,
+  location,
   starBlack,
   facebook,
   instagram,
@@ -146,6 +150,8 @@ export const assets = {
   user2,
   user3,
   user4,
+  user5,
+  user6,
   features1,
   features2,
   features3,
@@ -986,3 +992,60 @@ export const dummyDashboardData = {
   totalRevenue: 897,
   orders: dummyOrdersData,
 };
+
+// Testimonials
+export const testimonials = [
+  {
+    _id: "1resufirst",
+    name: "Farhan Kalingga Anhar",
+    role: "Content Creator",
+    location: "Yogyakarta",
+    review:
+      "Tempat Makan Sedap Malam benar-benar jadi tempat favorit baru saya! Menu makanannya variatif dan rasanya konsisten enak. Suasananya nyaman sehingga sangat mendukung untuk membuat konten juga. Highly recommended!",
+    imgPath: user1,
+  },
+  {
+    _id: "2resusecond",
+    name: "Chelsea Campbell",
+    role: "YouTube Vlogger",
+    location: "Bali",
+    review:
+      "Sebagai vlogger, saya sering mencari tempat makan yang bukan hanya lezat, tapi juga memiliki ambience menarik.",
+    imgPath: user2,
+  },
+  {
+    _id: "3resuthird",
+    name: "Bianca Krstić",
+    role: "TikTok Influencer",
+    location: "Jakarta",
+    review:
+      "Aku suka banget sama rasanya yang berani bumbu, porsinya pas, dan penyajiannya cepat.",
+    imgPath: user3,
+  },
+  {
+    _id: "4resuforth",
+    name: "Wildan Gilang Ardhana",
+    role: "Instagram Influencer",
+    location: "Sulawesi Barat",
+    review:
+      "Tempat makan ini punya vibe malam yang cozy banget. Banyak spot estetik untuk foto, dan makanannya pun luar biasa enak. Pelayanan cepat dan sangat friendly. Pasti bakal sering balik lagi!",
+    imgPath: user4,
+  },
+  {
+    _id: "5resufifth",
+    name: "Ren Gojou",
+    role: "JAV Actress",
+    location: "Perfektur Yamanashi",
+    review:
+      "Saat berkunjung ke Indonesia, saya mencoba Sedap Malam dan langsung jatuh cinta dengan cita rasanya. Hidangannya autentik, hangat, dan penuh karakter. Tempatnya pun sangat nyaman untuk makan malam setelah bekerja. Ini akan menjadi tempat makan favoritku saat berkunjung ke Indonesia lagi.",
+    imgPath: user5,
+  },
+  {
+    _id: "6resusixth",
+    name: "Kallen Vinicius Earl",
+    role: "Content Creator",
+    location: "Jawa Timur",
+    review: "Joslah pokoknya.",
+    imgPath: user6,
+  },
+];

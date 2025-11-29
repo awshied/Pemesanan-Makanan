@@ -19,7 +19,14 @@ const MenuPremium = () => {
 
   return (
     <section className="max-padd-container py-22 xl:py-28 bg-primary">
-      <Title title1={"Menu"} title2={"Premium"} titleStyles={"pb-10"} />
+      <Title
+        title1={"Hot"}
+        title2={"Premium"}
+        titleStyles={"pb-10"}
+        para={
+          "Cobain dulu menu sedap malam yang menggugah selera dan siap nemenin malam panjangmu dengan kelezatan yang nikmat."
+        }
+      />
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
