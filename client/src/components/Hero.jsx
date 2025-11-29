@@ -16,7 +16,7 @@ const Hero = () => {
             <h3>Menu Sedap yang Bikin Nagih</h3>
             <h2 className="uppercase mb-0 tracking-[0.22rem]">
               <span className="text-solidThree">Dapatkan Promo</span> -{" "}
-              <span className="text-solidTwo">25% Off!</span>
+              <span className="text-[#f8554c]">25% Off!</span>
             </h2>
             <h3 className="font-extrabold leading-none">
               untuk Aneka Favorit Kamu

@@ -9,6 +9,10 @@ import cartRemove from "./cart-remove.svg";
 import cartAdded from "./cart-added.png";
 import forward from "./forward.svg";
 import badge from "./badge.svg";
+import app from "./app.png";
+import aneka from "./aneka.png";
+import contact from "./contact.png";
+import beranda from "./beranda.png";
 import heartAdd from "./heart-add.svg";
 import returnRequest from "./return-request.svg";
 import delivery from "./delivery.svg";
@@ -18,14 +22,22 @@ import pin from "./pin.svg";
 import star from "./star.svg";
 import location from "./location.png";
 import starBlack from "./star-black.svg";
-import facebook from "./facebook.svg";
-import instagram from "./instagram.svg";
-import twitter from "./twitter.svg";
-import linkedin from "./linkedin.svg";
+import facebook from "./facebook.png";
+import instagram from "./instagram.png";
+import x from "./x.png";
+import threads from "./threads.png";
+import telegram from "./telegram.png";
+import youtube from "./youtube.png";
+import tiktok from "./tiktok.png";
+import discord from "./discord.png";
+import reddit from "./reddit.png";
+import messenger from "./messenger.png";
+import whatsapp from "./whatsapp.png";
 import rocket from "./rocket.svg";
 import mail from "./mail.svg";
 import phone from "./phone.svg";
 import house from "./house.svg";
+import awlogo from "./awlogo.png";
 import graph from "./graph.svg";
 import dollar from "./dollar.svg";
 import map from "./map.svg";
@@ -118,6 +130,10 @@ export const assets = {
   cartAdded,
   forward,
   badge,
+  app,
+  aneka,
+  contact,
+  beranda,
   heartAdd,
   returnRequest,
   delivery,
@@ -129,13 +145,21 @@ export const assets = {
   starBlack,
   facebook,
   instagram,
-  twitter,
-  linkedin,
+  x,
+  threads,
+  telegram,
+  youtube,
+  tiktok,
+  discord,
+  reddit,
+  messenger,
+  whatsapp,
   rocket,
   mail,
   phone,
   dollar,
   house,
+  awlogo,
   graph,
   map,
   dashboard,
@@ -1035,7 +1059,7 @@ export const testimonials = [
     _id: "5resufifth",
     name: "Ren Gojou",
     role: "JAV Actress",
-    location: "Perfektur Yamanashi",
+    location: "Yamanashi",
     review:
       "Saat berkunjung ke Indonesia, saya mencoba Sedap Malam dan langsung jatuh cinta dengan cita rasanya. Hidangannya autentik, hangat, dan penuh karakter. Tempatnya pun sangat nyaman untuk makan malam setelah bekerja. Ini akan menjadi tempat makan favoritku saat berkunjung ke Indonesia lagi.",
     imgPath: user5,
@@ -1047,5 +1071,63 @@ export const testimonials = [
     location: "Jawa Timur",
     review: "Joslah pokoknya.",
     imgPath: user6,
+  },
+];
+
+export const socialMedia = [
+  {
+    _id: "social1",
+    name: "Facebook",
+    imgIcon: facebook,
+  },
+  {
+    _id: "social2",
+    name: "Discord",
+    imgIcon: discord,
+  },
+  {
+    _id: "social3",
+    name: "Instagram",
+    imgIcon: instagram,
+  },
+  {
+    _id: "social4",
+    name: "X",
+    imgIcon: x,
+  },
+  {
+    _id: "social5",
+    name: "YouTube",
+    imgIcon: youtube,
+  },
+  {
+    _id: "social6",
+    name: "Threads",
+    imgIcon: threads,
+  },
+  {
+    _id: "social7",
+    name: "Reddit",
+    imgIcon: reddit,
+  },
+  {
+    _id: "social8",
+    name: "Telegram",
+    imgIcon: telegram,
+  },
+  {
+    _id: "social9",
+    name: "Tiktok",
+    imgIcon: tiktok,
+  },
+  {
+    _id: "social10",
+    name: "Messenger",
+    imgIcon: messenger,
+  },
+  {
+    _id: "social11",
+    name: "WhatsApp",
+    imgIcon: whatsapp,
   },
 ];

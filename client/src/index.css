@@ -78,6 +78,11 @@ body {
   .active-link {
     @apply relative after:w-2/5 after:h-1 after:rounded-full after:bg-solidThree after:absolute after:-bottom-0.5 after:right-3;
   }
+  .active-page {
+    @apply relative filter;
+    filter: brightness(0) saturate(100%) invert(96%) sepia(84%) saturate(6118%)
+      hue-rotate(302deg) brightness(105%) contrast(101%);
+  }
   h1 {
     @apply text-[41px] md:text-[45px] font-bold;
   }

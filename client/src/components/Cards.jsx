@@ -32,7 +32,7 @@ const Cards = ({ card, children, index }) => {
     >
       <div className="glow" />
       <div className="flex items-center justify-between gap-1 mb-5">
-        <div className="hidden sm:flex items-center">
+        <div className="flex items-center">
           {Array.from({ length: 5 }, (_, i) => (
             <img src={assets.star} key={i} alt="rating" width={20} />
           ))}
