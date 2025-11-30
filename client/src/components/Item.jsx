@@ -39,10 +39,12 @@ const Item = ({ product }) => {
         }}
       >
         <div className="p-3">
-          <h4 className="text-lg line-clamp-1 mb-1">{product.title}</h4>
+          <h4 className="text-base line-clamp-1 mt-2 mb-1">{product.title}</h4>
           <div className="flex items-start justify-between pb-1">
-            <h5 className="mb-1">{product.category}</h5>
-            <div className="flex items-center justify-start gap-x-1 bold-14">
+            <small className="mb-1 text-sm font-medium">
+              {product.category}
+            </small>
+            <div className="flex mb-1 items-center justify-start gap-x-1 bold-14">
               <img src={assets.star} alt="rating" width={16} />
               <img src={assets.star} alt="rating" width={16} />
               <img src={assets.star} alt="rating" width={16} />
@@ -71,15 +73,15 @@ const Item = ({ product }) => {
             {currency} {product.price[size]}k
           </h4>
         </div>
-        <div className="flexBetween rounded-xl pl-5 text-[13px] font-semibold pb-5">
+        <div className="flexBetween rounded-xl pl-5 text-[13px] pt-3 font-semibold pb-5">
           <div className="flexStart gap-5">
             <div className="flex flex-col gap-1 relative bottom-1.5">
-              <h5>Siap</h5>
+              <small className="text-sm">Siap</small>
               <p className="text-xs text-solidThree">5m</p>
             </div>
             <hr className="h-8 w-px bg-textColor border-none" />
             <div className="flex flex-col gap-1 relative bottom-1.5">
-              <h5>Masak</h5>
+              <small className="text-sm">Masak</small>
               <p className="text-xs text-solidThree">10m</p>
             </div>
           </div>

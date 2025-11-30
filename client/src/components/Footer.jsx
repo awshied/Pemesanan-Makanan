@@ -19,7 +19,7 @@ const Footer = () => {
             <NavLink
               key={footerLink.title}
               to={footerLink.path}
-              className="px-3 py-2 lg:text-xs text-[10px] font-medium hover:underline"
+              className="lg:px-3 px-1 py-2 lg:text-xs text-[8px] font-medium hover:underline"
               style={{
                 fontFamily: "var(--font-sans)",
               }}
@@ -30,7 +30,7 @@ const Footer = () => {
         </div>
         <div className="flexCenter px-3 lg:px-5 gap-3 lg:gap-5 my-2 lg:my-3">
           <div className="flexCenter">
-            <img src={assets.logoImg} alt="logoImg" className="lg:h-16 h-12" />
+            <img src={assets.logoImg} alt="logoImg" className="lg:h-16 h-10" />
             <div
               className="flex flex-col justify-center lg:gap-2 gap-1"
               style={{
@@ -47,14 +47,14 @@ const Footer = () => {
           </div>
           <hr className="w-px bg-textColor h-[42px]" />
           <div className="flexCenter gap-1 lg:gap-2">
-            <img src={assets.awlogo} alt="awlogo" className="lg:h-16 h-12" />
+            <img src={assets.awlogo} alt="awlogo" className="lg:h-16 h-10" />
             <div
               className="flex flex-col justify-center lg:gap-1 gap-0.5"
               style={{
                 fontFamily: "var(--font-sans)",
               }}
             >
-              <span className="block font-medium text-[10px] lg:text-xs relative">
+              <span className="block font-medium text-[8px] lg:text-xs relative">
                 Diproduksi oleh:
               </span>
               <span className="block font-semibold text-xs lg:text-base relative text-solidThree ">
@@ -63,11 +63,11 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <small className="lg:text-xs text-[10px] font-semibold">
+        <small className="lg:text-xs text-center text-[7px] font-semibold">
           "Jadilah pelanggan setia Mang TekTek dan gabung ke dalam komunitas
           kami yang profesional."
         </small>
-        <span className="lg:text-xs text-[10px] font-medium my-3">
+        <span className="lg:text-xs text-center text-[8px] font-medium my-3">
           Copyright © {new Date().getFullYear()}{" "}
           <span className="text-solidThree"> Mang TekTek</span> • All Rights
           Reserved

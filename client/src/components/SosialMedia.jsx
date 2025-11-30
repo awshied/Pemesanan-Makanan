@@ -50,7 +50,7 @@ const SosialMedia = () => {
         {socialMedia.map(({ _id, imgIcon, name }) => (
           <Tooltip key={_id}>
             <TooltipTrigger asChild>
-              <button className="border lg:border-2 border-textColor rounded-full p-2 cursor-pointer icon-filter-yellow">
+              <button className="border lg:border-2 border-textColor rounded-full p-1 lg:p-2 cursor-pointer icon-filter-yellow">
                 <img
                   src={imgIcon}
                   alt={_id}

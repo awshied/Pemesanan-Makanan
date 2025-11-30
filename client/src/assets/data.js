@@ -1,5 +1,5 @@
 import logoImg from "./logo.png";
-import search from "./search.svg";
+import search from "./search.png";
 import user from "./user-profile.png";
 import login from "./login.png";
 import menu from "./menu.png";
@@ -59,55 +59,55 @@ import user4 from "./user4.png";
 import user5 from "./user5.png";
 import user6 from "./user6.png";
 import uploadIcon from "./upload_icon.png";
-// Products
-import product_1 from "./product_1.png";
-import product_2 from "./product_2.png";
-import product_3 from "./product_3.png";
-import product_4 from "./product_4.png";
-import product_5 from "./product_5.png";
-import product_6 from "./product_6.png";
-import product_7 from "./product_7.png";
-import product_8 from "./product_8.png";
-import product_9 from "./product_9.png";
-import product_10 from "./product_10.png";
-import product_11 from "./product_11.png";
-import product_12 from "./product_12.png";
-import product_13 from "./product_13.png";
-import product_14 from "./product_14.png";
-import product_15 from "./product_15.png";
-import product_16 from "./product_16.png";
-import product_17 from "./product_17.png";
-import product_18 from "./product_18.png";
-import product_19 from "./product_19.png";
-import product_20 from "./product_20.png";
-import product_21 from "./product_21.png";
-import product_22 from "./product_22.png";
-import product_23 from "./product_23.png";
-import product_24 from "./product_24.png";
-import product_25 from "./product_25.png";
-import product_26 from "./product_26.png";
-import product_27 from "./product_27.png";
-import product_28 from "./product_28.png";
-import product_29 from "./product_29.png";
-import product_30 from "./product_30.png";
-import product_31 from "./product_31.png";
-import product_32 from "./product_32.png";
-import product_33 from "./product_33.png";
-import product_34 from "./product_34.png";
-import product_35 from "./product_35.png";
-import product_36 from "./product_36.png";
-import product_37 from "./product_37.png";
-import product_38 from "./product_38.png";
-import product_39 from "./product_39.png";
-import product_40 from "./product_40.png";
-import product_41 from "./product_41.png";
-import product_42 from "./product_42.png";
-import product_43 from "./product_43.png";
-import product_44 from "./product_44.png";
-import product_45 from "./product_45.png";
-import product_46 from "./product_46.png";
-import product_47 from "./product_47.png";
-import product_48 from "./product_48.png";
+// produks
+import produk_1 from "./produk_1.png";
+import produk_2 from "./produk_2.png";
+import produk_3 from "./produk_3.png";
+import produk_4 from "./produk_4.png";
+import produk_5 from "./produk_5.png";
+import produk_6 from "./produk_6.png";
+import produk_7 from "./produk_7.png";
+import produk_8 from "./produk_8.png";
+import produk_9 from "./produk_8.png";
+import produk_10 from "./produk_8.png";
+import produk_11 from "./produk_8.png";
+import produk_12 from "./produk_8.png";
+import produk_13 from "./produk_8.png";
+import produk_14 from "./produk_8.png";
+import produk_15 from "./produk_8.png";
+import produk_16 from "./produk_8.png";
+import produk_17 from "./produk_8.png";
+import produk_18 from "./produk_18.png";
+import produk_19 from "./produk_18.png";
+import produk_20 from "./produk_18.png";
+import produk_21 from "./produk_18.png";
+import produk_22 from "./produk_18.png";
+import produk_23 from "./produk_18.png";
+import produk_24 from "./produk_24.png";
+import produk_25 from "./produk_24.png";
+import produk_26 from "./produk_24.png";
+import produk_27 from "./produk_24.png";
+import produk_28 from "./produk_24.png";
+import produk_29 from "./produk_24.png";
+import produk_30 from "./produk_24.png";
+import produk_31 from "./produk_24.png";
+import produk_32 from "./produk_32.png";
+import produk_33 from "./produk_32.png";
+import produk_34 from "./produk_32.png";
+import produk_35 from "./produk_32.png";
+import produk_36 from "./produk_32.png";
+import produk_37 from "./produk_32.png";
+import produk_38 from "./produk_32.png";
+import produk_39 from "./produk_32.png";
+import produk_40 from "./produk_40.png";
+import produk_41 from "./produk_40.png";
+import produk_42 from "./produk_40.png";
+import produk_43 from "./produk_40.png";
+import produk_44 from "./produk_40.png";
+import produk_45 from "./produk_40.png";
+import produk_46 from "./produk_40.png";
+import produk_47 from "./produk_40.png";
+import produk_48 from "./produk_40.png";
 // Blogs
 import blog1 from "./blogs/blog1.jpg";
 import blog2 from "./blogs/blog2.jpg";
@@ -182,686 +182,690 @@ export const assets = {
   uploadIcon,
 };
 
+// R => Porsi Reguler & J => Porsi Jumbo
+// S => Ukuran Small, M => Ukuran Medium, L => Ukuran Large
 export const dummyProducts = [
   {
+    // Aneka Nasi
     _id: "1",
-    title: "Spicy Chicken Curry",
-    images: [product_1, product_5, product_4, product_8],
-    price: { H: 5, F: 10 },
+    title: "Nasi Putih",
+    images: [produk_1],
+    price: { R: 1, J: 1.5 },
     description:
       "Our Spicy Chicken Curry, made with tender chicken pieces cooked in a flavorful blendEnjoy of spices.",
-    category: "Curry",
-    type: "Chicken Curry",
-    sizes: ["H", "F"],
+    category: "Makanan",
+    type: "Nasi Biasa",
+    sizes: ["R", "J"],
     date: 1716634345448,
     popular: false,
     inStock: true,
   },
   {
     _id: "2",
-    title: "Vegetarian Chickpea Curry",
-    images: [product_2],
-    price: { H: 10, F: 20 },
+    title: "Nasi Goreng Ayam",
+    images: [produk_2],
+    price: { R: 10, J: 13.5 },
     description:
       "Our Vegetarian Chickpea Curry is a hearty dish made with tender chickpeas simmered in a rich tomato-based sauce.",
-    category: "Curry",
-    type: "Vegetable Curry",
-    sizes: ["H", "F"],
+    category: "Makanan",
+    type: "Nasi Goreng",
+    sizes: ["R", "J"],
     date: 1716634345448,
-    popular: true,
+    popular: false,
     inStock: true,
   },
   {
     _id: "3",
-    title: "Beef Vindaloo",
-    images: [product_3],
-    price: { H: 20, F: 30 },
+    title: "Nasi Goreng Spesial",
+    images: [produk_3],
+    price: { R: 12.5, J: 15 },
     description:
       "Experience the fiery taste of our Beef Vindaloo, a traditional Goan dish with a spicy and tangy sauce.",
-    category: "Curry",
-    type: "Beef Curry",
-    sizes: ["H", "F"],
-    date: 1716634345448,
-    popular: false,
-    inStock: true,
-  },
-  {
-    _id: "4",
-    title: "Creamy Paneer Butter Masala",
-    images: [product_4],
-    price: { H: 15, F: 20 },
-    description:
-      "Our Creamy Paneer Butter Masala features soft paneer cubes cooked in a rich and creamy tomato gravy.",
-    category: "Curry",
-    type: "Vegetable Curry",
-    sizes: ["H", "F"],
+    category: "Makanan",
+    type: "Nasi Goreng",
+    sizes: ["R", "J"],
     date: 1716634345448,
     popular: true,
     inStock: true,
   },
   {
-    _id: "5",
-    title: "Lamb Rogan Josh",
-    images: [product_5],
-    price: { H: 5, F: 10 },
+    _id: "4",
+    title: "Nasi Goreng Seafood",
+    images: [produk_4],
+    price: { R: 10, J: 13.5 },
     description:
-      "Try our Lamb Rogan Josh, a traditional Kashmiri dish with tender lamb in a fragrant curry sauce.",
-    category: "Curry",
-    type: "Beef Curry",
-    sizes: ["H", "F"],
+      "Our Creamy Paneer Butter Masala features soft paneer cubes cooked in a rich and creamy tomato gravy.",
+    category: "Makanan",
+    type: "Nasi Goreng",
+    sizes: ["R", "J"],
     date: 1716634345448,
     popular: false,
     inStock: true,
   },
   {
+    _id: "5",
+    title: "Nasi Goreng Daging",
+    images: [produk_5],
+    price: { R: 14, J: 17.5 },
+    description:
+      "Try our Lamb Rogan Josh, a traditional Kashmiri dish with tender lamb in a fragrant curry sauce.",
+    category: "Makanan",
+    type: "Nasi Goreng",
+    sizes: ["R", "J"],
+    date: 1716634345448,
+    popular: true,
+    inStock: true,
+  },
+  {
     _id: "6",
-    title: "Fish Curry with Coconut Milk",
-    images: [product_6],
-    price: { H: 10, F: 20 },
+    title: "Nasi Goreng Buntut T-Rex",
+    images: [produk_6],
+    price: { R: 18.5, J: 24 },
     description:
       "Delight in our Fish Curry, made with fresh fish fillets simmered in a creamy coconut milk sauce.",
-    category: "Curry",
-    type: "Fish Curry",
-    sizes: ["H", "F"],
+    category: "Makanan",
+    type: "Nasi Goreng",
+    sizes: ["R", "J"],
     date: 1716634345448,
     popular: false,
     inStock: true,
   },
   {
     _id: "7",
-    title: "Egg Curry with Spices",
-    images: [product_7],
-    price: { H: 5, F: 10 },
+    title: "Nasi Goreng Rahang Kuda Laut",
+    images: [produk_7],
+    price: { R: 18.5, J: 24 },
     description:
       "Our Egg Curry is a simple yet flavorful dish, featuring boiled eggs cooked in a spiced gravy.",
-    category: "Curry",
-    type: "Vegetable Curry",
-    sizes: ["H", "F"],
-    date: 1716634345448,
-    popular: false,
-    inStock: true,
-  },
-  {
-    _id: "8",
-    title: "Mutton Korma",
-    images: [product_8],
-    price: { H: 15, F: 20 },
-    description:
-      "Savor our Mutton Korma, a royal dish made with tender mutton pieces in a rich, creamy sauce.",
-    category: "Curry",
-    type: "Beef Curry",
-    sizes: ["H", "F"],
+    category: "Makanan",
+    type: "Nasi Goreng",
+    sizes: ["R", "J"],
     date: 1716634345448,
     popular: false,
     inStock: true,
   },
 
-  // Pizza Products
+  // Aneka Mie
+  {
+    _id: "8",
+    title: "Mie Goreng Ayam",
+    images: [produk_8],
+    price: { R: 10, J: 13.5 },
+    description:
+      "Savor our Mutton Korma, a royal dish made with tender mutton pieces in a rich, creamy sauce.",
+    category: "Makanan",
+    type: "Mie Goreng",
+    sizes: ["R", "J"],
+    date: 1716634345448,
+    popular: false,
+    inStock: true,
+  },
   {
     _id: "9",
-    title: "Margherita Pizza",
-    images: [product_9],
-    price: { S: 30, M: 35, L: 40, XL: 45 },
+    title: "Mie Goreng Spesial",
+    images: [produk_9],
+    price: { R: 12.5, J: 15 },
     description:
       "Our Margherita Pizza is a classic, topped with fresh mozzarella, tomatoes, and basil.",
-    category: "Pizza",
-    type: "Margherita",
-    sizes: ["S", "M", "L", "XL"],
+    category: "Makanan",
+    type: "Mie Goreng",
+    sizes: ["R", "J"],
     date: 1716634345448,
-    popular: true,
+    popular: false,
     inStock: true,
   },
   {
     _id: "10",
-    title: "Pepperoni Pizza",
-    images: [product_10],
-    price: { S: 30, M: 35, L: 40, XL: 45 },
+    title: "Mie Goreng Seafood",
+    images: [produk_10],
+    price: { R: 10, J: 13.5 },
     description:
       "Enjoy our Pepperoni Pizza, loaded with spicy pepperoni slices on a bed of melted cheese.",
-    category: "Pizza",
-    type: "Pepperoni",
-    sizes: ["S", "M", "L", "XL"],
+    category: "Makanan",
+    type: "Mie Goreng",
+    sizes: ["R", "J"],
     date: 1716634345448,
     popular: false,
     inStock: true,
   },
   {
     _id: "11",
-    title: "BBQ Chicken Pizza",
-    images: [product_11],
-    price: { S: 30, M: 35, L: 40, XL: 45 },
+    title: "Mie Goreng Daging",
+    images: [produk_11],
+    price: { R: 14, J: 17.5 },
     description:
       "Try our BBQ Chicken Pizza, topped with tender chicken pieces, BBQ sauce, and red onions.",
-    category: "Pizza",
-    type: "BBQ Chicken",
-    sizes: ["S", "M", "L", "XL"],
+    category: "Makanan",
+    type: "Mie Goreng",
+    sizes: ["R", "J"],
     date: 1716634345448,
     popular: false,
     inStock: true,
   },
   {
     _id: "12",
-    title: "Vegetarian Pizza",
-    images: [product_12],
-    price: { S: 30, M: 35, L: 40, XL: 45 },
+    title: "Mie Goreng Tinta Kraken",
+    images: [produk_12],
+    price: { R: 18.5, J: 24 },
     description:
       "Our Vegetarian Pizza is a colorful mix of bell peppers, onions, mushrooms, and olives on a cheese base.",
-    category: "Pizza",
-    type: "Veggie",
-    sizes: ["S", "M", "L", "XL"],
+    category: "Makanan",
+    type: "Mie Goreng",
+    sizes: ["R", "J"],
     date: 1716634345448,
     popular: false,
     inStock: true,
   },
   {
     _id: "13",
-    title: "Hawaiian Pizza",
-    images: [product_13],
-    price: { S: 30, M: 35, L: 40, XL: 45 },
+    title: "Mie Kuah Ayam",
+    images: [produk_13],
+    price: { R: 10, J: 13.5 },
     description:
       "Savor the sweet and savory taste of our Hawaiian Pizza, topped with ham and pineapple.",
-    category: "Pizza",
-    type: "Veggie",
-    sizes: ["S", "M", "L", "XL"],
+    category: "Makanan",
+    type: "Mie Kuah",
+    sizes: ["R", "J"],
     date: 1716634345448,
-    popular: true,
+    popular: false,
     inStock: true,
   },
   {
     _id: "14",
-    title: "Four Cheese Pizza",
-    images: [product_14],
-    price: { S: 30, M: 35, L: 40, XL: 45 },
+    title: "Mie Kuah Spesial",
+    images: [produk_14],
+    price: { R: 12.5, J: 15 },
     description:
       "Indulge in our Four Cheese Pizza, featuring a blend of mozzarella, cheddar, parmesan, and blue cheese.",
-    category: "Pizza",
-    type: "Four Cheese",
-    sizes: ["S", "M", "L", "XL"],
+    category: "Makanan",
+    type: "Mie Kuah",
+    sizes: ["R", "J"],
     date: 1716634345448,
     popular: false,
     inStock: true,
   },
   {
     _id: "15",
-    title: "Spicy Sausage Pizza",
-    images: [product_15],
-    price: { S: 30, M: 35, L: 40, XL: 45 },
+    title: "Mie Kuah Seafood",
+    images: [produk_15],
+    price: { R: 10, J: 13.5 },
     description:
       "Our Spicy Sausage Pizza is topped with hot sausage, peppers, and onions for a fiery kick.",
-    category: "Pizza",
-    type: "Pepperoni",
-    sizes: ["S", "M", "L", "XL"],
-    date: 1716634345448,
-    popular: false,
-    inStock: true,
-  },
-  {
-    _id: "16",
-    title: "Mushroom Truffle Pizza",
-    images: [product_16],
-    price: { S: 30, M: 35, L: 40, XL: 45 },
-    description:
-      "Experience the earthy flavors of our Mushroom Truffle Pizza, topped with sautéed mushrooms and truffle oil.",
-    category: "Pizza",
-    type: "Veggie",
-    sizes: ["S", "M", "L", "XL"],
-    date: 1716634345448,
-    popular: false,
-    inStock: true,
-  },
-
-  // Rice Products
-  {
-    _id: "17",
-    title: "Chicken Biryani",
-    images: [product_17],
-    price: { H: 15, F: 20 },
-    description:
-      "Our Chicken Biryani is a fragrant rice dish, made with tender chicken pieces and aromatic spices.",
-    category: "Rice",
-    type: "Biryani",
-    sizes: ["H", "F"],
-    date: 1716634345448,
-    popular: false,
-    inStock: true,
-  },
-  {
-    _id: "18",
-    title: "Vegetable Fried Rice",
-    images: [product_18],
-    price: { H: 15, F: 20 },
-    description:
-      "Enjoy our Vegetable Fried Rice, a mix of rice, fresh vegetables, and soy sauce for a tasty meal.",
-    category: "Rice",
-    type: "Fried Rice",
-    sizes: ["H", "F"],
+    category: "Makanan",
+    type: "Mie Kuah",
+    sizes: ["R", "J"],
     date: 1716634345448,
     popular: true,
     inStock: true,
   },
   {
+    _id: "16",
+    title: "Mie Kuah Daging",
+    images: [produk_16],
+    price: { R: 14, J: 17.5 },
+    description:
+      "Experience the earthy flavors of our Mushroom Truffle Pizza, topped with sautéed mushrooms and truffle oil.",
+    category: "Makanan",
+    type: "Mie Kuah",
+    sizes: ["R", "J"],
+    date: 1716634345448,
+    popular: false,
+    inStock: true,
+  },
+  {
+    _id: "17",
+    title: "Mie Kuah Kutil Megalodon",
+    images: [produk_17],
+    price: { R: 18.5, J: 24 },
+    description:
+      "Our Chicken Biryani is a fragrant rice dish, made with tender chicken pieces and aromatic spices.",
+    category: "Makanan",
+    type: "Mie Kuah",
+    sizes: ["R", "J"],
+    date: 1716634345448,
+    popular: false,
+    inStock: true,
+  },
+
+  // Aneka Kwetiaw
+  {
+    _id: "18",
+    title: "Kwetiaw Goreng Ayam",
+    images: [produk_18],
+    price: { R: 10, J: 13.5 },
+    description:
+      "Enjoy our Vegetable Fried Rice, a mix of rice, fresh vegetables, and soy sauce for a tasty meal.",
+    category: "Makanan",
+    type: "Kwetiaw Goreng",
+    sizes: ["R", "J"],
+    date: 1716634345448,
+    popular: false,
+    inStock: true,
+  },
+  {
     _id: "19",
-    title: "Prawn Pilaf",
-    images: [product_19],
-    price: { H: 15, F: 20 },
+    title: "Kwetiaw Goreng Spesial",
+    images: [produk_19],
+    price: { R: 12.5, J: 15 },
     description:
       "Savor our Prawn Pilaf, a flavorful rice dish with prawns cooked in a fragrant broth.",
-    category: "Rice",
-    type: "Pulao",
-    sizes: ["H", "F"],
+    category: "Makanan",
+    type: "Kwetiaw Goreng",
+    sizes: ["R", "J"],
     date: 1716634345448,
     popular: false,
     inStock: true,
   },
   {
     _id: "20",
-    title: "Beef Pulao",
-    images: [product_20],
-    price: { H: 15, F: 20 },
+    title: "Kwetiaw Goreng Seafood",
+    images: [produk_20],
+    price: { R: 10, J: 13.5 },
     description:
       "Our Beef Pulao is a hearty dish, featuring tender beef pieces cooked with aromatic basmati rice.",
-    category: "Rice",
-    type: "Pulao",
-    sizes: ["H", "F"],
+    category: "Makanan",
+    type: "Kwetiaw Goreng",
+    sizes: ["R", "J"],
     date: 1716634345448,
     popular: false,
     inStock: true,
   },
   {
     _id: "21",
-    title: "Mutton Biryani",
-    images: [product_21],
-    price: { H: 15, F: 20 },
+    title: "Kwetiaw Goreng Daging",
+    images: [produk_21],
+    price: { R: 14, J: 17.5 },
     description:
       "Try our Mutton Biryani, a rich and flavorful rice dish made with tender mutton and spices.",
-    category: "Rice",
-    type: "Biryani",
-    sizes: ["H", "F"],
+    category: "Makanan",
+    type: "Kwetiaw Goreng",
+    sizes: ["R", "J"],
     date: 1716634345448,
     popular: false,
     inStock: true,
   },
   {
     _id: "22",
-    title: "Egg Fried Rice",
-    images: [product_22],
-    price: { H: 15, F: 20 },
+    title: "Kwetiaw Goreng Paruh Ababil",
+    images: [produk_22],
+    price: { R: 16.5, J: 21 },
     description:
       "Our Egg Fried Rice is a simple yet delicious dish, made with scrambled eggs and seasoned rice.",
-    category: "Rice",
-    type: "Fried Rice",
-    sizes: ["H", "F"],
+    category: "Makanan",
+    type: "Kwetiaw Goreng",
+    sizes: ["R", "J"],
     date: 1716634345448,
     popular: false,
     inStock: true,
   },
   {
     _id: "23",
-    title: "Lemon Rice",
-    images: [product_23],
-    price: { H: 15, F: 20 },
+    title: "Kwetiaw Goreng Ceker Angsa",
+    images: [produk_23],
+    price: { R: 16.5, J: 21 },
     description:
       "Enjoy the tangy taste of our Lemon Rice, made with fresh lemon juice, turmeric, and aromatic spices.",
-    category: "Rice",
-    type: "Steamed Rice",
-    sizes: ["H", "F"],
-    date: 1716634345448,
-    popular: false,
-    inStock: true,
-  },
-  {
-    _id: "24",
-    title: "Shrimp Fried Rice",
-    images: [product_24],
-    price: { H: 15, F: 20 },
-    description:
-      "Our Shrimp Fried Rice is a tasty dish, featuring juicy shrimp stir-fried with seasoned rice.",
-    category: "Rice",
-    type: "Fried Rice",
-    sizes: ["H", "F"],
-    date: 1716634345448,
-    popular: false,
-    inStock: true,
-  },
-
-  // Deserts Products
-  {
-    _id: "25",
-    title: "Classic Chocolate Cake with Rich Ganache",
-    images: [product_25],
-    price: { H: 15, F: 20 },
-    description:
-      "Indulge in our Classic Chocolate Cake, made with layers of moist chocolate sponge and rich ganache.",
-    category: "Deserts",
-    type: "Cakes",
-    sizes: ["H", "F"],
+    category: "Makanan",
+    type: "Kwetiaw Goreng",
+    sizes: ["R", "J"],
     date: 1716634345448,
     popular: true,
     inStock: true,
   },
+
+  // Aneka Minuman
+  {
+    _id: "24",
+    title: "Air Putih",
+    images: [produk_24],
+    price: { S: 1, M: 2, L: 3 },
+    description:
+      "Our Shrimp Fried Rice is a tasty dish, featuring juicy shrimp stir-fried with seasoned rice.",
+    category: "Minuman",
+    type: "Air Putih",
+    sizes: ["S", "M", "L"],
+    date: 1716634345448,
+    popular: false,
+    inStock: true,
+  },
+  {
+    _id: "25",
+    title: "Vanilla Latte",
+    images: [produk_25],
+    price: { S: 7.5, M: 9, L: 10.5 },
+    description:
+      "Indulge in our Classic Chocolate Cake, made with layers of moist chocolate sponge and rich ganache.",
+    category: "Minuman",
+    type: "Latte",
+    sizes: ["S", "M", "L"],
+    date: 1716634345448,
+    popular: false,
+    inStock: true,
+  },
   {
     _id: "26",
-    title: "Creamy Cheesecake with Fresh Berry Topping",
-    images: [product_26],
-    price: { H: 15, F: 20 },
+    title: "Coffee Latte",
+    images: [produk_26],
+    price: { S: 7.5, M: 9, L: 10.5 },
     description:
       "Savor our Creamy Cheesecake, topped with a medley of fresh berries for a delightful finish.",
-    category: "Deserts",
-    type: "Cakes",
-    sizes: ["H", "F"],
+    category: "Minuman",
+    type: "Latte",
+    sizes: ["S", "M", "L"],
     date: 1716634345448,
     popular: true,
     inStock: true,
   },
   {
     _id: "27",
-    title: "Warm Apple Pie with Flaky Crust",
-    images: [product_27],
-    price: { H: 15, F: 20 },
+    title: "Americano",
+    images: [produk_27],
+    price: { S: 10, M: 12, L: 14 },
     description:
       "Enjoy our Warm Apple Pie, filled with spiced apples and encased in a flaky, buttery crust.",
-    category: "Deserts",
-    type: "Pastries",
-    sizes: ["H", "F"],
+    category: "Minuman",
+    type: "Espresso",
+    sizes: ["S", "M", "L"],
     date: 1716634345448,
     popular: false,
     inStock: true,
   },
   {
     _id: "28",
-    title: "Decadent Chocolate Brownie with Fudge Center",
-    images: [product_28],
-    price: { H: 15, F: 20 },
+    title: "Matcha Latte",
+    images: [produk_28],
+    price: { S: 7.5, M: 9, L: 10.5 },
     description:
       "Treat yourself to our Decadent Chocolate Brownie, featuring a rich, fudgy center.",
-    category: "Deserts",
-    type: "Brownies",
-    sizes: ["H", "F"],
+    category: "Minuman",
+    type: "Latte",
+    sizes: ["S", "M", "L"],
     date: 1716634345448,
     popular: false,
     inStock: true,
   },
   {
     _id: "29",
-    title: "Light Lemon Tart with Buttery Crust",
-    images: [product_29],
-    price: { H: 15, F: 20 },
+    title: "Teh Tarik",
+    images: [produk_29],
+    price: { S: 2.5, M: 4, L: 5.5 },
     description:
       "Relish our Light Lemon Tart, offering a tangy lemon filling in a crisp, buttery crust.",
-    category: "Deserts",
-    type: "Pastries",
-    sizes: ["H", "F"],
+    category: "Minuman",
+    type: "Teh",
+    sizes: ["S", "M", "L"],
     date: 1716634345448,
     popular: false,
     inStock: true,
   },
   {
     _id: "30",
-    title: "Velvety Chocolate Mousse with Whipped Cream",
-    images: [product_30],
-    price: { H: 15, F: 20 },
+    title: "Milkshake Cokelat",
+    images: [produk_30],
+    price: { S: 7, M: 10, L: 13 },
     description:
       "Experience the smooth texture of our Velvety Chocolate Mousse, topped with fresh whipped cream.",
-    category: "Deserts",
-    type: "Cakes",
-    sizes: ["H", "F"],
+    category: "Minuman",
+    type: "Milkshake",
+    sizes: ["S", "M", "L"],
     date: 1716634345448,
     popular: false,
     inStock: true,
   },
   {
     _id: "31",
-    title: "Creamy Panna Cotta with Berry Compote",
-    images: [product_31],
-    price: { H: 15, F: 20 },
+    title: "Milkshake Stroberi",
+    images: [produk_31],
+    price: { S: 7, M: 10, L: 13 },
     description:
       "Delight in our Creamy Panna Cotta, served with a luscious berry compote.",
-    category: "Deserts",
-    type: "Pastries",
-    sizes: ["H", "F"],
+    category: "Minuman",
+    type: "Milkshake",
+    sizes: ["S", "M", "L"],
+    date: 1716634345448,
+    popular: true,
+    inStock: true,
+  },
+
+  // Aneka Makanan Pembuka (Appetizer)
+  {
+    _id: "32",
+    title: "Gyoza",
+    images: [produk_32],
+    price: { R: 9.5, J: 12.5 },
+    description:
+      "Savor the flavors of Italy with our Traditional Tiramisu, layered with rich mascarpone cream.",
+    category: "Appetizer",
+    type: "Cemilan Ringan",
+    sizes: ["R", "J"],
     date: 1716634345448,
     popular: false,
     inStock: true,
   },
   {
-    _id: "32",
-    title: "Traditional Tiramisu with Mascarpone Cream",
-    images: [product_32],
-    price: { H: 15, F: 20 },
-    description:
-      "Savor the flavors of Italy with our Traditional Tiramisu, layered with rich mascarpone cream.",
-    category: "Deserts",
-    type: "Cakes",
-    sizes: ["H", "F"],
-    date: 1716634345448,
-    popular: true,
-    inStock: true,
-  },
-  // Drinks Products
-  {
     _id: "33",
-    title: "Chilled Lemonade with Fresh Mint",
-    images: [product_33],
-    price: { H: 15, F: 20 },
+    title: "Takoyaki",
+    images: [produk_33],
+    price: { R: 9.5, J: 12.5 },
     description:
       "Enjoy our Chilled Lemonade, infused with fresh mint for a refreshing twist on a classic drink.",
-    category: "Drinks",
-    type: "Fresh Juices",
-    sizes: ["H", "F"],
+    category: "Appetizer",
+    type: "Cemilan Ringan",
+    sizes: ["R", "J"],
     date: 1716634345448,
     popular: false,
     inStock: true,
   },
   {
     _id: "34",
-    title: "Smooth Vanilla Milkshake",
-    images: [product_34],
-    price: { H: 15, F: 20 },
+    title: "Falafel",
+    images: [produk_34],
+    price: { R: 6.5, J: 8 },
     description:
       "Indulge in our Smooth Vanilla Milkshake, made with creamy vanilla ice cream and fresh milk.",
-    category: "Drinks",
-    type: "Milkshakes",
-    sizes: ["H", "F"],
+    category: "Appetizer",
+    type: "Cemilan Ringan",
+    sizes: ["R", "J"],
     date: 1716634345448,
     popular: false,
     inStock: true,
   },
   {
     _id: "35",
-    title: "Tangy Orange Juice",
-    images: [product_35],
-    price: { H: 15, F: 20 },
+    title: "Lumpia",
+    images: [produk_35],
+    price: { R: 3, J: 5 },
     description:
       "Savor the taste of our Tangy Orange Juice, freshly squeezed from ripe oranges.",
-    category: "Drinks",
-    type: "Fresh Juices",
-    sizes: ["H", "F"],
+    category: "Appetizer",
+    type: "Gorengan",
+    sizes: ["R", "J"],
     date: 1716634345448,
     popular: false,
     inStock: true,
   },
   {
     _id: "36",
-    title: "Rich Chocolate Milk",
-    images: [product_36],
-    price: { H: 15, F: 20 },
+    title: "Tempura Sayur",
+    images: [produk_36],
+    price: { R: 8, J: 11.5 },
     description:
       "Treat yourself to our Rich Chocolate Milk, a perfect blend of cocoa and milk for a creamy delight.",
-    category: "Drinks",
-    type: "Milkshakes",
-    sizes: ["H", "F"],
+    category: "Appetizer",
+    type: "Gorengan",
+    sizes: ["R", "J"],
     date: 1716634345448,
-    popular: true,
+    popular: false,
     inStock: true,
   },
   {
     _id: "37",
-    title: "Fruity Mango Smoothie",
-    images: [product_37],
-    price: { H: 15, F: 20 },
+    title: "Tahu Isi Crispy",
+    images: [produk_37],
+    price: { R: 3, J: 5 },
     description:
       "Relish our Fruity Mango Smoothie, made with fresh mangoes and yogurt for a healthy treat.",
-    category: "Drinks",
-    type: "Smoothies",
-    sizes: ["H", "F"],
+    category: "Appetizer",
+    type: "Gorengan",
+    sizes: ["R", "J"],
     date: 1716634345448,
     popular: false,
     inStock: true,
   },
   {
     _id: "38",
-    title: "Refreshing Iced Tea",
-    images: [product_38],
-    price: { H: 15, F: 20 },
+    title: "Udang Keju Goreng",
+    images: [produk_38],
+    price: { R: 7, J: 10 },
     description:
       "Experience the cool and refreshing taste of our Iced Tea, brewed with a hint of lemon.",
-    category: "Drinks",
-    type: "Soft Drinks",
-    sizes: ["H", "F"],
+    category: "Appetizer",
+    type: "Gorengan",
+    sizes: ["R", "J"],
     date: 1716634345448,
     popular: false,
     inStock: true,
   },
   {
     _id: "39",
-    title: "Creamy Coffee Latte",
-    images: [product_39],
-    price: { H: 15, F: 20 },
+    title: "Shrimp Cocktail Canapé",
+    images: [produk_39],
+    price: { R: 11, J: 16 },
     description:
       "Delight in our Creamy Coffee Latte, made with rich espresso and steamed milk.",
-    category: "Drinks",
-    type: "Coffee",
-    sizes: ["H", "F"],
+    category: "Appetizer",
+    type: "Canapé",
+    sizes: ["R", "J"],
     date: 1716634345448,
-    popular: false,
-    inStock: true,
-  },
-  {
-    _id: "40",
-    title: "Zesty Ginger Ale",
-    images: [product_40],
-    price: { H: 15, F: 20 },
-    description:
-      "Savor the spicy and refreshing taste of our Zesty Ginger Ale, perfect for any time of day.",
-    category: "Drinks",
-    type: "Soft Drinks",
-    sizes: ["H", "F"],
-    date: 1716634345448,
-    popular: false,
+    popular: true,
     inStock: true,
   },
 
-  // Fruits Products
+  // Aneka Makanan Penutup (Desert)
+  {
+    _id: "40",
+    title: "Lapis Legit",
+    images: [produk_40],
+    price: { R: 1.5, J: 2.5 },
+    description:
+      "Savor the spicy and refreshing taste of our Zesty Ginger Ale, perfect for any time of day.",
+    category: "Desert",
+    type: "Kue Basah",
+    sizes: ["R", "J"],
+    date: 1716634345448,
+    popular: false,
+    inStock: true,
+  },
   {
     _id: "41",
-    title: "Fresh Strawberries",
-    images: [product_41],
-    price: { H: 15, F: 20 },
+    title: "Klepon",
+    images: [produk_41],
+    price: { R: 1.5, J: 2.5 },
     description:
       "Enjoy the sweet and juicy taste of our Fresh Strawberries, handpicked for your delight.",
-    category: "Fruits",
-    type: "Strawberries",
-    sizes: ["H", "F"],
+    category: "Desert",
+    type: "Tepung Beras",
+    sizes: ["R", "J"],
     date: 1716634345448,
     popular: false,
     inStock: true,
   },
   {
     _id: "42",
-    title: "Crisp Green Apples",
-    images: [product_42],
-    price: { H: 15, F: 20 },
+    title: "Cheese Cake",
+    images: [produk_42],
+    price: { R: 4, J: 6 },
     description:
       "Savor the tart and refreshing taste of our Crisp Green Apples, perfect for snacking.",
-    category: "Fruits",
-    type: "Apples",
-    sizes: ["H", "F"],
+    category: "Desert",
+    type: "Cake",
+    sizes: ["R", "J"],
     date: 1716634345448,
-    popular: false,
+    popular: true,
     inStock: true,
   },
   {
     _id: "43",
-    title: "Tropical Pineapple Chunks",
-    images: [product_43],
-    price: { H: 15, F: 20 },
+    title: "Choco Lava Cake",
+    images: [produk_43],
+    price: { R: 4, J: 6 },
     description:
       "Delight in our Tropical Pineapple Chunks, bursting with sweet and tangy flavors.",
-    category: "Fruits",
-    type: "Grapes",
-    sizes: ["H", "F"],
+    category: "Desert",
+    type: "Cake",
+    sizes: ["R", "J"],
     date: 1716634345448,
     popular: false,
     inStock: true,
   },
   {
     _id: "44",
-    title: "Juicy Watermelon Slices",
-    images: [product_44],
-    price: { H: 15, F: 20 },
+    title: "Tiramisu",
+    images: [produk_44],
+    price: { R: 8.5, J: 12 },
     description:
       "Cool down with our Juicy Watermelon Slices, perfect for a refreshing summer treat.",
-    category: "Fruits",
-    type: "Oranges",
-    sizes: ["H", "F"],
+    category: "Desert",
+    type: "Cake",
+    sizes: ["R", "J"],
     date: 1716634345448,
     popular: false,
     inStock: true,
   },
   {
     _id: "45",
-    title: "Sweet Red Grapes",
-    images: [product_45],
-    price: { H: 15, F: 20 },
+    title: "Matcha Pudding",
+    images: [produk_45],
+    price: { R: 5, J: 7.5 },
     description:
       "Indulge in our Sweet Red Grapes, packed with natural sweetness and flavor.",
-    category: "Fruits",
-    type: "Grapes",
-    sizes: ["H", "F"],
+    category: "Desert",
+    type: "Puding",
+    sizes: ["R", "J"],
     date: 1716634345448,
     popular: false,
     inStock: true,
   },
   {
     _id: "46",
-    title: "Freshly Peeled Oranges",
-    images: [product_46],
-    price: { H: 15, F: 20 },
+    title: "Cheese Pudding",
+    images: [produk_46],
+    price: { R: 5, J: 7.5 },
     description:
       "Enjoy the convenience of our Freshly Peeled Oranges, ready to eat and full of juicy goodness.",
-    category: "Fruits",
-    type: "Oranges",
-    sizes: ["H", "F"],
+    category: "Desert",
+    type: "Puding",
+    sizes: ["R", "J"],
     date: 1716634345448,
     popular: false,
     inStock: true,
   },
   {
     _id: "47",
-    title: "Ripe Banana Bunch",
-    images: [product_47],
-    price: { H: 15, F: 20 },
+    title: "Dorayaki",
+    images: [produk_47],
+    price: { R: 6.5, J: 9.5 },
     description:
       "Our Ripe Banana Bunch is perfect for a quick snack or a healthy addition to your meals.",
-    category: "Fruits",
-    type: "Bananas",
-    sizes: ["H", "F"],
+    category: "Desert",
+    type: "Cake",
+    sizes: ["R", "J"],
     date: 1716634345448,
-    popular: false,
+    popular: true,
     inStock: true,
   },
   {
     _id: "48",
-    title: "Exotic Mango Slices",
-    images: [product_48],
-    price: { H: 15, F: 20 },
+    title: "Waffle Ice Cream",
+    images: [produk_48],
+    price: { R: 10, J: 15 },
     description:
       "Savor the rich and juicy taste of our Exotic Mango Slices, a perfect tropical treat.",
-    category: "Fruits",
-    type: "Bananas",
-    sizes: ["H", "F"],
+    category: "Desert",
+    type: "Waffle",
+    sizes: ["R", "J"],
     date: 1716634345448,
-    popular: false,
+    popular: true,
     inStock: true,
   },
 ];
@@ -873,7 +877,7 @@ export const blogs = [
     category: "Skincare Tips",
     image: blog1,
     description:
-      "Discover the essential skincare products you need in your routine for glowing, healthy skin in 2025.",
+      "Discover the essential skincare produks you need in your routine for glowing, healthy skin in 2025.",
   },
   {
     title: "How to Choose the Perfect Foundation Shade",
@@ -887,7 +891,7 @@ export const blogs = [
     category: "Hair Care",
     image: blog3,
     description:
-      "Explore the latest hair care tips and product trends that help strengthen, style, and shine.",
+      "Explore the latest hair care tips and produk trends that help strengthen, style, and shine.",
   },
   {
     title: "Beginner’s Guide to Building a Makeup Kit",
@@ -961,13 +965,13 @@ export const dummyOrdersData = [
     userId: "68591d36daf423db94fa8f4f",
     items: [
       {
-        product: dummyProducts[0], // Argan Hair Oil
+        produk: dummyProducts[0], // Argan Hair Oil
         quantity: 1,
         size: "50ml",
         _id: "685a5bbfaff57babcdfcc172",
       },
       {
-        product: dummyProducts[3], // Tea Tree Hair Oil
+        produk: dummyProducts[3], // Tea Tree Hair Oil
         quantity: 2,
         size: "100ml",
         _id: "685a5bbfaff57babcdfcc173",
@@ -987,13 +991,13 @@ export const dummyOrdersData = [
     userId: "68591d36daf423db94fa8f4f",
     items: [
       {
-        product: dummyProducts[8], // Vitamin C Face Oil
+        produk: dummyProducts[8], // Vitamin C Face Oil
         quantity: 1,
         size: "30ml",
         _id: "685a5bbfaff57babcdfcc175",
       },
       {
-        product: dummyProducts[24], // Volumizing Shampoo
+        produk: dummyProducts[24], // Volumizing Shampoo
         quantity: 3,
         size: "400ml",
         _id: "685a5bbfaff57babcdfcc176",
