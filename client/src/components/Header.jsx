@@ -91,6 +91,7 @@ const Header = () => {
               src={assets.menuClose}
               onClick={toggleMenu}
               alt=""
+              width={29}
               className={`absolute inset-0 lg:hidden cursor-pointer transition-opacity duration-700 ${
                 menuOpened ? "opacity-100" : "opacity-0"
               }`}

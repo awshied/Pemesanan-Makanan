@@ -50,7 +50,7 @@ import plus from "./plus.svg";
 import squarePlus from "./square-plus.svg";
 import minus from "./minus.svg";
 import sliders from "./sliders.svg";
-import trash from "./trash.svg";
+import trash from "./trash.png";
 import features1 from "./features1.png";
 import features2 from "./features2.png";
 import features3 from "./features3.png";
