@@ -8,8 +8,22 @@ import {
 } from "@/components/ui/tooltip";
 
 const Item = ({ product }) => {
+  const { currency, tambahKeranjang } = useAppContext();
   const [size, setSize] = useState(product.sizes[0]);
-  const { currency } = useAppContext();
+
+  const renderStars = (rating) => {
+    const stars = [];
+    for (let i = 1; i <= 5; i++) {
+      if (rating >= i) {
+        stars.push(<img key={i} src={assets.fullStar} className="w-5 h-5" />);
+      } else if (rating >= i - 0.5) {
+        stars.push(<img key={i} src={assets.halfStar} className="w-5 h-5" />);
+      } else {
+        stars.push(<img key={i} src={assets.emptyStar} className="w-5 h-5" />);
+      }
+    }
+    return stars;
+  };
 
   return (
     <div className="relative mt-24 group">
@@ -44,13 +58,9 @@ const Item = ({ product }) => {
             <small className="mb-1 text-sm font-medium">
               {product.category}
             </small>
-            <div className="flex mb-1 items-center justify-start gap-x-1 bold-14">
-              <img src={assets.star} alt="rating" width={16} />
-              <img src={assets.star} alt="rating" width={16} />
-              <img src={assets.star} alt="rating" width={16} />
-              <img src={assets.star} alt="rating" width={16} />
-              <img src={assets.star} alt="rating" width={16} />
-              <h5>5.0</h5>
+            <div className="flex mb-1 items-start justify-start bold-14">
+              {renderStars(product.rating)}
+              <h5 className="pl-2 ">{product.rating.toFixed(1)}</h5>
             </div>
           </div>
           <p className="line-clamp-1">{product.description}</p>
@@ -88,7 +98,10 @@ const Item = ({ product }) => {
           <div className="flex flex-col gap-1 pr-5">
             <Tooltip>
               <TooltipTrigger asChild>
-                <button className="btn-solid rounded p-2">
+                <button
+                  onClick={() => tambahKeranjang(product._id, size)}
+                  className="btn-solid rounded p-2"
+                >
                   <img src={assets.cartAdd} alt="add-to-cart" width={22} />
                 </button>
               </TooltipTrigger>

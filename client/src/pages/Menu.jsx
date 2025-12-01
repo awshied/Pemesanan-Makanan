@@ -101,7 +101,7 @@ const Menu = () => {
 
         {/* Filter Menu */}
         <div className="max-sm:px-10 sm:pr-10 bg-primary px-4 rounded-l-xl my-4">
-          <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6">
             {products.length > 0 ? (
               products.map((product) => (
                 <Item key={product._id} product={product} />

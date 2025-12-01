@@ -20,6 +20,9 @@ import secure from "./secure.svg";
 import right from "./right.svg";
 import pin from "./pin.svg";
 import star from "./star.svg";
+import fullStar from "./full-star.png";
+import halfStar from "./half-star.png";
+import emptyStar from "./empty-star.png";
 import location from "./location.png";
 import starBlack from "./star-black.svg";
 import facebook from "./facebook.png";
@@ -141,6 +144,9 @@ export const assets = {
   right,
   pin,
   star,
+  fullStar,
+  halfStar,
+  emptyStar,
   location,
   starBlack,
   facebook,
@@ -199,6 +205,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: false,
     inStock: true,
+    rating: 3.5,
+    starsTotal: 3,
   },
   {
     _id: "2",
@@ -213,6 +221,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: false,
     inStock: true,
+    rating: 4.0,
+    starsTotal: 4,
   },
   {
     _id: "3",
@@ -227,6 +237,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: true,
     inStock: true,
+    rating: 5.0,
+    starsTotal: 5,
   },
   {
     _id: "4",
@@ -241,6 +253,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: false,
     inStock: true,
+    rating: 4.5,
+    starsTotal: 4,
   },
   {
     _id: "5",
@@ -255,6 +269,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: true,
     inStock: true,
+    rating: 5.0,
+    starsTotal: 5,
   },
   {
     _id: "6",
@@ -269,6 +285,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: false,
     inStock: true,
+    rating: 5.0,
+    starsTotal: 5,
   },
   {
     _id: "7",
@@ -283,6 +301,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: false,
     inStock: true,
+    rating: 5.0,
+    starsTotal: 5,
   },
 
   // Aneka Mie
@@ -299,6 +319,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: false,
     inStock: true,
+    rating: 4.5,
+    starsTotal: 4,
   },
   {
     _id: "9",
@@ -313,6 +335,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: false,
     inStock: true,
+    rating: 4.5,
+    starsTotal: 4,
   },
   {
     _id: "10",
@@ -327,6 +351,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: false,
     inStock: true,
+    rating: 5.0,
+    starsTotal: 5,
   },
   {
     _id: "11",
@@ -341,6 +367,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: false,
     inStock: true,
+    rating: 4.0,
+    starsTotal: 4,
   },
   {
     _id: "12",
@@ -355,6 +383,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: false,
     inStock: true,
+    rating: 5.0,
+    starsTotal: 5,
   },
   {
     _id: "13",
@@ -369,6 +399,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: false,
     inStock: true,
+    rating: 4.5,
+    starsTotal: 4,
   },
   {
     _id: "14",
@@ -383,6 +415,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: false,
     inStock: true,
+    rating: 4.5,
+    starsTotal: 4,
   },
   {
     _id: "15",
@@ -397,6 +431,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: true,
     inStock: true,
+    rating: 5.0,
+    starsTotal: 5,
   },
   {
     _id: "16",
@@ -411,6 +447,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: false,
     inStock: true,
+    rating: 4.5,
+    starsTotal: 4,
   },
   {
     _id: "17",
@@ -425,6 +463,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: false,
     inStock: true,
+    rating: 5.0,
+    starsTotal: 5,
   },
 
   // Aneka Kwetiaw
@@ -441,6 +481,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: false,
     inStock: true,
+    rating: 4.5,
+    starsTotal: 4,
   },
   {
     _id: "19",
@@ -455,6 +497,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: false,
     inStock: true,
+    rating: 5.0,
+    starsTotal: 5,
   },
   {
     _id: "20",
@@ -469,6 +513,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: false,
     inStock: true,
+    rating: 4.0,
+    starsTotal: 4,
   },
   {
     _id: "21",
@@ -483,6 +529,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: false,
     inStock: true,
+    rating: 4.0,
+    starsTotal: 4,
   },
   {
     _id: "22",
@@ -497,6 +545,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: false,
     inStock: true,
+    rating: 5.0,
+    starsTotal: 5,
   },
   {
     _id: "23",
@@ -511,6 +561,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: true,
     inStock: true,
+    rating: 5.0,
+    starsTotal: 5,
   },
 
   // Aneka Minuman
@@ -527,6 +579,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: false,
     inStock: true,
+    rating: 3.5,
+    starsTotal: 3,
   },
   {
     _id: "25",
@@ -541,6 +595,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: false,
     inStock: true,
+    rating: 5.0,
+    starsTotal: 5,
   },
   {
     _id: "26",
@@ -555,6 +611,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: true,
     inStock: true,
+    rating: 5.0,
+    starsTotal: 5,
   },
   {
     _id: "27",
@@ -569,6 +627,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: false,
     inStock: true,
+    rating: 4.5,
+    starsTotal: 4,
   },
   {
     _id: "28",
@@ -583,6 +643,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: false,
     inStock: true,
+    rating: 4.5,
+    starsTotal: 4,
   },
   {
     _id: "29",
@@ -597,6 +659,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: false,
     inStock: true,
+    rating: 4.0,
+    starsTotal: 4,
   },
   {
     _id: "30",
@@ -611,6 +675,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: false,
     inStock: true,
+    rating: 5.0,
+    starsTotal: 5,
   },
   {
     _id: "31",
@@ -625,6 +691,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: true,
     inStock: true,
+    rating: 5.0,
+    starsTotal: 5,
   },
 
   // Aneka Makanan Pembuka (Appetizer)
@@ -641,6 +709,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: false,
     inStock: true,
+    rating: 5.0,
+    starsTotal: 5,
   },
   {
     _id: "33",
@@ -655,6 +725,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: false,
     inStock: true,
+    rating: 4.0,
+    starsTotal: 4,
   },
   {
     _id: "34",
@@ -669,6 +741,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: false,
     inStock: true,
+    rating: 4.0,
+    starsTotal: 4,
   },
   {
     _id: "35",
@@ -683,6 +757,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: false,
     inStock: true,
+    rating: 5.0,
+    starsTotal: 5,
   },
   {
     _id: "36",
@@ -697,6 +773,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: false,
     inStock: true,
+    rating: 4.5,
+    starsTotal: 4,
   },
   {
     _id: "37",
@@ -711,6 +789,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: false,
     inStock: true,
+    rating: 4.5,
+    starsTotal: 4,
   },
   {
     _id: "38",
@@ -725,6 +805,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: false,
     inStock: true,
+    rating: 4.5,
+    starsTotal: 4,
   },
   {
     _id: "39",
@@ -739,6 +821,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: true,
     inStock: true,
+    rating: 5.0,
+    starsTotal: 5,
   },
 
   // Aneka Makanan Penutup (Desert)
@@ -755,6 +839,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: false,
     inStock: true,
+    rating: 4.5,
+    starsTotal: 4,
   },
   {
     _id: "41",
@@ -769,6 +855,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: false,
     inStock: true,
+    rating: 5.0,
+    starsTotal: 5,
   },
   {
     _id: "42",
@@ -783,6 +871,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: true,
     inStock: true,
+    rating: 5.0,
+    starsTotal: 5,
   },
   {
     _id: "43",
@@ -797,6 +887,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: false,
     inStock: true,
+    rating: 4.5,
+    starsTotal: 4,
   },
   {
     _id: "44",
@@ -811,6 +903,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: false,
     inStock: true,
+    rating: 3.5,
+    starsTotal: 3,
   },
   {
     _id: "45",
@@ -825,6 +919,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: false,
     inStock: true,
+    rating: 4.5,
+    starsTotal: 4,
   },
   {
     _id: "46",
@@ -839,6 +935,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: false,
     inStock: true,
+    rating: 4.0,
+    starsTotal: 4,
   },
   {
     _id: "47",
@@ -853,6 +951,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: true,
     inStock: true,
+    rating: 5.0,
+    starsTotal: 5,
   },
   {
     _id: "48",
@@ -867,6 +967,8 @@ export const dummyProducts = [
     date: 1716634345448,
     popular: true,
     inStock: true,
+    rating: 5.0,
+    starsTotal: 5,
   },
 ];
 

@@ -8,7 +8,7 @@ import { useAppContext } from "../context/AppContext";
 const Header = () => {
   const [menuOpened, setMenuOpened] = useState(false);
   const { openSignIn } = useClerk();
-  const { navigate, isSignedIn } = useAppContext();
+  const { navigate, isSignedIn, hitunganKeranjang } = useAppContext();
 
   const toggleMenu = () => setMenuOpened((prev) => !prev);
 
@@ -97,14 +97,17 @@ const Header = () => {
             />
           </div>
           {/* Keranjang */}
-          <div className="relative cursor-pointer flex justify-center">
+          <div
+            onClick={() => navigate("/keranjang")}
+            className="relative cursor-pointer flex justify-center"
+          >
             <img
               src={assets.cartAdded}
               alt=""
               className="w-6 icon-filter-yellow"
             />
             <label className="absolute bottom-3 left-3 text-[10px] font-bold bg-solidTwo text-white flexCenter rounded-full px-1.5 py-0.5">
-              0
+              {hitunganKeranjang()}
             </label>
           </div>
           {/* Profil Pengguna */}

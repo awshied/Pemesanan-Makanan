@@ -13,7 +13,9 @@ const MenuPremium = () => {
   const { products } = useAppContext();
 
   useEffect(() => {
-    const data = products.filter((item) => item.inStock).slice(0, 10);
+    const data = products
+      .filter((item) => item.popular && item.inStock)
+      .slice(0, 10);
     setPremiumMenu(data);
   }, [products]);
 
