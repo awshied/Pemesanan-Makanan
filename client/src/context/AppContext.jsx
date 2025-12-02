@@ -10,8 +10,9 @@ export const AppContextProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [searchQuery, setSearchQuery] = useState([]);
   const [cartItems, setCartItems] = useState([]);
+  const [method, setMethod] = useState("COD");
   const currency = import.meta.env.VITE_CURRENCY;
-  const delivery_charges = 10;
+  const delivery_charges = 5;
   const navigate = useNavigate();
 
   const { isSignedIn } = useUser();
@@ -44,6 +45,18 @@ export const AppContextProvider = ({ children }) => {
     setCartItems(cartData);
   };
 
+  const hitunganJumlah = () => {
+    let total = 0;
+    for (const itemId in cartItems) {
+      const product = products.find((p) => p._id === itemId);
+      if (!product) continue;
+      for (const size in cartItems[itemId]) {
+        total += product.price[size] * cartItems[itemId][size];
+      }
+    }
+    return total;
+  };
+
   useEffect(() => {
     fetchProducts();
   }, []);
@@ -56,12 +69,15 @@ export const AppContextProvider = ({ children }) => {
     fetchProducts,
     currency,
     navigate,
+    method,
+    setMethod,
     delivery_charges,
     cartItems,
     setCartItems,
     tambahKeranjang,
     hitunganKeranjang,
     ubahKuantitas,
+    hitunganJumlah,
   };
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };
