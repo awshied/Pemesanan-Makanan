@@ -61,7 +61,10 @@ const Keranjang = () => {
               title1={"Keranjang"}
               title2={"Belanja"}
               titleStyles={"pb-5 items-start"}
-              paraStyles={"hidden"}
+              paraStyles={"text-start max-w-xl leading-relaxed"}
+              para={
+                "Nikmati aneka menu Mang TekTek sepuas kamu dan jangan lupa untuk memasuki alamat pengiriman yang tepat."
+              }
             />
             <div className="grid grid-cols-[6fr_4fr_3fr_1fr] md:grid-cols-[6fr_3fr_2fr_1fr] font-medium bg-secondary p-2 rounded-xl">
               <h5 className="text-left ml-20 text-solidThree">Menu</h5>

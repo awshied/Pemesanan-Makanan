@@ -12,10 +12,11 @@ const SosialMedia = () => {
     { path: "/", title: "Beranda", icon: assets.beranda },
     { path: "/menu", title: "Menu", icon: assets.aneka },
     { path: "/kontak", title: "Kontak", icon: assets.contact },
+    { path: "/pesanan", title: "Pesanan", icon: assets.myOrder },
   ];
 
   return (
-    <div className="flex justify-between flex-col lg:flex-row bg-secondary px-4 lg:px-50 lg:py-4 py-2 shadow-xl gap-4">
+    <div className="flex justify-between flex-col lg:flex-row bg-secondary px-4 lg:px-40 lg:py-4 py-2 shadow-xl gap-4">
       {/* Bagian Halaman */}
       <div className="border-3 border-primary hidden lg:flex justify-center items-center rounded-lg">
         <div className="bg-primary">

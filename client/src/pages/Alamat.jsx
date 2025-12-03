@@ -122,10 +122,7 @@ const Alamat = () => {
 
           <button
             type="submit"
-            className="
-     active:scale-95 transition bg-secondary border border-gray-500/20 text-textColor hover:bg-[#262b32] text-sm font-medium rounded-md cursor-pointer flexCenter w-full mt-4 py-4 gap-2
-
-    "
+            className="active:scale-95 transition bg-secondary border border-gray-500/20 text-textColor hover:bg-[#262b32] text-sm font-medium rounded-md cursor-pointer flexCenter w-full mt-4 py-4 gap-2"
           >
             <img src={assets.locationEdit} width={18} />
             Ubah Alamat

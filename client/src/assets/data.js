@@ -19,6 +19,7 @@ import delivery from "./delivery.svg";
 import secure from "./secure.svg";
 import right from "./right.svg";
 import pin from "./pin.svg";
+import myOrder from "./my-order.png";
 import order from "./order.png";
 import star from "./star.svg";
 import fullStar from "./full-star.png";
@@ -28,6 +29,7 @@ import location from "./location.png";
 import locationEdit from "./location-edit.png";
 import starBlack from "./star-black.svg";
 import emptyCart from "./empty-cart.png";
+import emptyOrder from "./empty-order.png";
 import facebook from "./facebook.png";
 import instagram from "./instagram.png";
 import x from "./x.png";
@@ -153,6 +155,7 @@ export const assets = {
   secure,
   right,
   pin,
+  myOrder,
   order,
   star,
   fullStar,
@@ -162,6 +165,7 @@ export const assets = {
   locationEdit,
   starBlack,
   emptyCart,
+  emptyOrder,
   facebook,
   instagram,
   x,
@@ -1120,13 +1124,13 @@ export const dummyOrdersData = [
     userId: "68591d36daf423db94fa8f4f",
     items: [
       {
-        produk: dummyProducts[0], // Argan Hair Oil
+        product: dummyProducts[0], // Argan Hair Oil
         quantity: 1,
         size: "50ml",
         _id: "685a5bbfaff57babcdfcc172",
       },
       {
-        produk: dummyProducts[3], // Tea Tree Hair Oil
+        product: dummyProducts[3], // Tea Tree Hair Oil
         quantity: 2,
         size: "100ml",
         _id: "685a5bbfaff57babcdfcc173",
@@ -1146,13 +1150,13 @@ export const dummyOrdersData = [
     userId: "68591d36daf423db94fa8f4f",
     items: [
       {
-        produk: dummyProducts[8], // Vitamin C Face Oil
+        product: dummyProducts[8], // Vitamin C Face Oil
         quantity: 1,
         size: "30ml",
         _id: "685a5bbfaff57babcdfcc175",
       },
       {
-        produk: dummyProducts[24], // Volumizing Shampoo
+        product: dummyProducts[24], // Volumizing Shampoo
         quantity: 3,
         size: "400ml",
         _id: "685a5bbfaff57babcdfcc176",
