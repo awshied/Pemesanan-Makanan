@@ -60,7 +60,7 @@ const Item = ({ product }) => {
             </small>
             <div className="flex mb-1 items-start justify-start bold-14">
               {renderStars(product.rating)}
-              <h5 className="pl-2 ">{product.rating.toFixed(1)}</h5>
+              <h5 className="pl-2 text-sm">{product.rating.toFixed(1)}</h5>
             </div>
           </div>
           <p className="line-clamp-1">{product.description}</p>

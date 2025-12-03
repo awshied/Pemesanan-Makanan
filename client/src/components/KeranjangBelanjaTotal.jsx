@@ -24,8 +24,6 @@ const KeranjangBelanjaTotal = () => {
   } = useAppContext();
 
   const [addresses, setAddresses] = useState(dummyAddress);
-  const [showAddress, setShowAddress] = useState(false);
-  const [selectedAddress, setSelectedAddress] = useState(null);
 
   const formatValue = (value) => {
     return value === 0 ? "0" : value.toFixed(3);
@@ -46,23 +44,28 @@ const KeranjangBelanjaTotal = () => {
           <h4 className="mb-3">Alamat</h4>
           <div className="relative flex justify-between items-center">
             <div className="flex flex-col">
-              <div className="flexStart gap-x-2 pb-1">
+              <div className="flexStart gap-x-2 pt-1 pb-2">
                 <span className="text-base text-solidThree font-semibold">
-                  Dummy Boy
+                  {dummyAddress.userName}
                 </span>
                 <hr className="w-px bg-textColor h-4" />
-                <small className="text-sm font-medium">+1 234 567 890</small>
+                <small className="text-sm font-medium">
+                  {dummyAddress.phone}
+                </small>
               </div>
-              <p className="text-sm max-w-70">
-                {selectedAddress
-                  ? `${selectedAddress.street}, ${selectedAddress.village}, ${selectedAddress.district}, ${selectedAddress.city}, ${selectedAddress.province}, ${selectedAddress.zipcode}`
+              <p className="text-sm max-w-70 leading-relaxed">
+                {addresses
+                  ? `${addresses.street}, ${addresses.village}, ${addresses.district}, ${addresses.city}, ${addresses.province}, ${addresses.zipcode}`
                   : "Alamat tidak ditemukan."}
               </p>
             </div>
             <Tooltip>
               <TooltipTrigger asChild>
                 <button
-                  onClick={() => setShowAddress(!showAddress)}
+                  onClick={() => {
+                    navigate("/alamat");
+                    scrollTo(0, 0);
+                  }}
                   className="cursor-pointer pr-1"
                 >
                   <img
@@ -71,34 +74,8 @@ const KeranjangBelanjaTotal = () => {
                   />
                 </button>
               </TooltipTrigger>
-              <TooltipContent>Ganti Lokasi</TooltipContent>
+              <TooltipContent>Ganti Alamat</TooltipContent>
             </Tooltip>
-            {showAddress && (
-              <div className="absolute top-10 py-1 bg-primary rounded-xl text-sm w-full">
-                {addresses.map((address, index) => (
-                  <p
-                    key={index}
-                    onClick={() => {
-                      setSelectedAddress(address);
-                      setShowAddress(false);
-                    }}
-                    className="p-2 cursor-pointer hover:bg-secondary text-sm"
-                  >
-                    {address.street}, {address.village}, {address.district},{" "}
-                    {address.city}, {address.province}, {address.zipcode}
-                  </p>
-                ))}
-                <p
-                  onClick={() => {
-                    navigate("/alamat");
-                    scrollTo(0, 0);
-                  }}
-                  className="p-2 text-center cursor-pointer hover:bg-tertiary hover:text-solidThree"
-                >
-                  Tambah Alamat
-                </p>
-              </div>
-            )}
           </div>
         </div>
         <hr className="border-textColor mt-5" />

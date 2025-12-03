@@ -41,7 +41,14 @@ import messenger from "./messenger.png";
 import whatsapp from "./whatsapp.png";
 import rocket from "./rocket.svg";
 import mail from "./mail.svg";
-import phone from "./phone.svg";
+import email from "./email.png";
+import phone from "./phone.png";
+import street from "./street.png";
+import village from "./village.png";
+import district from "./district.png";
+import city from "./city.png";
+import zipcode from "./zipcode.png";
+import province from "./province.png";
 import house from "./house.svg";
 import awlogo from "./awlogo.png";
 import graph from "./graph.svg";
@@ -168,7 +175,14 @@ export const assets = {
   whatsapp,
   rocket,
   mail,
+  email,
   phone,
+  street,
+  village,
+  district,
+  city,
+  zipcode,
+  province,
   dollar,
   house,
   awlogo,
@@ -1086,36 +1100,19 @@ export const blogs = [
   },
 ];
 
-export const dummyAddress = [
-  {
-    _id: "67b5b9e54ea97f71bbc196a0",
-    userId: "68591d36daf423db94fa8f4f",
-    firstName: "user",
-    lastName: "one",
-    email: "userone@gmail.com",
-    street: "Jl. Merapi Raya",
-    village: "Abadijaya",
-    district: "Sukmajaya",
-    city: "Kota Depok",
-    zipcode: 16417,
-    province: "Jawa Barat",
-    phone: "+1-555-123-4567",
-  },
-  {
-    _id: "67b5b9e54ea97fdfgdbcsd5",
-    userId: "68591d36daf423db94fa8f4f",
-    firstName: "Jane",
-    lastName: "Smith",
-    email: "janesmith@gmail.com",
-    street: "Gg. Bambu Ampel",
-    village: "Ciganjur",
-    district: "Jagakarsa",
-    city: "Jakarta Selatan",
-    zipcode: 12630,
-    province: "Jakarta",
-    phone: "9876543210",
-  },
-];
+export const dummyAddress = {
+  _id: "67b5b9e54ea97f71bbc196a0",
+  userId: "68591d36daf423db94fa8f4f",
+  userName: "Chelsea Campbell",
+  email: "chelseacampbell@gmail.com",
+  street: "Jl. Merapi Raya No.47 RT.07 RW.09",
+  village: "Abadijaya",
+  district: "Sukmajaya",
+  city: "Kota Depok",
+  zipcode: 16417,
+  province: "Jawa Barat",
+  phone: "+1-555-123-4567",
+};
 
 export const dummyOrdersData = [
   {
