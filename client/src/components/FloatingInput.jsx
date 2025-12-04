@@ -11,6 +11,7 @@ const FloatingInput = ({
   const [focused, setFocused] = useState(false);
 
   const isActive = focused || (value && value.length > 0);
+
   return (
     <div className="relative w-full">
       {/* Label */}
@@ -28,37 +29,46 @@ const FloatingInput = ({
         {label}
       </label>
 
-      {/* Input */}
-      <input
-        type={type}
-        name={name}
-        value={value}
-        onChange={onChange}
-        onFocus={() => setFocused(true)}
-        onBlur={() => setFocused(false)}
-        className="
-          w-full
-          bg-transparent
-          text-textColor
-          text-base
-          border-b-2
-          border-textColor
-          pb-2 pt-5
-          outline-none
-          transition-all duration-300
-          focus:border-solidThree
-          pr-10
-        "
-      />
+      {/* Render sesuai type */}
+      {type === "textarea" ? (
+        <textarea
+          name={name}
+          value={value}
+          onChange={onChange}
+          onFocus={() => setFocused(true)}
+          onBlur={() => setFocused(false)}
+          rows={4}
+          className="
+            w-full bg-transparent text-textColor text-base
+            border-b-2 border-textColor pb-2 pt-5 outline-none
+            transition-all duration-300 focus:border-solidThree pr-10
+            resize-none
+          "
+        />
+      ) : (
+        <input
+          type={type}
+          name={name}
+          value={value}
+          onChange={onChange}
+          onFocus={() => setFocused(true)}
+          onBlur={() => setFocused(false)}
+          className="
+            w-full bg-transparent text-textColor text-base
+            border-b-2 border-textColor pb-2 pt-5 outline-none
+            transition-all duration-300 focus:border-solidThree pr-10
+          "
+        />
+      )}
 
       {/* Icon */}
       {icon && (
         <img
           src={icon}
           alt=""
-          className={`
-          absolute right-1 bottom-3 w-5 ${isActive ? "icon-active-yellow" : ""}
-          `}
+          className={`absolute right-1 bottom-3 w-5 ${
+            isActive ? "icon-active-yellow" : ""
+          }`}
         />
       )}
     </div>

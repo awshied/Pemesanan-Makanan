@@ -1,7 +1,7 @@
 import React from "react";
 
-const kebijakanPrivasi = () => {
-  return <div>kebijakanPrivasi</div>;
+const KebijakanPrivasi = () => {
+  return <div>Kebijakan Privasi</div>;
 };
 
-export default kebijakanPrivasi;
+export default KebijakanPrivasi;

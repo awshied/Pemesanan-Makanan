@@ -46,7 +46,7 @@ const Alamat = () => {
 
           <div className="flex gap-5">
             <FloatingInput
-              label="Nama Lengkap"
+              label="Nama"
               name="userName"
               value={address.userName}
               onChange={onChangeHandler}

@@ -5,7 +5,7 @@ const Navbar = ({ containerStyles, setMenuOpened }) => {
   const navLinks = [
     { path: "/", title: "Beranda" },
     { path: "/menu", title: "Menu" },
-    { path: "/kontak", title: "Kontak" },
+    { path: "/blog", title: "Blog" },
   ];
   return (
     <nav className={containerStyles}>

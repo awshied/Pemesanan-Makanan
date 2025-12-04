@@ -18,6 +18,7 @@ import returnRequest from "./return-request.svg";
 import delivery from "./delivery.svg";
 import secure from "./secure.svg";
 import right from "./right.svg";
+import cancel from "./cancel.png";
 import pin from "./pin.svg";
 import myOrder from "./my-order.png";
 import order from "./order.png";
@@ -63,6 +64,8 @@ import squarePlus from "./square-plus.svg";
 import minus from "./minus.png";
 import sliders from "./sliders.svg";
 import trash from "./trash.png";
+import send from "./send.png";
+import textArea from "./text-area.png";
 import features1 from "./features1.png";
 import features2 from "./features2.png";
 import features3 from "./features3.png";
@@ -154,6 +157,7 @@ export const assets = {
   delivery,
   secure,
   right,
+  cancel,
   pin,
   myOrder,
   order,
@@ -197,6 +201,8 @@ export const assets = {
   minus,
   squarePlus,
   trash,
+  send,
+  textArea,
   list,
   sliders,
   userImg,

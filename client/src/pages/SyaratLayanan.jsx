@@ -1,7 +1,7 @@
 import React from "react";
 
 const SyaratLayanan = () => {
-  return <div>SyaratLayanan</div>;
+  return <div>Syarat Layanan</div>;
 };
 
 export default SyaratLayanan;

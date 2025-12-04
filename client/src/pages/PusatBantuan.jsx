@@ -1,7 +1,7 @@
 import React from "react";
 
 const PusatBantuan = () => {
-  return <div>PusatBantuan</div>;
+  return <div>Pusat Bantuan</div>;
 };
 
 export default PusatBantuan;
