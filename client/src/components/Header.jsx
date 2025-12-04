@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { assets } from "../assets/data";
 import Navbar from "./Navbar";
 import KontakKami from "./KontakKami";
@@ -9,7 +9,7 @@ import { useAppContext } from "../context/AppContext";
 const Header = () => {
   const [menuOpened, setMenuOpened] = useState(false);
   const { openSignIn } = useClerk();
-  const { navigate, isSignedIn, hitunganKeranjang } = useAppContext();
+  const { navigate, user, hitunganKeranjang } = useAppContext();
   const [contactOpened, setContactOpened] = useState(false);
 
   const toggleMenu = () => setMenuOpened((prev) => !prev);
@@ -127,7 +127,7 @@ const Header = () => {
             </div>
             {/* Profil Pengguna */}
             <div>
-              {isSignedIn ? (
+              {user ? (
                 <UserButton
                   appearance={{
                     elements: {

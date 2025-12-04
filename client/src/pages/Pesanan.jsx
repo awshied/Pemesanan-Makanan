@@ -4,7 +4,7 @@ import { useAppContext } from "../context/AppContext";
 import { assets, dummyOrdersData } from "../assets/data";
 
 const Pesanan = () => {
-  const { currency, isSignedIn } = useAppContext();
+  const { currency, user } = useAppContext();
   const [orders, setOrders] = useState([]);
 
   const loadOrderData = () => {
@@ -12,10 +12,10 @@ const Pesanan = () => {
   };
 
   useEffect(() => {
-    if (isSignedIn) {
+    if (user) {
       loadOrderData();
     }
-  }, [isSignedIn]);
+  }, [user]);
 
   return (
     <div className="max-padd-container pb-16 pt-28 bg-primary">

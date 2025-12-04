@@ -11,11 +11,12 @@ export const AppContextProvider = ({ children }) => {
   const [searchQuery, setSearchQuery] = useState([]);
   const [cartItems, setCartItems] = useState([]);
   const [method, setMethod] = useState("COD");
+  const [isAdmin, setIsAdmin] = useState(true);
+  const navigate = useNavigate();
   const currency = import.meta.env.VITE_CURRENCY;
   const delivery_charges = 5;
-  const navigate = useNavigate();
 
-  const { isSignedIn } = useUser();
+  const { user } = useUser();
 
   const fetchProducts = () => {
     setProducts(dummyProducts);
@@ -62,7 +63,7 @@ export const AppContextProvider = ({ children }) => {
   }, []);
 
   const value = {
-    isSignedIn,
+    user,
     products,
     searchQuery,
     setSearchQuery,
@@ -78,6 +79,8 @@ export const AppContextProvider = ({ children }) => {
     hitunganKeranjang,
     ubahKuantitas,
     hitunganJumlah,
+    isAdmin,
+    setIsAdmin,
   };
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };

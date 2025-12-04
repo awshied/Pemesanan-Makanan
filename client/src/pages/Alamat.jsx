@@ -7,9 +7,10 @@ import FloatingInput from "../components/floatingInput";
 import { assets } from "../assets/data";
 
 const Alamat = () => {
-  const { navigate, isSignedIn } = useAppContext();
+  const { navigate, user } = useAppContext();
   const [address, setAddress] = useState({
-    userName: "",
+    firstName: "",
+    lastName: "",
     email: "",
     street: "",
     village: "",
@@ -28,7 +29,7 @@ const Alamat = () => {
   };
 
   useEffect(() => {
-    if (!isSignedIn) {
+    if (!user) {
       navigate("/keranjang");
     }
   }, []);
@@ -47,20 +48,27 @@ const Alamat = () => {
           <div className="flex gap-5">
             <FloatingInput
               label="Nama"
-              name="userName"
-              value={address.userName}
+              name="firstName"
+              value={address.firstName}
               onChange={onChangeHandler}
               icon={assets.user}
             />
             <FloatingInput
-              label="Email"
-              name="email"
-              type="email"
-              value={address.email}
+              label="Nama"
+              name="lastName"
+              value={address.lastName}
               onChange={onChangeHandler}
-              icon={assets.email}
+              icon={assets.user}
             />
           </div>
+          <FloatingInput
+            label="Email"
+            name="email"
+            type="email"
+            value={address.email}
+            onChange={onChangeHandler}
+            icon={assets.email}
+          />
 
           <FloatingInput
             label="Telepon"

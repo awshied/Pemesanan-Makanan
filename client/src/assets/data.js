@@ -57,14 +57,15 @@ import awlogo from "./awlogo.png";
 import graph from "./graph.svg";
 import dollar from "./dollar.svg";
 import map from "./map.svg";
-import list from "./list.svg";
-import dashboard from "./dashboard.svg";
+import menuList from "./menu-list.png";
+import dashboard from "./dashboard.png";
 import plus from "./plus.png";
-import squarePlus from "./square-plus.svg";
+import menuManagement from "./menu-management.png";
 import minus from "./minus.png";
 import sliders from "./sliders.svg";
 import trash from "./trash.png";
 import send from "./send.png";
+import report from "./report.png";
 import textArea from "./text-area.png";
 import features1 from "./features1.png";
 import features2 from "./features2.png";
@@ -197,13 +198,14 @@ export const assets = {
   graph,
   map,
   dashboard,
+  menuManagement,
+  menuList,
   plus,
   minus,
-  squarePlus,
   trash,
   send,
+  report,
   textArea,
-  list,
   sliders,
   userImg,
   user1,
@@ -1113,7 +1115,8 @@ export const blogs = [
 export const dummyAddress = {
   _id: "67b5b9e54ea97f71bbc196a0",
   userId: "68591d36daf423db94fa8f4f",
-  userName: "Chelsea Campbell",
+  firstName: "Chelsea",
+  lastName: "Campbell",
   email: "chelseacampbell@gmail.com",
   street: "Jl. Merapi Raya No.47 RT.07 RW.09",
   village: "Abadijaya",

@@ -17,7 +17,7 @@ const KeranjangBelanjaTotal = () => {
     delivery_charges,
     hitunganKeranjang,
     hitunganJumlah,
-    isSignedIn,
+    user,
     cartItems,
     setCartItems,
     products,
@@ -46,7 +46,7 @@ const KeranjangBelanjaTotal = () => {
             <div className="flex flex-col">
               <div className="flexStart gap-x-2 pt-1 pb-2">
                 <span className="text-base text-solidThree font-semibold">
-                  {dummyAddress.userName}
+                  {dummyAddress.firstName} {dummyAddress.lastName}
                 </span>
                 <hr className="w-px bg-textColor h-4" />
                 <small className="text-sm font-medium">
