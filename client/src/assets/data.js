@@ -54,13 +54,14 @@ import zipcode from "./zipcode.png";
 import province from "./province.png";
 import house from "./house.svg";
 import awlogo from "./awlogo.png";
-import graph from "./graph.svg";
-import dollar from "./dollar.svg";
+import client from "./client.png";
+import revenue from "./revenue.png";
 import map from "./map.svg";
 import menuList from "./menu-list.png";
 import dashboard from "./dashboard.png";
 import plus from "./plus.png";
 import menuManagement from "./menu-management.png";
+import analytic from "./analytic.png";
 import minus from "./minus.png";
 import sliders from "./sliders.svg";
 import trash from "./trash.png";
@@ -192,14 +193,15 @@ export const assets = {
   city,
   zipcode,
   province,
-  dollar,
+  revenue,
   house,
   awlogo,
-  graph,
+  client,
   map,
   dashboard,
   menuManagement,
   menuList,
+  analytic,
   plus,
   minus,
   trash,
@@ -1133,21 +1135,21 @@ export const dummyOrdersData = [
     userId: "68591d36daf423db94fa8f4f",
     items: [
       {
-        product: dummyProducts[0], // Argan Hair Oil
-        quantity: 1,
-        size: "50ml",
+        product: dummyProducts[44], // Argan Hair Oil
+        quantity: 6,
+        size: "R",
         _id: "685a5bbfaff57babcdfcc172",
       },
       {
-        product: dummyProducts[3], // Tea Tree Hair Oil
+        product: dummyProducts[32], // Tea Tree Hair Oil
         quantity: 2,
-        size: "100ml",
+        size: "J",
         _id: "685a5bbfaff57babcdfcc173",
       },
     ],
     amount: 40.6,
     address: dummyAddress[0],
-    status: "Out for delivery",
+    status: "Dalam Perjalanan",
     paymentMethod: "COD",
     isPaid: false,
     createdAt: "2025-06-24T08:03:11.197+00:00",
@@ -1161,20 +1163,20 @@ export const dummyOrdersData = [
       {
         product: dummyProducts[8], // Vitamin C Face Oil
         quantity: 1,
-        size: "30ml",
+        size: "J",
         _id: "685a5bbfaff57babcdfcc175",
       },
       {
         product: dummyProducts[24], // Volumizing Shampoo
         quantity: 3,
-        size: "400ml",
+        size: "M",
         _id: "685a5bbfaff57babcdfcc176",
       },
     ],
     amount: 85.0,
     address: dummyAddress[0],
-    status: "Delivered",
-    paymentMethod: "Online",
+    status: "Pesanan Terkirim",
+    paymentMethod: "Transfer",
     isPaid: true,
     createdAt: "2025-07-01T09:15:45.197+00:00",
     updatedAt: "2025-07-01T11:30:04.631+00:00",
@@ -1182,10 +1184,62 @@ export const dummyOrdersData = [
   },
 ];
 
+export const dummyTopSell = [
+  {
+    product: dummyProducts[5],
+    selling: 48,
+  },
+  {
+    product: dummyProducts[22],
+    selling: 35,
+  },
+  {
+    product: dummyProducts[13],
+    selling: 31,
+  },
+  {
+    product: dummyProducts[31],
+    selling: 109,
+  },
+  {
+    product: dummyProducts[25],
+    selling: 40,
+  },
+  {
+    product: dummyProducts[24],
+    selling: 39,
+  },
+  {
+    product: dummyProducts[39],
+    selling: 77,
+  },
+  {
+    product: dummyProducts[34],
+    selling: 51,
+  },
+  {
+    product: dummyProducts[33],
+    selling: 48,
+  },
+  {
+    product: dummyProducts[47],
+    selling: 95,
+  },
+  {
+    product: dummyProducts[46],
+    selling: 12,
+  },
+  {
+    product: dummyProducts[45],
+    selling: 11,
+  },
+];
+
 // Dashboard Dummy Data
 export const dummyDashboardData = {
-  totalOrders: 2,
+  totalDelivered: 100,
   totalRevenue: 897,
+  totalCustomers: 69,
   orders: dummyOrdersData,
 };
 
@@ -1243,6 +1297,33 @@ export const testimonials = [
     location: "Jawa Timur",
     review: "Joslah pokoknya.",
     imgPath: user6,
+  },
+];
+
+export const customerActive = [
+  {
+    person: testimonials[0],
+    status: "Offline",
+  },
+  {
+    person: testimonials[1],
+    status: "Online",
+  },
+  {
+    person: testimonials[2],
+    status: "Online",
+  },
+  {
+    person: testimonials[3],
+    status: "Online",
+  },
+  {
+    person: testimonials[4],
+    status: "Offline",
+  },
+  {
+    person: testimonials[5],
+    status: "Online",
   },
 ];
 

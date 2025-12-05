@@ -14,6 +14,11 @@ const Sidebar = () => {
       icon: assets.dashboard,
     },
     {
+      path: "/admin/analitik",
+      label: "Analitik",
+      icon: assets.analytic,
+    },
+    {
       path: "/admin/kelola-menu",
       label: "Kelola Menu",
       icon: assets.menuManagement,
@@ -44,7 +49,7 @@ const Sidebar = () => {
           <div className="flex flex-col gap-y-6 md:flex-col md:pt-2 ">
             <div className="w-full flex justify-between md:flex-col">
               {/* Logo */}
-              <div className="flex flex-1 p-2 border-b border-primary">
+              <div className="flex flex-1 p-2 border-b border-[#49535d]">
                 <Link
                   to={"/"}
                   className="flex items-center hover:opacity-80 transition"
@@ -74,7 +79,7 @@ const Sidebar = () => {
                   end={link.path === "/admin"}
                   className={({ isActive }) =>
                     isActive
-                      ? "flexStart gap-x-2 p-5 pl-7 text-sm font-bold h-10 border-l-3 bg-[#262b32] border-solidThree"
+                      ? "flexStart gap-x-2 p-5 pl-7 text-sm font-bold h-10 max-md:border-b-3 md:border-l-3 bg-[#262b32] border-solidThree"
                       : "flexStart gap-x-2 p-5 pl-7 text-sm font-bold h-10 hover:text-white rounded-xl"
                   }
                 >
@@ -91,7 +96,7 @@ const Sidebar = () => {
           </div>
 
           {/* User */}
-          <div className="hidden md:flex items-center gap-3 md:bg-secondary rounded-b-xl p-3 pl-4 md:mt-10 border-t border-primary">
+          <div className="hidden md:flex items-center gap-3 md:bg-secondary rounded-b-xl p-3 pl-4 md:mt-10 border-t border-[#49535d]">
             <UserButton
               appearance={{
                 elements: {
@@ -112,6 +117,7 @@ const Sidebar = () => {
             </div>
           </div>
         </div>
+        <Outlet />
       </div>
     </div>
   );

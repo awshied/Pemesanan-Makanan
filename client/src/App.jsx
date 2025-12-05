@@ -19,6 +19,7 @@ import KelolaMenu from "./pages/admin/KelolaMenu";
 import DaftarMenu from "./pages/admin/DaftarMenu";
 import { useAppContext } from "./context/AppContext";
 import Laporan from "./pages/admin/Laporan";
+import Analitik from "./pages/admin/Analitik";
 
 const App = () => {
   const { isAdmin } = useAppContext();
@@ -40,6 +41,7 @@ const App = () => {
         <Route path="/pusat-bantuan" element={<PusatBantuan />} />
         <Route path="/admin" element={<Sidebar />}>
           <Route index element={<Dashboard />} />
+          <Route path="/admin/analitik" element={<Analitik />} />
           <Route path="/admin/kelola-menu" element={<KelolaMenu />} />
           <Route path="/admin/daftar-menu" element={<DaftarMenu />} />
           <Route path="/admin/laporan" element={<Laporan />} />
