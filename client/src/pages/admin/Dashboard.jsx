@@ -7,8 +7,8 @@ import {
 } from "../../assets/data";
 import { useAppContext } from "../../context/AppContext";
 import { BarChart } from "@mui/x-charts";
-import { testimonials } from "../../assets/data";
-import Cards from "../../components/Cards";
+import CardReview from "../../components/admin/CardReview";
+import { CountUpAnimation } from "../../components/admin/CountUpAnimation";
 
 const Dashboard = () => {
   const { user, currency } = useAppContext();
@@ -19,6 +19,10 @@ const Dashboard = () => {
     totalRevenue: 0,
     totalCustomers: 0,
   });
+
+  const delivered = CountUpAnimation(dashboardData.totalDelivered);
+  const revenue = CountUpAnimation(dashboardData.totalRevenue);
+  const customers = CountUpAnimation(dashboardData.totalCustomers);
 
   const [topMenu, setTopMenu] = useState([]);
   const [category, setCategory] = useState("makanan");
@@ -68,7 +72,7 @@ const Dashboard = () => {
               <img src={assets.myOrder} alt="" className="hidden sm:flex w-8" />
               <div className="flex justify-center flex-col">
                 <big className="md:text-xl text-lg font-bold text-solidThree">
-                  {dashboardData?.totalDelivered?.toString().padStart(2, "0")}
+                  {delivered.toString().padStart(2, "0")}
                 </big>
                 <span className="md:text-sm text-xs font-medium text-textColor">
                   Pesanan Terkirim
@@ -79,7 +83,7 @@ const Dashboard = () => {
               <img src={assets.revenue} alt="" className="hidden sm:flex w-8" />
               <div className="flex justify-center flex-col">
                 <big className="md:text-xl text-lg font-bold text-solidThree">
-                  {currency} {dashboardData?.totalRevenue?.toFixed(3) || 0}
+                  {currency} {revenue.toFixed(3)}
                 </big>
                 <span className="md:text-sm text-xs font-medium text-textColor">
                   Pendapatan
@@ -90,7 +94,7 @@ const Dashboard = () => {
               <img src={assets.client} alt="" className="hidden sm:flex w-8" />
               <div className="flex justify-center flex-col">
                 <big className="md:text-xl text-lg font-bold text-solidThree">
-                  {dashboardData?.totalCustomers?.toString().padStart(2, "0")}
+                  {customers.toString().padStart(2, "0")}
                 </big>
                 <span className="md:text-sm text-xs font-medium text-textColor">
                   Jumlah Pelanggan
@@ -265,50 +269,7 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-      <div className="marquee-row w-full mx-auto max-w-5xl overflow-hidden relative">
-        <div className="absolute left-0 top-0 h-full w-20 z-10 pointer-events-none bg-linear-to-r from-primary to-transparent"></div>
-
-        <div className="marquee-inner h-auto flex transform-gpu min-w-[200%] gap-2">
-          {[...testimonials, ...testimonials].map(
-            ({ _id, imgPath, name, role, review, location }, index) => (
-              <Cards
-                key={`${_id}-${index}`}
-                index={index}
-                card={{ review, location }}
-              >
-                {/* Tambahan konten (foto + nama + role) */}
-                <div className="flex items-center gap-5 mt-5">
-                  <img
-                    src={imgPath}
-                    alt={name}
-                    className="size-12 rounded-full"
-                    style={{
-                      filter: "drop-shadow(8px 5px 6px hsla(0, 0%, 0%, 0.8))",
-                    }}
-                  />
-
-                  <div className="flex flex-col gap-1">
-                    <p
-                      className="font-bold text-solidThree"
-                      style={{ fontFamily: "var(--font-poppins)" }}
-                    >
-                      {name}
-                    </p>
-                    <p
-                      className="text-textColor"
-                      style={{ fontFamily: "var(--font-poppins)" }}
-                    >
-                      {role}
-                    </p>
-                  </div>
-                </div>
-              </Cards>
-            )
-          )}
-        </div>
-
-        <div className="absolute right-0 top-0 h-full w-20 md:w-40 z-10 pointer-events-none bg-linear-to-l from-primary to-transparent"></div>
-      </div>
+      <CardReview />
     </div>
   );
 };
