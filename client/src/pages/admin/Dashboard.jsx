@@ -6,9 +6,8 @@ import {
   dummyTopSell,
 } from "../../assets/data";
 import { useAppContext } from "../../context/AppContext";
-import { BarChart } from "@mui/x-charts";
-import CardReview from "../../components/admin/CardReview";
 import { CountUpAnimation } from "../../components/admin/CountUpAnimation";
+import ChartPendapatanHarian from "../../components/admin/ChartPendapatanHarian";
 
 const Dashboard = () => {
   const { user, currency } = useAppContext();
@@ -54,8 +53,8 @@ const Dashboard = () => {
   );
 
   return (
-    <div className="flex flex-col p-2 m-1 sm:m-3 overflow-y-scroll w-full lg:w-11/12 gap-2">
-      <div className="flex items-start justify-center flex-col gap-2">
+    <div className="flex flex-col mt-5 overflow-y-scroll w-full gap-2">
+      <div className="flex pl-3 items-start justify-center flex-col gap-2">
         <big className="text-2xl font-bold text-white">Dashboard</big>
         <small className="text-sm">
           Halo,{" "}
@@ -65,8 +64,8 @@ const Dashboard = () => {
           . Selamat datang kembali di Mang TekTek.
         </small>
       </div>
-      <div className="grid grid-cols-[2fr_1fr] gap-2">
-        <div className="flex flex-col gap-2 max-w-[850px]">
+      <div className="mt-2 grid grid-cols-[3fr_1fr] gap-2">
+        <div className="flex flex-col gap-2 max-w-[900px]">
           <div className="grid grid-cols-3 gap-2">
             <div className="flexStart gap-7 p-5 bg-secondary lg:min-w-56 rounded-xl">
               <img src={assets.myOrder} alt="" className="hidden sm:flex w-8" />
@@ -104,80 +103,11 @@ const Dashboard = () => {
           </div>
           <div className="flex gap-2">
             {/* Pendapatan Harian */}
-            <div className="bg-secondary flex flex-col p-5 w-2/3 rounded-xl">
-              <div className="flex justify-center items-start flex-col mb-2 gap-1">
-                <span className="text-base font-bold text-textColor">
-                  Pendapatan
-                </span>
-                <p className="text-xs text-textColor">
-                  Pendapatan harian selama 30 hari di bulan ini.
-                </p>
-              </div>
-              <div className="overflow-x-auto">
-                {(() => {
-                  const jumlahHari = 30;
-                  const hari = [
-                    "Senin",
-                    "Selasa",
-                    "Rabu",
-                    "Kamis",
-                    "Jumat",
-                    "Sabtu",
-                    "Minggu",
-                  ];
-
-                  const dataset = Array.from(
-                    { length: jumlahHari },
-                    (_, i) => ({
-                      index: i + 1,
-                      day: hari[i % 7],
-                      income: Math.floor(80 + Math.random() * 150),
-                    })
-                  );
-
-                  return (
-                    <BarChart
-                      dataset={dataset}
-                      xAxis={[
-                        {
-                          dataKey: "index",
-                          scaleType: "band",
-                          valueFormatter: (value) => dataset[value - 1].day,
-                          sx: {
-                            "& .MuiChartsAxis-tick": {
-                              stroke: "#d6d6d6", // warna titik tumpu (tick mark)
-                            },
-                            "& .MuiChartsAxis-tickLabel": { fill: "#d6d6d6" },
-                            "& .MuiChartsAxis-line": { stroke: "#d6d6d6" },
-                          },
-                        },
-                      ]}
-                      yAxis={[
-                        {
-                          sx: {
-                            "& .MuiChartsAxis-tick": {
-                              stroke: "#d6d6d6", // warna titik tumpu (tick mark)
-                            },
-                            "& .MuiChartsAxis-tickLabel": { fill: "#d6d6d6" },
-                            "& .MuiChartsAxis-line": { stroke: "#d6d6d6" },
-                          },
-                        },
-                      ]}
-                      series={[
-                        {
-                          dataKey: "income",
-                          color: "#ffc586",
-                        },
-                      ]}
-                      width={jumlahHari * 60}
-                      height={200}
-                    />
-                  );
-                })()}
-              </div>
+            <div className="bg-secondary flex p-5 w-full rounded-xl">
+              <ChartPendapatanHarian />
             </div>
             {/* Menu yang Laku */}
-            <div className="flex flex-col w-1/3 bg-secondary p-2 rounded-xl">
+            <div className="flex flex-col w-1/2 bg-secondary p-2 rounded-xl">
               <div className="grid grid-cols-2 p-2 pb-4 border-b border-[#49535d] items-center gap-2">
                 <span className="text-base font-bold text-textColor">
                   Top Menu
@@ -194,7 +124,7 @@ const Dashboard = () => {
                   <option value="desert">Desert</option>
                 </select>
               </div>
-              <div className="flex flex-col gap-2 mt-3 h-[200px] overflow-y-auto">
+              <div className="flex flex-col mt-3 h-[260px] overflow-y-auto">
                 {filteredTopMenu.map((top, index) => (
                   <div key={index} className="flex flex-col gap-2 p-2">
                     <div className="flex gap-2 items-center">
@@ -214,6 +144,10 @@ const Dashboard = () => {
                         </span>
                       </div>
                     </div>
+
+                    {index !== filteredTopMenu.length - 1 && (
+                      <hr className="border-b border-[#49535d] mt-2" />
+                    )}
                   </div>
                 ))}
               </div>
@@ -227,7 +161,7 @@ const Dashboard = () => {
             Pelanggan
           </span>
           <hr className="w-full border-b border-[#49535d]" />
-          <div className="flex flex-col gap-2 w-full h-[300px] overflow-y-auto">
+          <div className="flex flex-col gap-2 w-full h-[360px] overflow-y-auto">
             {customerStatus.map((stats, on) => (
               <div
                 key={on}
@@ -269,7 +203,14 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-      <CardReview />
+      <div className="grid grid-cols-[2fr_1fr] gap-2 mb-3">
+        <div className="bg-secondary">
+          <span>SSS</span>
+        </div>
+        <div className="bg-secondary">
+          <span>PPP</span>
+        </div>
+      </div>
     </div>
   );
 };

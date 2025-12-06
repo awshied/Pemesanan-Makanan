@@ -16,7 +16,8 @@ import { Toaster } from "react-hot-toast";
 import Sidebar from "./components/admin/Sidebar";
 import Dashboard from "./pages/admin/Dashboard";
 import KelolaMenu from "./pages/admin/KelolaMenu";
-import DaftarMenu from "./pages/admin/DaftarMenu";
+import KelolaPengguna from "./pages/admin/KelolaPengguna";
+import KelolaPesanan from "./pages/admin/KelolaPesanan";
 import { useAppContext } from "./context/AppContext";
 import Laporan from "./pages/admin/Laporan";
 import Analitik from "./pages/admin/Analitik";
@@ -43,7 +44,8 @@ const App = () => {
           <Route index element={<Dashboard />} />
           <Route path="/admin/analitik" element={<Analitik />} />
           <Route path="/admin/kelola-menu" element={<KelolaMenu />} />
-          <Route path="/admin/daftar-menu" element={<DaftarMenu />} />
+          <Route path="/admin/kelola-pengguna" element={<KelolaPengguna />} />
+          <Route path="/admin/kelola-pesanan" element={<KelolaPesanan />} />
           <Route path="/admin/laporan" element={<Laporan />} />
         </Route>
       </Routes>

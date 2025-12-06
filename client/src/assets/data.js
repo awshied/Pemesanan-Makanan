@@ -60,7 +60,10 @@ import map from "./map.svg";
 import menuList from "./menu-list.png";
 import dashboard from "./dashboard.png";
 import plus from "./plus.png";
+import management from "./management.png";
 import menuManagement from "./menu-management.png";
+import customerManagement from "./customer-management.png";
+import orderManagement from "./order-management.png";
 import analytic from "./analytic.png";
 import minus from "./minus.png";
 import sliders from "./sliders.svg";
@@ -68,6 +71,7 @@ import trash from "./trash.png";
 import send from "./send.png";
 import report from "./report.png";
 import textArea from "./text-area.png";
+import down from "./down.png";
 import features1 from "./features1.png";
 import features2 from "./features2.png";
 import features3 from "./features3.png";
@@ -199,7 +203,10 @@ export const assets = {
   client,
   map,
   dashboard,
+  management,
   menuManagement,
+  customerManagement,
+  orderManagement,
   menuList,
   analytic,
   plus,
@@ -208,6 +215,7 @@ export const assets = {
   send,
   report,
   textArea,
+  down,
   sliders,
   userImg,
   user1,
@@ -1233,6 +1241,18 @@ export const dummyTopSell = [
     product: dummyProducts[45],
     selling: 11,
   },
+  {
+    product: dummyProducts[44],
+    selling: 11,
+  },
+  {
+    product: dummyProducts[43],
+    selling: 11,
+  },
+  {
+    product: dummyProducts[42],
+    selling: 11,
+  },
 ];
 
 // Dashboard Dummy Data
@@ -1382,5 +1402,80 @@ export const socialMedia = [
     _id: "social11",
     name: "WhatsApp",
     imgIcon: whatsapp,
+  },
+];
+
+export const dummyRevenueExpenses = [
+  {
+    month: "Jan",
+    monthMeans: "Januari",
+    revenue: 86450000,
+    expenses: 50000000,
+  },
+  {
+    month: "Feb",
+    monthMeans: "Februari",
+    revenue: 120200000,
+    expenses: 67500500,
+  },
+  {
+    month: "Mar",
+    monthMeans: "Maret",
+    revenue: 93715000,
+    expenses: 79060000,
+  },
+  {
+    month: "Apr",
+    monthMeans: "April",
+    revenue: 59950000,
+    expenses: 82000000,
+  },
+  {
+    month: "Mei",
+    monthMeans: "Mei",
+    revenue: 65925000,
+    expenses: 61040500,
+  },
+  {
+    month: "Jun",
+    monthMeans: "Juni",
+    revenue: 84100000,
+    expenses: 78050000,
+  },
+  {
+    month: "Jul",
+    monthMeans: "Juli",
+    revenue: 71952000,
+    expenses: 71800500,
+  },
+  {
+    month: "Agu",
+    monthMeans: "Agustus",
+    revenue: 64450000,
+    expenses: 92000000,
+  },
+  {
+    month: "Sep",
+    monthMeans: "September",
+    revenue: 87805000,
+    expenses: 90000000,
+  },
+  {
+    month: "Okt",
+    monthMeans: "Oktober",
+    revenue: 116370000,
+    expenses: 90000000,
+  },
+  {
+    month: "Nov",
+    monthMeans: "November",
+    revenue: 111150000,
+    expenses: 110805500,
+  },
+  {
+    month: "Des",
+    monthMeans: "Desember",
+    revenue: 103345500,
+    expenses: 61395500,
   },
 ];

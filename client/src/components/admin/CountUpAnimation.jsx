@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export function CountUpAnimation(target, duration = 1200) {
+export function CountUpAnimation(target, duration = 200) {
   const [value, setValue] = useState(0);
 
   useEffect(() => {
