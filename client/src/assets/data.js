@@ -1200,6 +1200,58 @@ export const dummyOrdersData = [
   },
 ];
 
+export const dummyPesananTerbaru = [
+  {
+    id: "#3847",
+    customer: "Wildan Ardhana",
+    totalHarga: 107500,
+    status: "berhasil",
+    date: "2025-07-01T09:15:45.197+00:00",
+  },
+  {
+    id: "#3848",
+    customer: "Glenn Vincent",
+    totalHarga: 248000,
+    status: "menunggu",
+    date: "2025-07-01T11:30:04.631+00:00",
+  },
+  {
+    id: "#3849",
+    customer: "Kanzahira Gandari",
+    totalHarga: 76000,
+    status: "berhasil",
+    date: "2025-06-24T08:03:11.197+00:00",
+  },
+  {
+    id: "#3850",
+    customer: "Zulaikha Ainundeta",
+    totalHarga: 152500,
+    status: "dibatalkan",
+    date: "2025-06-24T11:02:04.631+00:00",
+  },
+  {
+    id: "#3851",
+    customer: "Hikaru Nagi",
+    totalHarga: 90500,
+    status: "menunggu",
+    date: "2025-07-01T09:15:45.197+00:00",
+  },
+  {
+    id: "#3851",
+    customer: "Hikaru Nagi",
+    totalHarga: 90500,
+    status: "menunggu",
+    date: "2025-07-01T09:15:45.197+00:00",
+  },
+  {
+    id: "#3851",
+    customer: "Hikaru Nagi",
+    totalHarga: 90500,
+    status: "menunggu",
+    date: "2025-07-01T09:15:45.197+00:00",
+  },
+];
+
 export const dummyTopSell = [
   {
     product: dummyProducts[5],

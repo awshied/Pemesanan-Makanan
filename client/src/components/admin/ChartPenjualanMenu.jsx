@@ -106,8 +106,8 @@ const ChartPenjualanMenu = () => {
               data={chartData}
               cx="50%"
               cy="50%"
-              innerRadius={40}
-              outerRadius={80}
+              innerRadius={35}
+              outerRadius={70}
               paddingAngle={5}
               dataKey="value"
             >

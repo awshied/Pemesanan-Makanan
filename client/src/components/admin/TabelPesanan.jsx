@@ -1,6 +1,19 @@
 import React from "react";
+import { dummyPesananTerbaru } from "../../assets/data";
 
 const TabelPesanan = () => {
+  const getStatusColor = (status) => {
+    switch (status) {
+      case "berhasil":
+        return "bg-emerald-800/40 text-emerald-300";
+      case "menunggu":
+        return "bg-amber-800/40 text-amber-300";
+      case "dibatalkan":
+        return "bg-rose-800/40 text-rose-300";
+      default:
+        return "bg-slate-700/40 text-slate-300";
+    }
+  };
   return (
     <div className="space-y-6">
       <div className="rounded-xl bg-secondary backdrop-blur-xl overflow-hidden">
@@ -28,7 +41,7 @@ const TabelPesanan = () => {
                   Kode Pesanan
                 </th>
                 <th className="text-left p-3 text-sm font-semibold text-solidThree">
-                  Menu
+                  Nama
                 </th>
                 <th className="text-left p-3 text-sm font-semibold text-solidThree">
                   Total Harga
@@ -40,37 +53,62 @@ const TabelPesanan = () => {
                   Tanggal
                 </th>
               </tr>
-              <tbody>
-                <tr className="border-b border-[#49535d] hover:bg-primary transition-colors">
-                  <td className="p-3">
-                    <span className="text-sm font-medium text-textColor">
-                      Kode Pesanan
-                    </span>
-                  </td>
-                  <td className="p-3">
-                    <span className="text-sm font-medium text-white">
-                      Pelanggan
-                    </span>
-                  </td>
-                  <td className="p-3">
-                    <span className="text-sm font-medium text-white">Menu</span>
-                  </td>
-                  <td className="p-3">
-                    <span className="text-sm font-medium text-white">
-                      Total Harga
-                    </span>
-                  </td>
-                  <td className="p-3">
-                    <span
-                      className={`text-white font-medium text-xs px-3 py-1 rounded-full`}
-                    >
-                      Status Pesanan
-                    </span>
-                  </td>
-                </tr>
-              </tbody>
             </thead>
           </table>
+
+          {/* SCROLL AREA UNTUK TBODY */}
+          <div className="max-h-75 overflow-y-auto">
+            <table className="w-full">
+              <tbody className="block">
+                {dummyPesananTerbaru.map((order, index) => (
+                  <tr
+                    key={index}
+                    className="border-b border-[#49535d] hover:bg-primary transition-colors table w-full table-fixed"
+                  >
+                    <td className="p-3 w-1/5">
+                      <span className="text-sm font-medium text-textColor">
+                        {order.id}
+                      </span>
+                    </td>
+
+                    <td className="p-3 w-1/5">
+                      <span className="text-sm font-medium text-white">
+                        {order.customer}
+                      </span>
+                    </td>
+
+                    <td className="p-3 w-1/5">
+                      <span className="text-sm font-medium text-white">
+                        {order.totalHarga}
+                      </span>
+                    </td>
+
+                    <td className="p-3 w-1/5">
+                      <span
+                        className={`text-white font-medium text-xs px-3 py-1 rounded-full ${getStatusColor(
+                          order.status
+                        )}`}
+                      >
+                        {order.status}
+                      </span>
+                    </td>
+
+                    <td className="p-3 w-1/5">
+                      <span className="text-sm font-medium text-white">
+                        {new Date(order.date).toLocaleDateString("id-ID", {
+                          timeZone: "Asia/Jakarta",
+                          weekday: "short",
+                          day: "2-digit",
+                          month: "short",
+                          year: "numeric",
+                        })}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
