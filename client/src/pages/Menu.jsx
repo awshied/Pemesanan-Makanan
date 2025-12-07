@@ -14,7 +14,7 @@ const Menu = () => {
   const itemsPerPage = 8;
 
   const semuaKategori = useMemo(
-    () => ["Makanan", "Minuman", "Appetizer", "Desert"],
+    () => ["Makanan", "Minuman", "Appetizer", "Dessert"],
     []
   );
 

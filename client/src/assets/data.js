@@ -4,6 +4,10 @@ import user from "./user-profile.png";
 import login from "./login.png";
 import menu from "./menu.png";
 import menuClose from "./menu-close.png";
+import makanan from "./makanan.png";
+import minuman from "./minuman.png";
+import appetizer from "./appetizer.png";
+import dessert from "./dessert.png";
 import cartAdd from "./cart-add.png";
 import cartRemove from "./cart-remove.svg";
 import cartAdded from "./cart-added.png";
@@ -149,6 +153,10 @@ export const assets = {
   login,
   menu,
   menuClose,
+  makanan,
+  minuman,
+  appetizer,
+  dessert,
   cartAdd,
   cartRemove,
   cartAdded,
@@ -914,7 +922,7 @@ export const dummyProducts = [
     price: { R: 1.5, J: 2.5 },
     description:
       "Savor the spicy and refreshing taste of our Zesty Ginger Ale, perfect for any time of day.",
-    category: "Desert",
+    category: "Dessert",
     type: "Kue Basah",
     sizes: ["R", "J"],
     date: 1716634345448,
@@ -931,7 +939,7 @@ export const dummyProducts = [
     price: { R: 1.5, J: 2.5 },
     description:
       "Enjoy the sweet and juicy taste of our Fresh Strawberries, handpicked for your delight.",
-    category: "Desert",
+    category: "Dessert",
     type: "Tepung Beras",
     sizes: ["R", "J"],
     date: 1716634345448,
@@ -948,7 +956,7 @@ export const dummyProducts = [
     price: { R: 4, J: 6 },
     description:
       "Savor the tart and refreshing taste of our Crisp Green Apples, perfect for snacking.",
-    category: "Desert",
+    category: "Dessert",
     type: "Cake",
     sizes: ["R", "J"],
     date: 1716634345448,
@@ -965,7 +973,7 @@ export const dummyProducts = [
     price: { R: 4, J: 6 },
     description:
       "Delight in our Tropical Pineapple Chunks, bursting with sweet and tangy flavors.",
-    category: "Desert",
+    category: "Dessert",
     type: "Cake",
     sizes: ["R", "J"],
     date: 1716634345448,
@@ -982,7 +990,7 @@ export const dummyProducts = [
     price: { R: 8.5, J: 12 },
     description:
       "Cool down with our Juicy Watermelon Slices, perfect for a refreshing summer treat.",
-    category: "Desert",
+    category: "Dessert",
     type: "Cake",
     sizes: ["R", "J"],
     date: 1716634345448,
@@ -999,7 +1007,7 @@ export const dummyProducts = [
     price: { R: 5, J: 7.5 },
     description:
       "Indulge in our Sweet Red Grapes, packed with natural sweetness and flavor.",
-    category: "Desert",
+    category: "Dessert",
     type: "Puding",
     sizes: ["R", "J"],
     date: 1716634345448,
@@ -1016,7 +1024,7 @@ export const dummyProducts = [
     price: { R: 5, J: 7.5 },
     description:
       "Enjoy the convenience of our Freshly Peeled Oranges, ready to eat and full of juicy goodness.",
-    category: "Desert",
+    category: "Dessert",
     type: "Puding",
     sizes: ["R", "J"],
     date: 1716634345448,
@@ -1033,7 +1041,7 @@ export const dummyProducts = [
     price: { R: 6.5, J: 9.5 },
     description:
       "Our Ripe Banana Bunch is perfect for a quick snack or a healthy addition to your meals.",
-    category: "Desert",
+    category: "Dessert",
     type: "Cake",
     sizes: ["R", "J"],
     date: 1716634345448,
@@ -1050,7 +1058,7 @@ export const dummyProducts = [
     price: { R: 10, J: 15 },
     description:
       "Savor the rich and juicy taste of our Exotic Mango Slices, a perfect tropical treat.",
-    category: "Desert",
+    category: "Dessert",
     type: "Waffle",
     sizes: ["R", "J"],
     date: 1716634345448,
@@ -1345,6 +1353,30 @@ export const customerActive = [
     person: testimonials[5],
     status: "Online",
   },
+  {
+    person: testimonials[0],
+    status: "Offline",
+  },
+  {
+    person: testimonials[1],
+    status: "Online",
+  },
+  {
+    person: testimonials[2],
+    status: "Online",
+  },
+  {
+    person: testimonials[3],
+    status: "Online",
+  },
+  {
+    person: testimonials[4],
+    status: "Offline",
+  },
+  {
+    person: testimonials[5],
+    status: "Online",
+  },
 ];
 
 export const socialMedia = [
@@ -1407,75 +1439,278 @@ export const socialMedia = [
 
 export const dummyRevenueExpenses = [
   {
-    month: "Jan",
-    monthMeans: "Januari",
-    revenue: 86450000,
-    expenses: 50000000,
+    2025: [
+      {
+        month: "Jan",
+        monthMeans: "Januari",
+        revenue: 86450000,
+        expenses: 50000000,
+      },
+      {
+        month: "Feb",
+        monthMeans: "Februari",
+        revenue: 120200000,
+        expenses: 67500500,
+      },
+      {
+        month: "Mar",
+        monthMeans: "Maret",
+        revenue: 93715000,
+        expenses: 79060000,
+      },
+      {
+        month: "Apr",
+        monthMeans: "April",
+        revenue: 59950000,
+        expenses: 82000000,
+      },
+      {
+        month: "Mei",
+        monthMeans: "Mei",
+        revenue: 65925000,
+        expenses: 61040500,
+      },
+      {
+        month: "Jun",
+        monthMeans: "Juni",
+        revenue: 84100000,
+        expenses: 78050000,
+      },
+      {
+        month: "Jul",
+        monthMeans: "Juli",
+        revenue: 71952000,
+        expenses: 71800500,
+      },
+      {
+        month: "Agu",
+        monthMeans: "Agustus",
+        revenue: 64450000,
+        expenses: 92000000,
+      },
+      {
+        month: "Sep",
+        monthMeans: "September",
+        revenue: 87805000,
+        expenses: 90000000,
+      },
+      {
+        month: "Okt",
+        monthMeans: "Oktober",
+        revenue: 116370000,
+        expenses: 90000000,
+      },
+      {
+        month: "Nov",
+        monthMeans: "November",
+        revenue: 111150000,
+        expenses: 110805500,
+      },
+      {
+        month: "Des",
+        monthMeans: "Desember",
+        revenue: 103345500,
+        expenses: 61395500,
+      },
+    ],
+    2026: [
+      {
+        month: "Jan",
+        monthMeans: "Januari",
+        revenue: 91305000,
+        expenses: 104550000,
+      },
+      {
+        month: "Feb",
+        monthMeans: "Februari",
+        revenue: 80227000,
+        expenses: 137000000,
+      },
+      {
+        month: "Mar",
+        monthMeans: "Maret",
+        revenue: 122942000,
+        expenses: 114099000,
+      },
+      {
+        month: "Apr",
+        monthMeans: "April",
+        revenue: 118950000,
+        expenses: 145003500,
+      },
+      {
+        month: "Mei",
+        monthMeans: "Mei",
+        revenue: 135925000,
+        expenses: 77450500,
+      },
+      {
+        month: "Jun",
+        monthMeans: "Juni",
+        revenue: 89560000,
+        expenses: 95428000,
+      },
+      {
+        month: "Jul",
+        monthMeans: "Juli",
+        revenue: 96952000,
+        expenses: 74800500,
+      },
+      {
+        month: "Agu",
+        monthMeans: "Agustus",
+        revenue: 100390500,
+        expenses: 81555500,
+      },
+      {
+        month: "Sep",
+        monthMeans: "September",
+        revenue: 102420000,
+        expenses: 59000000,
+      },
+      {
+        month: "Okt",
+        monthMeans: "Oktober",
+        revenue: 116370000,
+        expenses: 90000000,
+      },
+      {
+        month: "Nov",
+        monthMeans: "November",
+        revenue: 114052000,
+        expenses: 96805500,
+      },
+      {
+        month: "Des",
+        monthMeans: "Desember",
+        revenue: 129995000,
+        expenses: 120510200,
+      },
+    ],
   },
+];
+
+export const dummySalesByCategory = [
   {
-    month: "Feb",
-    monthMeans: "Februari",
-    revenue: 120200000,
-    expenses: 67500500,
-  },
-  {
-    month: "Mar",
-    monthMeans: "Maret",
-    revenue: 93715000,
-    expenses: 79060000,
-  },
-  {
-    month: "Apr",
-    monthMeans: "April",
-    revenue: 59950000,
-    expenses: 82000000,
-  },
-  {
-    month: "Mei",
-    monthMeans: "Mei",
-    revenue: 65925000,
-    expenses: 61040500,
-  },
-  {
-    month: "Jun",
-    monthMeans: "Juni",
-    revenue: 84100000,
-    expenses: 78050000,
-  },
-  {
-    month: "Jul",
-    monthMeans: "Juli",
-    revenue: 71952000,
-    expenses: 71800500,
-  },
-  {
-    month: "Agu",
-    monthMeans: "Agustus",
-    revenue: 64450000,
-    expenses: 92000000,
-  },
-  {
-    month: "Sep",
-    monthMeans: "September",
-    revenue: 87805000,
-    expenses: 90000000,
-  },
-  {
-    month: "Okt",
-    monthMeans: "Oktober",
-    revenue: 116370000,
-    expenses: 90000000,
-  },
-  {
-    month: "Nov",
-    monthMeans: "November",
-    revenue: 111150000,
-    expenses: 110805500,
-  },
-  {
-    month: "Des",
-    monthMeans: "Desember",
-    revenue: 103345500,
-    expenses: 61395500,
+    harian: [
+      {
+        categoryName: "Makanan",
+        value: 23,
+        color: "#e6392f",
+        statsBar: 23,
+        imageIcon: makanan,
+      },
+      {
+        categoryName: "Minuman",
+        value: 19,
+        color: "#ffc586",
+        statsBar: 19,
+        imageIcon: minuman,
+      },
+      {
+        categoryName: "Appetizer",
+        value: 16,
+        color: "#e6392f",
+        statsBar: 16,
+        imageIcon: appetizer,
+      },
+      {
+        categoryName: "Dessert",
+        value: 42,
+        color: "#ffc586",
+        statsBar: 42,
+        imageIcon: dessert,
+      },
+    ],
+    mingguan: [
+      {
+        categoryName: "Makanan",
+        value: 26,
+        color: "#e6392f",
+        statsBar: 26,
+        imageIcon: makanan,
+      },
+      {
+        categoryName: "Minuman",
+        value: 22,
+        color: "#ffc586",
+        statsBar: 22,
+        imageIcon: minuman,
+      },
+      {
+        categoryName: "Appetizer",
+        value: 29,
+        color: "#e6392f",
+        statsBar: 29,
+        imageIcon: appetizer,
+      },
+      {
+        categoryName: "Dessert",
+        value: 23,
+        color: "#ffc586",
+        statsBar: 23,
+        imageIcon: dessert,
+      },
+    ],
+    bulanan: [
+      {
+        categoryName: "Makanan",
+        value: 18,
+        color: "#e6392f",
+        statsBar: 18,
+        imageIcon: makanan,
+      },
+      {
+        categoryName: "Minuman",
+        value: 25,
+        color: "#ffc586",
+        statsBar: 25,
+        imageIcon: minuman,
+      },
+      {
+        categoryName: "Appetizer",
+        value: 20,
+        color: "#e6392f",
+        statsBar: 20,
+        imageIcon: appetizer,
+      },
+      {
+        categoryName: "Dessert",
+        value: 37,
+        color: "#ffc586",
+        statsBar: 37,
+        imageIcon: dessert,
+      },
+    ],
+    tahunan: [
+      {
+        categoryName: "Makanan",
+        value: 17,
+        color: "#e6392f",
+        statsBar: 17,
+        imageIcon: makanan,
+      },
+      {
+        categoryName: "Minuman",
+        value: 25,
+        color: "#ffc586",
+        statsBar: 25,
+        imageIcon: minuman,
+      },
+      {
+        categoryName: "Appetizer",
+        value: 9,
+        color: "#e6392f",
+        statsBar: 9,
+        imageIcon: appetizer,
+      },
+      {
+        categoryName: "Dessert",
+        value: 49,
+        color: "#ffc586",
+        statsBar: 49,
+        imageIcon: dessert,
+      },
+    ],
   },
 ];

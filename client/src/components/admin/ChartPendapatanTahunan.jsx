@@ -13,29 +13,52 @@ import { useAppContext } from "../../context/AppContext";
 import CustomYAxisTick from "./CustomYAxisTick";
 import CustomTooltip from "./CustomTooltip";
 
-const ChartPendapatanHarian = () => {
+const ChartPendapatanTahunan = () => {
   const { currency } = useAppContext();
+  const [selectedYear, setSelectedYear] = React.useState("2025");
+  const yearData = dummyRevenueExpenses[0][selectedYear];
 
   return (
     <div className="backdrop-blur-xl rounded-xl w-full">
       <div className="flexBetween mb-6 w-full">
         <div className="flex flex-col gap-2">
           <span className="text-base font-bold text-textColor">Pendapatan</span>
-          <p className="text-xs text-textColor">
+          <p className="text-xs text-textColor font-medium">
             Pendapatan bulanan dalam setahun.
           </p>
         </div>
-        <div className="flex items-center space-x-4">
-          <div className="flex items-center space-x-2">
-            <div className="w-2 h-2 bg-solidThree rounded-full"></div>
-            <div className="text-xs text-textColor">
-              <span>Pendapatan</span>
-            </div>
+        <div className="flex flex-col items-end justify-center gap-3">
+          <div className="flex gap-2">
+            <button
+              className={`text-xs font-semibold py-2 px-4 rounded-md cursor-pointer ${
+                selectedYear === "2025" ? "bg-gray-600 font-bold" : "bg-primary"
+              }`}
+              onClick={() => setSelectedYear("2025")}
+            >
+              2025
+            </button>
+
+            <button
+              className={`text-xs font-semibold py-2 px-4 rounded-md cursor-pointer ${
+                selectedYear === "2026" ? "bg-gray-600 font-bold" : "bg-primary"
+              }`}
+              onClick={() => setSelectedYear("2026")}
+            >
+              2026
+            </button>
           </div>
-          <div className="flex items-center space-x-2">
-            <div className="w-2 h-2 bg-solidTwo rounded-full"></div>
-            <div className="text-xs text-textColor">
-              <span>Pengeluaran</span>
+          <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-2">
+              <div className="w-2 h-2 bg-solidThree rounded-full"></div>
+              <div className="text-xs text-textColor">
+                <span>Pendapatan</span>
+              </div>
+            </div>
+            <div className="flex items-center space-x-2">
+              <div className="w-2 h-2 bg-solidTwo rounded-full"></div>
+              <div className="text-xs text-textColor">
+                <span>Pengeluaran</span>
+              </div>
             </div>
           </div>
         </div>
@@ -43,7 +66,7 @@ const ChartPendapatanHarian = () => {
       <div className="h-60">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
-            data={dummyRevenueExpenses}
+            data={yearData}
             margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
           >
             <CartesianGrid
@@ -104,4 +127,4 @@ const ChartPendapatanHarian = () => {
   );
 };
 
-export default ChartPendapatanHarian;
+export default ChartPendapatanTahunan;

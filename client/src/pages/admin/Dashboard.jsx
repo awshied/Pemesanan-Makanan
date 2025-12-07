@@ -7,7 +7,9 @@ import {
 } from "../../assets/data";
 import { useAppContext } from "../../context/AppContext";
 import { CountUpAnimation } from "../../components/admin/CountUpAnimation";
-import ChartPendapatanHarian from "../../components/admin/ChartPendapatanHarian";
+import ChartPenjualanMenu from "../../components/admin/ChartPenjualanMenu";
+import ChartPendapatanTahunan from "../../components/admin/ChartPendapatanTahunan";
+import TabelPesanan from "../../components/admin/TabelPesanan";
 
 const Dashboard = () => {
   const { user, currency } = useAppContext();
@@ -104,7 +106,7 @@ const Dashboard = () => {
           <div className="flex gap-2">
             {/* Pendapatan Harian */}
             <div className="bg-secondary flex p-5 w-full rounded-xl">
-              <ChartPendapatanHarian />
+              <ChartPendapatanTahunan />
             </div>
             {/* Menu yang Laku */}
             <div className="flex flex-col w-1/2 bg-secondary p-2 rounded-xl">
@@ -121,10 +123,10 @@ const Dashboard = () => {
                   <option value="makanan">Makanan</option>
                   <option value="minuman">Minuman</option>
                   <option value="appetizer">Appetizer</option>
-                  <option value="desert">Desert</option>
+                  <option value="dessert">Dessert</option>
                 </select>
               </div>
-              <div className="flex flex-col mt-3 h-[260px] overflow-y-auto">
+              <div className="flex flex-col mt-3 h-[270px] overflow-y-auto">
                 {filteredTopMenu.map((top, index) => (
                   <div key={index} className="flex flex-col gap-2 p-2">
                     <div className="flex gap-2 items-center">
@@ -161,7 +163,7 @@ const Dashboard = () => {
             Pelanggan
           </span>
           <hr className="w-full border-b border-[#49535d]" />
-          <div className="flex flex-col gap-2 w-full h-[360px] overflow-y-auto">
+          <div className="flex flex-col gap-2 w-full h-[370px] overflow-y-auto">
             {customerStatus.map((stats, on) => (
               <div
                 key={on}
@@ -203,12 +205,12 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-[2fr_1fr] gap-2 mb-3">
-        <div className="bg-secondary">
-          <span>SSS</span>
-        </div>
-        <div className="bg-secondary">
-          <span>PPP</span>
+      <div className="grid grid-cols-[1fr_2fr] gap-2 mb-3">
+        <ChartPenjualanMenu />
+        <div className="grid-cols-3 gap-6">
+          <div className="xl:col-span-2">
+            <TabelPesanan />
+          </div>
         </div>
       </div>
     </div>

@@ -134,9 +134,9 @@ const Pesanan = () => {
                     </p>
                   </div>
                   <div className="flex items-center gap-x-2">
-                    <h5 className="text-sm font-bold">Jumlah: </h5>
+                    <h5 className="text-sm font-bold">Total Harga: </h5>
                     <p className="text-solidThree font-medium text-sm">
-                      {order.amount}
+                      {currency} {order.amount.toFixed(3)}
                     </p>
                   </div>
                 </div>

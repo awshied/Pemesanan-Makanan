@@ -7,7 +7,12 @@ const CustomTooltip = ({ active, payload, currency }) => {
   const expenses = payload.find((p) => p.dataKey === "expenses");
 
   return (
-    <div className="bg-secondary p-4 rounded-xl flex flex-col gap-2 min-w-[140px] border-2 border-textColor">
+    <div
+      className="bg-[#1f2630] p-4 rounded-xl flex flex-col gap-2 min-w-[140px]"
+      style={{
+        boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
+      }}
+    >
       {/* Label Bulan */}
       <span className="text-textColor font-bold text-sm">
         {payload && payload.length > 0 && payload[0].payload.monthMeans}
