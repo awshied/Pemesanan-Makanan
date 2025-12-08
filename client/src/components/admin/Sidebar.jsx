@@ -17,11 +17,6 @@ const Sidebar = () => {
       icon: assets.dashboard,
     },
     {
-      path: "/admin/analitik",
-      label: "Analitik",
-      icon: assets.analytic,
-    },
-    {
       label: "Kelola",
       icon: assets.management,
       hasChildren: true,
@@ -42,6 +37,11 @@ const Sidebar = () => {
           icon: assets.orderManagement,
         },
       ],
+    },
+    {
+      path: "/admin/blog",
+      label: "Blog",
+      icon: assets.blog,
     },
     {
       path: "/admin/laporan",

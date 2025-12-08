@@ -20,7 +20,7 @@ import KelolaPengguna from "./pages/admin/KelolaPengguna";
 import KelolaPesanan from "./pages/admin/KelolaPesanan";
 import { useAppContext } from "./context/AppContext";
 import Laporan from "./pages/admin/Laporan";
-import Analitik from "./pages/admin/Analitik";
+import BlogAdmin from "./pages/admin/BlogAdmin";
 
 const App = () => {
   const { isAdmin } = useAppContext();
@@ -42,7 +42,7 @@ const App = () => {
         <Route path="/pusat-bantuan" element={<PusatBantuan />} />
         <Route path="/admin" element={<Sidebar />}>
           <Route index element={<Dashboard />} />
-          <Route path="/admin/analitik" element={<Analitik />} />
+          <Route path="/admin/blog" element={<BlogAdmin />} />
           <Route path="/admin/kelola-menu" element={<KelolaMenu />} />
           <Route path="/admin/kelola-pengguna" element={<KelolaPengguna />} />
           <Route path="/admin/kelola-pesanan" element={<KelolaPesanan />} />

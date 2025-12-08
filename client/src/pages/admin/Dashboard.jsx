@@ -9,7 +9,7 @@ import { useAppContext } from "../../context/AppContext";
 import { CountUpAnimation } from "../../components/admin/CountUpAnimation";
 import ChartPenjualanMenu from "../../components/admin/ChartPenjualanMenu";
 import ChartPendapatanTahunan from "../../components/admin/ChartPendapatanTahunan";
-import TabelPesanan from "../../components/admin/TabelPesanan";
+import ChartPertumbuhanPembeli from "../../components/admin/ChartPertumbuhanPembeli";
 
 const Dashboard = () => {
   const { user, currency } = useAppContext();
@@ -209,7 +209,7 @@ const Dashboard = () => {
         <ChartPenjualanMenu />
         <div className="grid-cols-3 gap-6">
           <div className="xl:col-span-2">
-            <TabelPesanan />
+            <ChartPertumbuhanPembeli />
           </div>
         </div>
       </div>

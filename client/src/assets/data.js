@@ -68,7 +68,7 @@ import management from "./management.png";
 import menuManagement from "./menu-management.png";
 import customerManagement from "./customer-management.png";
 import orderManagement from "./order-management.png";
-import analytic from "./analytic.png";
+import blog from "./blog.png";
 import minus from "./minus.png";
 import sliders from "./sliders.svg";
 import trash from "./trash.png";
@@ -216,7 +216,7 @@ export const assets = {
   customerManagement,
   orderManagement,
   menuList,
-  analytic,
+  blog,
   plus,
   minus,
   trash,
@@ -1205,50 +1205,101 @@ export const dummyPesananTerbaru = [
     id: "#3847",
     customer: "Wildan Ardhana",
     totalHarga: 107500,
-    status: "berhasil",
+    status: "Berhasil",
     date: "2025-07-01T09:15:45.197+00:00",
   },
   {
     id: "#3848",
     customer: "Glenn Vincent",
     totalHarga: 248000,
-    status: "menunggu",
+    status: "Menunggu",
     date: "2025-07-01T11:30:04.631+00:00",
   },
   {
     id: "#3849",
     customer: "Kanzahira Gandari",
     totalHarga: 76000,
-    status: "berhasil",
+    status: "Berhasil",
     date: "2025-06-24T08:03:11.197+00:00",
   },
   {
     id: "#3850",
     customer: "Zulaikha Ainundeta",
     totalHarga: 152500,
-    status: "dibatalkan",
+    status: "Dibatalkan",
     date: "2025-06-24T11:02:04.631+00:00",
   },
   {
     id: "#3851",
     customer: "Hikaru Nagi",
     totalHarga: 90500,
-    status: "menunggu",
+    status: "Menunggu",
     date: "2025-07-01T09:15:45.197+00:00",
   },
   {
     id: "#3851",
     customer: "Hikaru Nagi",
     totalHarga: 90500,
-    status: "menunggu",
+    status: "Menunggu",
     date: "2025-07-01T09:15:45.197+00:00",
   },
   {
     id: "#3851",
     customer: "Hikaru Nagi",
     totalHarga: 90500,
-    status: "menunggu",
+    status: "Dibatalkan",
     date: "2025-07-01T09:15:45.197+00:00",
+  },
+];
+
+export const pertumbuhanPembeliTahunan = [
+  { bulan: "Jan", kepanjangan: "Januari", y2023: 1242, y2024: 794, y2025: 996 },
+  {
+    bulan: "Feb",
+    kepanjangan: "Februari",
+    y2023: 1102,
+    y2024: 808,
+    y2025: 1833,
+  },
+  { bulan: "Mar", kepanjangan: "Maret", y2023: 818, y2024: 1073, y2025: 1834 },
+  { bulan: "Apr", kepanjangan: "April", y2023: 290, y2024: 1491, y2025: 1750 },
+  { bulan: "Mei", kepanjangan: "Mei", y2023: 1619, y2024: 650, y2025: 861 },
+  { bulan: "Jun", kepanjangan: "Juni", y2023: 1444, y2024: 477, y2025: 1102 },
+  { bulan: "Jul", kepanjangan: "Juli", y2023: 1705, y2024: 925, y2025: 888 },
+  {
+    bulan: "Agu",
+    kepanjangan: "Agustus",
+    y2023: 1704,
+    y2024: 1209,
+    y2025: 1499,
+  },
+  {
+    bulan: "Sep",
+    kepanjangan: "September",
+    y2023: 1960,
+    y2024: 716,
+    y2025: 709,
+  },
+  {
+    bulan: "Okt",
+    kepanjangan: "Oktober",
+    y2023: 1238,
+    y2024: 734,
+    y2025: 1212,
+  },
+  {
+    bulan: "Nov",
+    kepanjangan: "November",
+    y2023: 973,
+    y2024: 1349,
+    y2025: 1541,
+  },
+  {
+    bulan: "Des",
+    kepanjangan: "Desember",
+    y2023: 1006,
+    y2024: 1024,
+    y2025: 1385,
   },
 ];
 
