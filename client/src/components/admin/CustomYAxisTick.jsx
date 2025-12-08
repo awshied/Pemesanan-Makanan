@@ -1,11 +1,13 @@
 import React from "react";
+import { formatPendapatan } from "../../utils/formatNumber";
 
 const CustomYAxisTick = ({ x, y, payload, currency }) => {
   return (
     <g transform={`translate(${x},${y})`}>
-      <foreignObject x="-70" y="-10" width="70" height="20">
-        <div className="flex gap-1 items-center text-xs text-textColor">
+      <foreignObject x="-55" y="-10" width="80" height="20">
+        <div className="flex gap-1 items-center text-textColor">
           <span
+            className="text-xs"
             style={{
               fontFamily: "var(--font-poppins)",
             }}
@@ -13,11 +15,12 @@ const CustomYAxisTick = ({ x, y, payload, currency }) => {
             {currency}
           </span>
           <span
+            className="text-xs"
             style={{
               fontFamily: "var(--font-poppins)",
             }}
           >
-            {payload.value / 1000}k
+            {formatPendapatan(payload.value)}
           </span>
         </div>
       </foreignObject>

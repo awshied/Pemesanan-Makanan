@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useAppContext } from "../../context/AppContext";
 import { assets } from "../../assets/data";
-import { Link, NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import { UserButton } from "@clerk/clerk-react";
 
 const Sidebar = () => {
@@ -9,6 +9,14 @@ const Sidebar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [animate, setAnimate] = useState(false);
   const [submenuAnimClass, setSubmenuAnimClass] = useState("");
+
+  const [mobileSubmenu, setMobileSubmenu] = useState(false);
+  const [mobileSubmenuAnim, setMobileSubmenuAnim] = useState("");
+
+  const location = useLocation();
+  const kelolaActive = location.pathname.startsWith("/admin/kelola");
+
+  const isProfileActive = location.pathname.includes("/profile");
 
   const navItems = [
     {
@@ -83,11 +91,28 @@ const Sidebar = () => {
     }
   };
 
+  // HANDLE MOBILE SUBMENU POPUP
+  const openMobileSubmenu = () => {
+    setMobileSubmenu(true);
+
+    setTimeout(() => {
+      setMobileSubmenuAnim("translate-y-0 opacity-100");
+    }, 20);
+  };
+
+  const closeMobileSubmenu = () => {
+    setMobileSubmenuAnim("translate-y-full opacity-0");
+
+    setTimeout(() => {
+      setMobileSubmenu(false);
+    }, 250);
+  };
+
   return (
     <div>
-      <div className="mx-auto max-w-[1440px] bg-primary h-screen flex">
+      <div className="mx-auto max-w-[1440px] bg-primary min-h-screen md:h-screen flex flex-col md:flex-row">
         {/* SideBar */}
-        <div className="max-md:flexCenter flex flex-col justify-between bg-secondary sm:m-3 h-auto min-h-[calc(100vh-24px)] sticky top-0 rounded-xl  shadow">
+        <div className="hidden max-md:flexCenter md:flex flex-col justify-between overflow-y-auto max-h-screen bg-secondary w-full md:w-[250px] sm:m-3 md:h-[calc(100vh-24px)] md:sticky md:top-0 rounded-xl shadow">
           <div className="flex flex-col gap-y-6 md:flex-col md:pt-2 ">
             <div className="w-full flex justify-between md:flex-col">
               {/* Logo */}
@@ -199,7 +224,6 @@ const Sidebar = () => {
               ))}
             </div>
           </div>
-
           {/* User */}
           <div className="hidden md:flex items-center gap-3 md:bg-secondary rounded-b-xl p-3 pl-4 md:mt-10 border-t border-[#49535d]">
             <UserButton
@@ -222,9 +246,87 @@ const Sidebar = () => {
             </div>
           </div>
         </div>
-        <div className="flex-1 overflow-y-auto mr-3">
+        <div className="flex-1 overflow-y-auto mr-3 pb-20 md:pb-0">
           <Outlet />
         </div>
+        <div className="md:hidden fixed bottom-0 left-0 w-full bg-secondary border-t border-[#49535d] overflow-visible flex justify-around py-4 z-50">
+          {navItems.map((item) =>
+            item.hasChildren ? (
+              // Untuk item dengan submenu — tetap pakai button untuk membuka popup
+              <button
+                onClick={openMobileSubmenu}
+                className={`flex flex-col items-center px-3 py-2 ${
+                  kelolaActive
+                    ? "border-t-2 border-solidThree text-solidThree"
+                    : "text-textColor"
+                }`}
+              >
+                <img src={assets.management} width={22} />
+              </button>
+            ) : (
+              <NavLink
+                key={item.label}
+                to={item.path}
+                end={item.path === "/admin"}
+                className={({ isActive }) =>
+                  `flex flex-col items-center px-3 py-2 ${
+                    isActive
+                      ? "border-t-2 border-solidThree text-solidThree"
+                      : "text-textColor"
+                  }`
+                }
+              >
+                <img src={item.icon} width={22} alt={item.label} />
+              </NavLink>
+            )
+          )}
+          <div
+            className={`flex flex-col items-center px-3 py-2 ${
+              isProfileActive ? "border-t-2 border-solidThree" : ""
+            }`}
+          >
+            <UserButton
+              appearance={{
+                elements: {
+                  userButtonAvatarBox: {
+                    width: "25px",
+                    height: "25px",
+                  },
+                },
+              }}
+            />
+          </div>
+        </div>
+
+        {mobileSubmenu && (
+          <div
+            className="fixed inset-0 bg-black/40 z-50"
+            onClick={closeMobileSubmenu}
+          >
+            <div
+              className={`fixed bottom-0 left-0 w-full bg-secondary p-5 rounded-t-xl shadow-xl transform transition-all duration-300 ${mobileSubmenuAnim}`}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <h4 className="font-bold text-lg mb-3 text-white">Kelola</h4>
+
+              <div className="flex flex-col gap-3">
+                {navItems[1].children.map((sub) => (
+                  <button
+                    key={sub.label}
+                    onClick={() => {
+                      navigate(sub.path);
+                      closeMobileSubmenu();
+                    }}
+                    className="flex gap-3 items-center p-3 bg-[#262b32] rounded-lg text-white hover:bg-[#30363f]"
+                  >
+                    <img src={sub.icon} width={20} />
+                    <span>{sub.label}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

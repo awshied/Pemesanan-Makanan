@@ -22,12 +22,14 @@ const CustomTooltip = ({ active, payload }) => {
           boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
         }}
       >
-        <p className="text-textColor font-bold text-sm">{data.kepanjangan}</p>
+        <p className="text-textColor font-bold text-xs md:text-sm">
+          {data.kepanjangan}
+        </p>
 
         <div className="flex items-center gap-2">
           <div className="w-2 h-2 bg-gray-600 rounded-full"></div>
           <span
-            className="text-sm text-textColor font-medium"
+            className="text-xs md:text-sm text-textColor font-medium"
             style={{
               fontFamily: "var(--font-poppins)",
             }}
@@ -39,7 +41,7 @@ const CustomTooltip = ({ active, payload }) => {
         <div className="flex items-center gap-2">
           <div className="w-2 h-2 bg-solidTwo rounded-full"></div>
           <span
-            className="text-sm text-textColor font-medium"
+            className="text-xs md:text-sm text-textColor font-medium"
             style={{
               fontFamily: "var(--font-poppins)",
             }}
@@ -51,7 +53,7 @@ const CustomTooltip = ({ active, payload }) => {
         <div className="flex items-center gap-2">
           <div className="w-2 h-2 bg-solidThree rounded-full"></div>
           <span
-            className="text-sm text-textColor font-medium"
+            className="text-xs md:text-sm text-textColor font-medium"
             style={{
               fontFamily: "var(--font-poppins)",
             }}
@@ -68,7 +70,8 @@ const CustomTooltip = ({ active, payload }) => {
 const ChartPertumbuhanPembeli = () => {
   return (
     <div className="backdrop-blur-xl rounded-xl w-full bg-secondary p-5">
-      <div className="flexBetween mb-6 w-full">
+      {/* Header */}
+      <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-6 gap-4 md:gap-0">
         <div className="flex flex-col gap-2">
           <span className="text-base font-bold text-textColor">
             Pertumbuhan Pelanggan
@@ -78,33 +81,35 @@ const ChartPertumbuhanPembeli = () => {
           </p>
         </div>
 
-        <div className="flex items-center space-x-4">
+        {/* Legend */}
+        <div className="flex items-center flex-wrap md:gap-4 gap-3">
           <div className="flex items-center space-x-2">
             <div className="w-2 h-2 bg-gray-600 rounded-full"></div>
-            <div className="text-[14px] text-textColor">
+            <div className="text-xs md:text-[14px] text-textColor">
               <span>2023</span>
             </div>
           </div>
           <div className="flex items-center space-x-2">
             <div className="w-2 h-2 bg-solidTwo rounded-full"></div>
-            <div className="text-[14px] text-textColor">
+            <div className="text-xs md:text-[14px] text-textColor">
               <span>2024</span>
             </div>
           </div>
           <div className="flex items-center space-x-2">
             <div className="w-2 h-2 bg-solidThree rounded-full"></div>
-            <div className="text-[14px] text-textColor">
+            <div className="text-xs md:text-[14px] text-textColor">
               <span>2025</span>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="h-82">
+      {/* Chart Pertumbuhan Pembeli */}
+      <div className="h-46 md:h-85">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart
             data={pertumbuhanPembeliTahunan}
-            margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+            margin={{ top: 20, right: 20, left: 0, bottom: 5 }}
           >
             <CartesianGrid
               strokeDasharray="3 3"
@@ -115,13 +120,13 @@ const ChartPertumbuhanPembeli = () => {
             <XAxis
               dataKey="bulan"
               stroke="#d6d6d6"
-              fontSize={14}
+              fontSize={12}
               tickLine={false}
               axisLine={false}
             />
             <YAxis
               stroke="#d6d6d6"
-              fontSize={14}
+              fontSize={12}
               tickLine={false}
               axisLine={false}
               tick={(props) => <CustomYAxis {...props} />}

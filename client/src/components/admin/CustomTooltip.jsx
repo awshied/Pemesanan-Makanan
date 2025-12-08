@@ -14,7 +14,7 @@ const CustomTooltip = ({ active, payload, currency }) => {
       }}
     >
       {/* Label Bulan */}
-      <span className="text-textColor font-bold text-sm">
+      <span className="text-textColor font-bold md:text-sm text-xs">
         {payload && payload.length > 0 && payload[0].payload.monthMeans}
       </span>
 
@@ -23,7 +23,7 @@ const CustomTooltip = ({ active, payload, currency }) => {
         <div className="flex items-center gap-2">
           <div className="w-2 h-2 bg-solidThree rounded-full"></div>
           <span
-            className="text-sm text-textColor font-medium"
+            className="md:text-sm text-xs text-textColor font-medium"
             style={{
               fontFamily: "var(--font-poppins)",
             }}
@@ -39,7 +39,7 @@ const CustomTooltip = ({ active, payload, currency }) => {
           <div className="w-2 h-2 bg-solidTwo rounded-full"></div>
 
           <span
-            className="text-sm text-textColor font-medium"
+            className="md:text-sm text-xs text-textColor font-medium"
             style={{
               fontFamily: "var(--font-poppins)",
             }}

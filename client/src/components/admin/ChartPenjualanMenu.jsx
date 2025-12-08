@@ -42,12 +42,16 @@ const ChartPenjualanMenu = () => {
 
   const StatBar = ({ label, categoryName, value, color }) => {
     return (
-      <div className="mb-2">
+      <div className="mb-4">
         <div className="flex justify-between items-center mb-3">
-          <span className="flex items-center gap-3">
-            <img src={label} alt="icon" className="h-5 w-5 object-contain" />
+          <span className="flex items-center gap-3 min-w-0">
+            <img
+              src={label}
+              alt="icon"
+              className="md:h-5 h-4 md:w-5 w-4 object-contain shrink-0"
+            />
             <span
-              className="text-textColor truncate text-[14px]"
+              className="text-textColor truncate text-xs md:text-[14px]"
               style={{
                 fontFamily: "var(--font-poppins)",
               }}
@@ -56,7 +60,7 @@ const ChartPenjualanMenu = () => {
             </span>
           </span>
           <span
-            className="text-[14px]"
+            className="text-xs md:text-[14px]"
             style={{
               fontFamily: "var(--font-poppins)",
             }}
@@ -76,7 +80,8 @@ const ChartPenjualanMenu = () => {
 
   return (
     <div className="bg-secondary backdrop-blur-xl rounded-xl p-5 w-full">
-      <div className="mb-6 grid grid-cols-[2fr_1fr]">
+      {/* Header */}
+      <div className="mb-6 grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-4 md:gap-0">
         <div className="flex flex-col gap-2">
           <big className="text-base font-bold text-textColor">
             Penjualan Menu
@@ -86,7 +91,7 @@ const ChartPenjualanMenu = () => {
           </p>
         </div>
         <select
-          className="outline-none bg-primary text-textColor text-xs font-medium h-8 w-full p-1 rounded-md cursor-pointer"
+          className="hidden md:flex outline-none bg-primary text-textColor text-xs font-medium h-8 w-full p-1 rounded-md cursor-pointer"
           value={filter}
           onChange={(e) => setFilter(e.target.value)}
           style={{
@@ -98,6 +103,41 @@ const ChartPenjualanMenu = () => {
           <option value="bulanan">Bulanan</option>
           <option value="tahunan">Tahunan</option>
         </select>
+      </div>
+      <div className="flexCenter md:hidden gap-2 w-full">
+        <button
+          className={`text-xs font-semibold py-1.5 px-3 rounded-md cursor-pointer ${
+            filter === "harian" ? "bg-gray-600 font-bold" : "bg-primary"
+          }`}
+          onClick={() => setFilter("harian")}
+        >
+          Harian
+        </button>
+
+        <button
+          className={`text-xs font-semibold py-1.5 px-3 rounded-md cursor-pointer ${
+            filter === "mingguan" ? "bg-gray-600 font-bold" : "bg-primary"
+          }`}
+          onClick={() => setFilter("mingguan")}
+        >
+          Mingguan
+        </button>
+        <button
+          className={`text-xs font-semibold py-1.5 px-3 rounded-md cursor-pointer ${
+            filter === "bulanan" ? "bg-gray-600 font-bold" : "bg-primary"
+          }`}
+          onClick={() => setFilter("bulanan")}
+        >
+          Bulanan
+        </button>
+        <button
+          className={`text-xs font-semibold py-1.5 px-3 rounded-md cursor-pointer ${
+            filter === "tahunan" ? "bg-gray-600 font-bold" : "bg-primary"
+          }`}
+          onClick={() => setFilter("tahunan")}
+        >
+          Tahunan
+        </button>
       </div>
       <div className="h-48">
         <ResponsiveContainer width="100%" height="100%">
@@ -119,7 +159,7 @@ const ChartPenjualanMenu = () => {
           </PieChart>
         </ResponsiveContainer>
       </div>
-      <div className="gap-x-3 grid grid-cols-2 mt-3">
+      <div className="gap-x-3 grid grid-cols-1 md:grid-cols-2 md:mt-3">
         {chartData.map((item, index) => {
           return (
             <StatBar

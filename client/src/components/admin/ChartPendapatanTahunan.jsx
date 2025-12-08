@@ -20,17 +20,20 @@ const ChartPendapatanTahunan = () => {
 
   return (
     <div className="backdrop-blur-xl rounded-xl w-full">
-      <div className="flexBetween mb-6 w-full">
+      {/* Header */}
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between md:gap-0 gap-4 md:mb-6 mb-4">
         <div className="flex flex-col gap-2">
           <span className="text-base font-bold text-textColor">Pendapatan</span>
           <p className="text-xs text-textColor font-medium">
             Pendapatan bulanan dalam setahun.
           </p>
         </div>
-        <div className="flex flex-col items-end justify-center gap-3">
-          <div className="flex gap-2">
+
+        {/* Tombol Kanan */}
+        <div className="flex flex-col items-end justify-center w-full md:w-auto gap-3">
+          <div className="flex gap-2 w-full md:w-auto">
             <button
-              className={`text-xs font-semibold py-2 px-4 rounded-md cursor-pointer ${
+              className={`text-xs font-semibold md:py-2 py-1.5 md:px-4 px-3 rounded-md cursor-pointer ${
                 selectedYear === "2025" ? "bg-gray-600 font-bold" : "bg-primary"
               }`}
               onClick={() => setSelectedYear("2025")}
@@ -39,7 +42,7 @@ const ChartPendapatanTahunan = () => {
             </button>
 
             <button
-              className={`text-xs font-semibold py-2 px-4 rounded-md cursor-pointer ${
+              className={`text-xs font-semibold md:py-2 py-1.5 md:px-4 px-3 rounded-md cursor-pointer ${
                 selectedYear === "2026" ? "bg-gray-600 font-bold" : "bg-primary"
               }`}
               onClick={() => setSelectedYear("2026")}
@@ -47,14 +50,16 @@ const ChartPendapatanTahunan = () => {
               2026
             </button>
           </div>
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-2">
+
+          {/* Legend */}
+          <div className="flex items-center justify-end gap-4 flex-wrap">
+            <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-solidThree rounded-full"></div>
               <div className="text-xs text-textColor">
                 <span>Pendapatan</span>
               </div>
             </div>
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-solidTwo rounded-full"></div>
               <div className="text-xs text-textColor">
                 <span>Pengeluaran</span>
@@ -63,11 +68,13 @@ const ChartPendapatanTahunan = () => {
           </div>
         </div>
       </div>
-      <div className="h-60">
+
+      {/* Bar Chart Pendapatan */}
+      <div className="h-44 md:h-60 w-full">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
             data={yearData}
-            margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+            margin={{ top: 20, right: 20, left: 20, bottom: 5 }}
           >
             <CartesianGrid
               strokeDasharray="3 3"
@@ -78,9 +85,10 @@ const ChartPendapatanTahunan = () => {
             <XAxis
               dataKey="month"
               stroke="#d6d6d6"
-              fontSize={12}
+              fontSize={10}
               tickLine={false}
               axisLine={false}
+              tickMargin={8}
             />
 
             <YAxis
@@ -88,9 +96,10 @@ const ChartPendapatanTahunan = () => {
                 display: "flex",
               }}
               stroke="#d6d6d6"
-              fontSize={12}
+              fontSize={10}
               tickLine={false}
               axisLine={false}
+              width={45}
               tick={(props) => (
                 <CustomYAxisTick {...props} currency={currency} />
               )}
@@ -102,13 +111,13 @@ const ChartPendapatanTahunan = () => {
               dataKey="revenue"
               fill="#ffc586"
               radius={[4, 4, 0, 0]}
-              maxBarSize={40}
+              maxBarSize={25}
             />
             <Bar
               dataKey="expenses"
               fill="#e6392f"
               radius={[4, 4, 0, 0]}
-              maxBarSize={40}
+              maxBarSize={25}
             />
             <defs>
               <linearGradient id="revenueGradient" x1="0" y1="0" x2="0" y2="1">
