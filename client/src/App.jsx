@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Beranda from "./pages/Beranda";
 import Menu from "./pages/Menu";
 import Blog from "./pages/Blog";
@@ -18,16 +18,16 @@ import Dashboard from "./pages/admin/Dashboard";
 import KelolaMenu from "./pages/admin/KelolaMenu";
 import KelolaPengguna from "./pages/admin/KelolaPengguna";
 import KelolaPesanan from "./pages/admin/KelolaPesanan";
-import { useAppContext } from "./context/AppContext";
 import Laporan from "./pages/admin/Laporan";
 import BlogAdmin from "./pages/admin/BlogAdmin";
+import DummyMenuPage from "./pages/DummyMenuPage";
 
 const App = () => {
-  const { isAdmin } = useAppContext();
+  const isAdminPath = useLocation().pathname.includes("admin");
 
   return (
     <main className="overflow-x-hidden text-textColor">
-      {!isAdmin && <Header />}
+      {!isAdminPath && <Header />}
       <Toaster position="bottom-right" />
       <Routes>
         <Route path="/" element={<Beranda />} />
@@ -36,6 +36,7 @@ const App = () => {
         <Route path="/keranjang" element={<Keranjang />} />
         <Route path="/alamat" element={<Alamat />} />
         <Route path="/pesanan" element={<Pesanan />} />
+        <Route path="/dummy-menu" element={<DummyMenuPage />} />
         <Route path="/kebijakan-privasi" element={<KebijakanPrivasi />} />
         <Route path="/syarat-layanan" element={<SyaratLayanan />} />
         <Route path="/tentang-kami" element={<TentangKami />} />
@@ -49,7 +50,7 @@ const App = () => {
           <Route path="/admin/laporan" element={<Laporan />} />
         </Route>
       </Routes>
-      {!isAdmin && <Footer />}
+      {!isAdminPath && <Footer />}
     </main>
   );
 };

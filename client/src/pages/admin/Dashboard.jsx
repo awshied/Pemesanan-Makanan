@@ -62,7 +62,7 @@ const Dashboard = () => {
         <big className="text-2xl font-bold text-white">Dashboard</big>
         <small className="text-sm leading-relaxed">
           Halo,{" "}
-          <span className="text-solidThree">
+          <span className="text-solidThree font-medium">
             {user?.firstName} {user?.lastName}
           </span>
           . Selamat datang kembali di Mang TekTek.

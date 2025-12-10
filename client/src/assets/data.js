@@ -30,11 +30,15 @@ import star from "./star.svg";
 import fullStar from "./full-star.png";
 import halfStar from "./half-star.png";
 import emptyStar from "./empty-star.png";
+import clock from "./clock.png";
+import all from "./all.png";
+import addMenu from "./add-menu.png";
 import location from "./location.png";
 import locationEdit from "./location-edit.png";
 import starBlack from "./star-black.svg";
 import emptyCart from "./empty-cart.png";
 import emptyOrder from "./empty-order.png";
+import prepTime from "./prep-time.png";
 import facebook from "./facebook.png";
 import instagram from "./instagram.png";
 import x from "./x.png";
@@ -57,6 +61,7 @@ import city from "./city.png";
 import zipcode from "./zipcode.png";
 import province from "./province.png";
 import house from "./house.svg";
+import eye from "./eye.png";
 import awlogo from "./awlogo.png";
 import client from "./client.png";
 import revenue from "./revenue.png";
@@ -71,6 +76,7 @@ import orderManagement from "./order-management.png";
 import blog from "./blog.png";
 import minus from "./minus.png";
 import sliders from "./sliders.svg";
+import editMenu from "./menu-edit.png";
 import trash from "./trash.png";
 import send from "./send.png";
 import report from "./report.png";
@@ -87,7 +93,25 @@ import user4 from "./user4.png";
 import user5 from "./user5.png";
 import user6 from "./user6.png";
 import uploadIcon from "./upload_icon.png";
-// produks
+import nasiBiasa from "./nasi-biasa.png";
+import nasiGoreng from "./nasi-goreng.png";
+import mieGoreng from "./mie-goreng.png";
+import mieKuah from "./mie-kuah.png";
+import kwetiawGoreng from "./kwetiaw-goreng.png";
+import airPutih from "./air-putih.png";
+import latte from "./latte.png";
+import espresso from "./espresso.png";
+import teh from "./teh.png";
+import milkshake from "./milkshake.png";
+import cemilanRingan from "./cemilan-ringan.png";
+import gorengan from "./gorengan.png";
+import canape from "./canape.png";
+import kueBasah from "./kue-basah.png";
+import tepungBeras from "./tepung-beras.png";
+import cake from "./cake.png";
+import puding from "./puding.png";
+import waffle from "./waffle.png";
+// produk
 import produk_1 from "./produk_1.png";
 import produk_2 from "./produk_2.png";
 import produk_3 from "./produk_3.png";
@@ -163,6 +187,7 @@ export const assets = {
   forward,
   badge,
   app,
+  addMenu,
   aneka,
   contact,
   beranda,
@@ -179,11 +204,14 @@ export const assets = {
   fullStar,
   halfStar,
   emptyStar,
+  clock,
+  all,
   location,
   locationEdit,
   starBlack,
   emptyCart,
   emptyOrder,
+  prepTime,
   facebook,
   instagram,
   x,
@@ -207,6 +235,7 @@ export const assets = {
   province,
   revenue,
   house,
+  eye,
   awlogo,
   client,
   map,
@@ -219,6 +248,7 @@ export const assets = {
   blog,
   plus,
   minus,
+  editMenu,
   trash,
   send,
   report,
@@ -236,6 +266,24 @@ export const assets = {
   features2,
   features3,
   uploadIcon,
+  nasiBiasa,
+  nasiGoreng,
+  mieGoreng,
+  mieKuah,
+  kwetiawGoreng,
+  airPutih,
+  latte,
+  espresso,
+  teh,
+  milkshake,
+  cemilanRingan,
+  gorengan,
+  canape,
+  kueBasah,
+  tepungBeras,
+  cake,
+  puding,
+  waffle,
 };
 
 // R => Porsi Reguler & J => Porsi Jumbo
@@ -258,6 +306,7 @@ export const dummyProducts = [
     sizeMeans: { R: "Reguler", J: "Jumbo" },
     rating: 3.5,
     starsTotal: 3,
+    estimatedTime: "1 - 4",
   },
   {
     _id: "2",
@@ -275,6 +324,7 @@ export const dummyProducts = [
     sizeMeans: { R: "Reguler", J: "Jumbo" },
     rating: 4.0,
     starsTotal: 4,
+    estimatedTime: "9 - 12",
   },
   {
     _id: "3",
@@ -292,6 +342,7 @@ export const dummyProducts = [
     sizeMeans: { R: "Reguler", J: "Jumbo" },
     rating: 5.0,
     starsTotal: 5,
+    estimatedTime: "13 - 16",
   },
   {
     _id: "4",
@@ -309,6 +360,7 @@ export const dummyProducts = [
     sizeMeans: { R: "Reguler", J: "Jumbo" },
     rating: 4.5,
     starsTotal: 4,
+    estimatedTime: "9 - 12",
   },
   {
     _id: "5",
@@ -326,6 +378,7 @@ export const dummyProducts = [
     sizeMeans: { R: "Reguler", J: "Jumbo" },
     rating: 5.0,
     starsTotal: 5,
+    estimatedTime: "9 - 12",
   },
   {
     _id: "6",
@@ -343,6 +396,7 @@ export const dummyProducts = [
     sizeMeans: { R: "Reguler", J: "Jumbo" },
     rating: 5.0,
     starsTotal: 5,
+    estimatedTime: "13 - 16",
   },
   {
     _id: "7",
@@ -360,6 +414,7 @@ export const dummyProducts = [
     sizeMeans: { R: "Reguler", J: "Jumbo" },
     rating: 5.0,
     starsTotal: 5,
+    estimatedTime: "9 - 12",
   },
 
   // Aneka Mie
@@ -379,6 +434,7 @@ export const dummyProducts = [
     sizeMeans: { R: "Reguler", J: "Jumbo" },
     rating: 4.5,
     starsTotal: 4,
+    estimatedTime: "9 - 12",
   },
   {
     _id: "9",
@@ -396,6 +452,7 @@ export const dummyProducts = [
     sizeMeans: { R: "Reguler", J: "Jumbo" },
     rating: 4.5,
     starsTotal: 4,
+    estimatedTime: "13 - 16",
   },
   {
     _id: "10",
@@ -413,6 +470,7 @@ export const dummyProducts = [
     sizeMeans: { R: "Reguler", J: "Jumbo" },
     rating: 5.0,
     starsTotal: 5,
+    estimatedTime: "9 - 12",
   },
   {
     _id: "11",
@@ -430,6 +488,7 @@ export const dummyProducts = [
     sizeMeans: { R: "Reguler", J: "Jumbo" },
     rating: 4.0,
     starsTotal: 4,
+    estimatedTime: "9 - 12",
   },
   {
     _id: "12",
@@ -447,6 +506,7 @@ export const dummyProducts = [
     sizeMeans: { R: "Reguler", J: "Jumbo" },
     rating: 5.0,
     starsTotal: 5,
+    estimatedTime: "17 - 20",
   },
   {
     _id: "13",
@@ -464,6 +524,7 @@ export const dummyProducts = [
     sizeMeans: { R: "Reguler", J: "Jumbo" },
     rating: 4.5,
     starsTotal: 4,
+    estimatedTime: "9 - 12",
   },
   {
     _id: "14",
@@ -481,6 +542,7 @@ export const dummyProducts = [
     sizeMeans: { R: "Reguler", J: "Jumbo" },
     rating: 4.5,
     starsTotal: 4,
+    estimatedTime: "13 - 16",
   },
   {
     _id: "15",
@@ -498,6 +560,7 @@ export const dummyProducts = [
     sizeMeans: { R: "Reguler", J: "Jumbo" },
     rating: 5.0,
     starsTotal: 5,
+    estimatedTime: "9 - 12",
   },
   {
     _id: "16",
@@ -515,6 +578,7 @@ export const dummyProducts = [
     sizeMeans: { R: "Reguler", J: "Jumbo" },
     rating: 4.5,
     starsTotal: 4,
+    estimatedTime: "9 - 12",
   },
   {
     _id: "17",
@@ -532,6 +596,7 @@ export const dummyProducts = [
     sizeMeans: { R: "Reguler", J: "Jumbo" },
     rating: 5.0,
     starsTotal: 5,
+    estimatedTime: "13 - 16",
   },
 
   // Aneka Kwetiaw
@@ -551,6 +616,7 @@ export const dummyProducts = [
     sizeMeans: { R: "Reguler", J: "Jumbo" },
     rating: 4.5,
     starsTotal: 4,
+    estimatedTime: "9 - 12",
   },
   {
     _id: "19",
@@ -568,6 +634,7 @@ export const dummyProducts = [
     sizeMeans: { R: "Reguler", J: "Jumbo" },
     rating: 5.0,
     starsTotal: 5,
+    estimatedTime: "13 - 16",
   },
   {
     _id: "20",
@@ -585,6 +652,7 @@ export const dummyProducts = [
     sizeMeans: { R: "Reguler", J: "Jumbo" },
     rating: 4.0,
     starsTotal: 4,
+    estimatedTime: "9 - 12",
   },
   {
     _id: "21",
@@ -602,6 +670,7 @@ export const dummyProducts = [
     sizeMeans: { R: "Reguler", J: "Jumbo" },
     rating: 4.0,
     starsTotal: 4,
+    estimatedTime: "9 - 12",
   },
   {
     _id: "22",
@@ -619,6 +688,7 @@ export const dummyProducts = [
     sizeMeans: { R: "Reguler", J: "Jumbo" },
     rating: 5.0,
     starsTotal: 5,
+    estimatedTime: "17 - 20",
   },
   {
     _id: "23",
@@ -636,6 +706,7 @@ export const dummyProducts = [
     sizeMeans: { R: "Reguler", J: "Jumbo" },
     rating: 5.0,
     starsTotal: 5,
+    estimatedTime: "17 - 20",
   },
 
   // Aneka Minuman
@@ -655,6 +726,7 @@ export const dummyProducts = [
     sizeMeans: { S: "Small", M: "Medium", L: "Large" },
     rating: 3.5,
     starsTotal: 3,
+    estimatedTime: "1 - 4",
   },
   {
     _id: "25",
@@ -672,6 +744,7 @@ export const dummyProducts = [
     sizeMeans: { S: "Small", M: "Medium", L: "Large" },
     rating: 5.0,
     starsTotal: 5,
+    estimatedTime: "5 - 8",
   },
   {
     _id: "26",
@@ -689,6 +762,7 @@ export const dummyProducts = [
     sizeMeans: { S: "Small", M: "Medium", L: "Large" },
     rating: 5.0,
     starsTotal: 5,
+    estimatedTime: "5 - 8",
   },
   {
     _id: "27",
@@ -706,6 +780,7 @@ export const dummyProducts = [
     sizeMeans: { S: "Small", M: "Medium", L: "Large" },
     rating: 4.5,
     starsTotal: 4,
+    estimatedTime: "5 - 8",
   },
   {
     _id: "28",
@@ -723,6 +798,7 @@ export const dummyProducts = [
     sizeMeans: { S: "Small", M: "Medium", L: "Large" },
     rating: 4.5,
     starsTotal: 4,
+    estimatedTime: "5 - 8",
   },
   {
     _id: "29",
@@ -740,6 +816,7 @@ export const dummyProducts = [
     sizeMeans: { S: "Small", M: "Medium", L: "Large" },
     rating: 4.0,
     starsTotal: 4,
+    estimatedTime: "1 - 4",
   },
   {
     _id: "30",
@@ -757,6 +834,7 @@ export const dummyProducts = [
     sizeMeans: { S: "Small", M: "Medium", L: "Large" },
     rating: 5.0,
     starsTotal: 5,
+    estimatedTime: "9 - 12",
   },
   {
     _id: "31",
@@ -774,6 +852,7 @@ export const dummyProducts = [
     sizeMeans: { S: "Small", M: "Medium", L: "Large" },
     rating: 5.0,
     starsTotal: 5,
+    estimatedTime: "9 - 12",
   },
 
   // Aneka Makanan Pembuka (Appetizer)
@@ -793,6 +872,7 @@ export const dummyProducts = [
     sizeMeans: { R: "Reguler", J: "Jumbo" },
     rating: 5.0,
     starsTotal: 5,
+    estimatedTime: "9 - 12",
   },
   {
     _id: "33",
@@ -810,6 +890,7 @@ export const dummyProducts = [
     sizeMeans: { R: "Reguler", J: "Jumbo" },
     rating: 4.0,
     starsTotal: 4,
+    estimatedTime: "5 - 8",
   },
   {
     _id: "34",
@@ -827,6 +908,7 @@ export const dummyProducts = [
     sizeMeans: { R: "Reguler", J: "Jumbo" },
     rating: 4.0,
     starsTotal: 4,
+    estimatedTime: "1 - 4",
   },
   {
     _id: "35",
@@ -844,6 +926,7 @@ export const dummyProducts = [
     sizeMeans: { R: "Reguler", J: "Jumbo" },
     rating: 5.0,
     starsTotal: 5,
+    estimatedTime: "1 - 4",
   },
   {
     _id: "36",
@@ -861,6 +944,7 @@ export const dummyProducts = [
     sizeMeans: { R: "Reguler", J: "Jumbo" },
     rating: 4.5,
     starsTotal: 4,
+    estimatedTime: "5 - 8",
   },
   {
     _id: "37",
@@ -878,6 +962,7 @@ export const dummyProducts = [
     sizeMeans: { R: "Reguler", J: "Jumbo" },
     rating: 4.5,
     starsTotal: 4,
+    estimatedTime: "5 - 8",
   },
   {
     _id: "38",
@@ -895,6 +980,7 @@ export const dummyProducts = [
     sizeMeans: { R: "Reguler", J: "Jumbo" },
     rating: 4.5,
     starsTotal: 4,
+    estimatedTime: "5 - 8",
   },
   {
     _id: "39",
@@ -912,6 +998,7 @@ export const dummyProducts = [
     sizeMeans: { R: "Reguler", J: "Jumbo" },
     rating: 5.0,
     starsTotal: 5,
+    estimatedTime: "13 - 16",
   },
 
   // Aneka Makanan Penutup (Desert)
@@ -931,6 +1018,7 @@ export const dummyProducts = [
     sizeMeans: { R: "Reguler", J: "Jumbo" },
     rating: 4.5,
     starsTotal: 4,
+    estimatedTime: "5 - 8",
   },
   {
     _id: "41",
@@ -948,6 +1036,7 @@ export const dummyProducts = [
     sizeMeans: { R: "Reguler", J: "Jumbo" },
     rating: 5.0,
     starsTotal: 5,
+    estimatedTime: "9 - 12",
   },
   {
     _id: "42",
@@ -965,6 +1054,7 @@ export const dummyProducts = [
     sizeMeans: { R: "Reguler", J: "Jumbo" },
     rating: 5.0,
     starsTotal: 5,
+    estimatedTime: "5 - 8",
   },
   {
     _id: "43",
@@ -982,6 +1072,7 @@ export const dummyProducts = [
     sizeMeans: { R: "Reguler", J: "Jumbo" },
     rating: 4.5,
     starsTotal: 4,
+    estimatedTime: "5 - 8",
   },
   {
     _id: "44",
@@ -999,6 +1090,7 @@ export const dummyProducts = [
     sizeMeans: { R: "Reguler", J: "Jumbo" },
     rating: 3.5,
     starsTotal: 3,
+    estimatedTime: "5 - 8",
   },
   {
     _id: "45",
@@ -1016,6 +1108,7 @@ export const dummyProducts = [
     sizeMeans: { R: "Reguler", J: "Jumbo" },
     rating: 4.5,
     starsTotal: 4,
+    estimatedTime: "16 - 20",
   },
   {
     _id: "46",
@@ -1033,6 +1126,7 @@ export const dummyProducts = [
     sizeMeans: { R: "Reguler", J: "Jumbo" },
     rating: 4.0,
     starsTotal: 4,
+    estimatedTime: "16 - 20",
   },
   {
     _id: "47",
@@ -1050,6 +1144,7 @@ export const dummyProducts = [
     sizeMeans: { R: "Reguler", J: "Jumbo" },
     rating: 5.0,
     starsTotal: 5,
+    estimatedTime: "9 - 12",
   },
   {
     _id: "48",
@@ -1067,6 +1162,106 @@ export const dummyProducts = [
     sizeMeans: { R: "Reguler", J: "Jumbo" },
     rating: 5.0,
     starsTotal: 5,
+    estimatedTime: "13 - 16",
+  },
+];
+
+export const menuCategory = [
+  {
+    categoryName: "Makanan",
+    iconSource: makanan,
+    types: [
+      {
+        typeName: "Nasi Biasa",
+        imageSource: nasiBiasa,
+      },
+      {
+        typeName: "Nasi Goreng",
+        imageSource: nasiGoreng,
+      },
+      {
+        typeName: "Mie Goreng",
+        imageSource: mieGoreng,
+      },
+      {
+        typeName: "Nasi Kuah",
+        imageSource: mieKuah,
+      },
+      {
+        typeName: "Kwetiaw Goreng",
+        imageSource: kwetiawGoreng,
+      },
+    ],
+  },
+  {
+    categoryName: "Minuman",
+    iconSource: minuman,
+    types: [
+      {
+        typeName: "Air Putih",
+        imageSource: airPutih,
+      },
+      {
+        typeName: "Latte",
+        imageSource: latte,
+      },
+      {
+        typeName: "Espresso",
+        imageSource: espresso,
+      },
+      {
+        typeName: "Teh",
+        imageSource: teh,
+      },
+      {
+        typeName: "Milkshake",
+        imageSource: milkshake,
+      },
+    ],
+  },
+  {
+    categoryName: "Appetizer",
+    iconSource: appetizer,
+    types: [
+      {
+        typeName: "Cemilan Ringan",
+        imageSource: cemilanRingan,
+      },
+      {
+        typeName: "Gorengan",
+        imageSource: gorengan,
+      },
+      {
+        typeName: "Canapé",
+        imageSource: canape,
+      },
+    ],
+  },
+  {
+    categoryName: "Dessert",
+    iconSource: dessert,
+    types: [
+      {
+        typeName: "Kue Basah",
+        imageSource: kueBasah,
+      },
+      {
+        typeName: "Tepung Beras",
+        imageSource: tepungBeras,
+      },
+      {
+        typeName: "Cake",
+        imageSource: cake,
+      },
+      {
+        typeName: "Puding",
+        imageSource: puding,
+      },
+      {
+        typeName: "Waffle",
+        imageSource: waffle,
+      },
+    ],
   },
 ];
 
@@ -1249,6 +1444,14 @@ export const pertumbuhanPembeliTahunan = [
     y2024: 1024,
     y2025: 1385,
   },
+];
+
+export const adminMenuCategories = [
+  { id: "all", label: "Semua", count: 100, imgPath: all },
+  { id: "makanan", label: "Makanan", count: 16, imgPath: makanan },
+  { id: "minuman", label: "Minuman", count: 21, imgPath: minuman },
+  { id: "appetizer", label: "Appetizer", count: 19, imgPath: appetizer },
+  { id: "dessert", label: "Dessert", count: 23, imgPath: dessert },
 ];
 
 export const dummyTopSell = [

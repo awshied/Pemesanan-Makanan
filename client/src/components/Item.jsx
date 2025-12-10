@@ -84,29 +84,22 @@ const Item = ({ product }) => {
           </h4>
         </div>
         <div className="flexBetween rounded-xl pl-5 text-[13px] pt-3 font-semibold pb-5">
-          <div className="flexStart gap-5">
-            <div className="flex flex-col gap-1 relative bottom-1.5">
-              <small className="text-sm">Siap</small>
-              <p className="text-xs text-solidThree">5m</p>
-            </div>
-            <hr className="h-8 w-px bg-textColor border-none" />
-            <div className="flex flex-col gap-1 relative bottom-1.5">
-              <small className="text-sm">Masak</small>
-              <p className="text-xs text-solidThree">10m</p>
-            </div>
+          <div className="flex items-center gap-1.5">
+            <img src={assets.prepTime} alt="estimated-time" width={16} />
+            <small className="text-xs text-textColor font-semibold">
+              {product.estimatedTime} min
+            </small>
           </div>
-          <div className="flex flex-col gap-1 pr-5">
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <button
-                  onClick={() => tambahKeranjang(product._id, size)}
-                  className="btn-solid rounded p-2"
-                >
-                  <img src={assets.cartAdd} alt="add-to-cart" width={22} />
-                </button>
-              </TooltipTrigger>
-              <TooltipContent>Tambah Keranjang</TooltipContent>
-            </Tooltip>
+          <div className="flex gap-2 mr-4">
+            <button
+              onClick={() => tambahKeranjang(product._id, size)}
+              className="btn-solid rounded p-2"
+            >
+              <img src={assets.eye} alt="see-details" width={22} />
+            </button>
+            <button className="btn-solid rounded p-2">
+              <img src={assets.cartAdd} alt="add-to-cart" width={22} />
+            </button>
           </div>
         </div>
       </div>
