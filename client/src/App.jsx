@@ -20,7 +20,6 @@ import KelolaPengguna from "./pages/admin/KelolaPengguna";
 import KelolaPesanan from "./pages/admin/KelolaPesanan";
 import Laporan from "./pages/admin/Laporan";
 import BlogAdmin from "./pages/admin/BlogAdmin";
-import DummyMenuPage from "./pages/DummyMenuPage";
 
 const App = () => {
   const isAdminPath = useLocation().pathname.includes("admin");
@@ -36,7 +35,6 @@ const App = () => {
         <Route path="/keranjang" element={<Keranjang />} />
         <Route path="/alamat" element={<Alamat />} />
         <Route path="/pesanan" element={<Pesanan />} />
-        <Route path="/dummy-menu" element={<DummyMenuPage />} />
         <Route path="/kebijakan-privasi" element={<KebijakanPrivasi />} />
         <Route path="/syarat-layanan" element={<SyaratLayanan />} />
         <Route path="/tentang-kami" element={<TentangKami />} />

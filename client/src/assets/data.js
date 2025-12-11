@@ -77,6 +77,7 @@ import blog from "./blog.png";
 import minus from "./minus.png";
 import sliders from "./sliders.svg";
 import editMenu from "./menu-edit.png";
+import menuEdit from "./edit-menu.png";
 import trash from "./trash.png";
 import send from "./send.png";
 import report from "./report.png";
@@ -249,6 +250,7 @@ export const assets = {
   plus,
   minus,
   editMenu,
+  menuEdit,
   trash,
   send,
   report,
@@ -1184,7 +1186,7 @@ export const menuCategory = [
         imageSource: mieGoreng,
       },
       {
-        typeName: "Nasi Kuah",
+        typeName: "Mie Kuah",
         imageSource: mieKuah,
       },
       {

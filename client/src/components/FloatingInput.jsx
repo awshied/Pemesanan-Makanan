@@ -10,15 +10,18 @@ const FloatingInput = ({
 }) => {
   const [focused, setFocused] = useState(false);
 
-  const isActive = focused || (value && value.length > 0);
+  const isActive =
+    focused ||
+    (type === "boolean"
+      ? value === true || value === false
+      : value && value.length > 0);
 
   return (
     <div className="relative w-full">
       {/* Label */}
       <label
         className={`
-          absolute left-0 
-          transition-all duration-300 font-semibold
+          absolute left-0 transition-all duration-300 font-semibold
           ${
             isActive
               ? "-top-2 text-solidThree text-sm"
@@ -29,7 +32,7 @@ const FloatingInput = ({
         {label}
       </label>
 
-      {/* Render sesuai type */}
+      {/* ========== Render TEXTAREA ========== */}
       {type === "textarea" ? (
         <textarea
           name={name}
@@ -45,7 +48,21 @@ const FloatingInput = ({
             resize-none
           "
         />
+      ) : type === "boolean" ? (
+        /* ========== Render BOOLEAN CHECKBOX ========== */
+        <input
+          type="checkbox"
+          name={name}
+          checked={value}
+          onChange={(e) =>
+            onChange({ target: { name, value: e.target.checked } })
+          }
+          className="
+            mt-6 w-5 h-5 cursor-pointer accent-solidThree
+          "
+        />
       ) : (
+        /* ========== Render TEXT / NUMBER / OTHER INPUTS ========== */
         <input
           type={type}
           name={name}
@@ -61,11 +78,11 @@ const FloatingInput = ({
         />
       )}
 
-      {/* Icon */}
-      {icon && (
+      {/* ICON */}
+      {icon && type !== "boolean" && (
         <img
           src={icon}
-          alt=""
+          alt="icon"
           className={`absolute right-1 bottom-3 w-5 ${
             isActive ? "icon-active-yellow" : ""
           }`}
