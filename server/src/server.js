@@ -1,14 +1,34 @@
 import express from "express";
 import dotenv from "dotenv";
+import cookieParser from "cookie-parser";
+import path from "path";
+import cors from "cors";
 
 import authRoutes from "./routes/auth.route.js";
+import { connectDB } from "./lib/db.js";
 
 dotenv.config();
 
 const app = express();
+const __dirname = path.resolve();
 
 const PORT = process.env.PORT || 3000;
 
+app.use(express.json({ limit: "5mb" }));
+app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
+app.use(cookieParser());
+
 app.use("/api/auth", authRoutes);
 
-app.listen(PORT, () => console.log("Servernya jalan kok diport: " + PORT));
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../client/dist")));
+
+  app.get("*", (_, res) => {
+    res.sendFile(path.join(__dirname, "../client", "dist", "index.html"));
+  });
+}
+
+app.listen(PORT, () => {
+  console.log("Servernya jalan di port: ", +PORT);
+  connectDB();
+});

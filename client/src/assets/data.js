@@ -2,6 +2,7 @@ import logoImg from "./logo.png";
 import search from "./search.png";
 import user from "./user-profile.png";
 import login from "./login.png";
+import signup from "./signup.png";
 import menu from "./menu.png";
 import menuClose from "./menu-close.png";
 import makanan from "./makanan.png";
@@ -53,6 +54,7 @@ import whatsapp from "./whatsapp.png";
 import rocket from "./rocket.svg";
 import mail from "./mail.svg";
 import email from "./email.png";
+import password from "./password.png";
 import phone from "./phone.png";
 import street from "./street.png";
 import village from "./village.png";
@@ -176,6 +178,7 @@ export const assets = {
   search,
   user,
   login,
+  signup,
   menu,
   menuClose,
   makanan,
@@ -227,6 +230,7 @@ export const assets = {
   rocket,
   mail,
   email,
+  password,
   phone,
   street,
   village,

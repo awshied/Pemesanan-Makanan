@@ -3,36 +3,18 @@ import { Link } from "react-router-dom";
 import { assets } from "../assets/data";
 import Navbar from "./Navbar";
 import KontakKami from "./KontakKami";
-import { useClerk, UserButton } from "@clerk/clerk-react";
 import { useAppContext } from "../context/AppContext";
+import LoginModal from "./LoginModal";
+import SignupModal from "./SignupModal";
 
 const Header = () => {
   const [menuOpened, setMenuOpened] = useState(false);
-  const { openSignIn } = useClerk();
   const { navigate, user, hitunganKeranjang } = useAppContext();
   const [contactOpened, setContactOpened] = useState(false);
+  const [loginModalOpen, setLoginModalOpen] = useState(false);
+  const [signupModalOpen, setSignupModalOpen] = useState(false);
 
   const toggleMenu = () => setMenuOpened((prev) => !prev);
-
-  const OrdersIcon = () => (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="16"
-      height="16"
-      viewBox="0 0 24 24"
-    >
-      <g
-        fill="none"
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-      >
-        <path d="M15 12h-5m5-4h-5m9 9V5a2 2 0 0 0-2-2H4" />
-        <path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3" />
-      </g>
-    </svg>
-  );
 
   return (
     <>
@@ -128,41 +110,40 @@ const Header = () => {
             {/* Profil Pengguna */}
             <div>
               {user ? (
-                <UserButton
-                  appearance={{
-                    elements: {
-                      userButtonAvatarBox: {
-                        width: "36px",
-                        height: "36px",
-                      },
-                    },
-                  }}
-                >
-                  <UserButton.MenuItems>
-                    <UserButton.Action
-                      label="Pesanan Gue"
-                      labelIcon={<OrdersIcon />}
-                      onClick={() => navigate("/pesanan")}
-                    />
-                  </UserButton.MenuItems>
-                </UserButton>
+                <img
+                  src={user.profilePic}
+                  className="w-9 h-9 rounded-full cursor-pointer"
+                  onClick={() => navigate("/profile")}
+                />
               ) : (
-                <button
-                  onClick={openSignIn}
-                  className=" cursor-pointer flexCenter"
-                >
-                  <img
-                    src={assets.login}
-                    alt=""
-                    className="w-6 icon-filter-yellow"
-                  />
-                </button>
+                <div className="flex items-center gap-x-8">
+                  <button
+                    onClick={() => setLoginModalOpen(true)}
+                    className=" cursor-pointer flexCenter"
+                  >
+                    <img
+                      src={assets.login}
+                      alt=""
+                      className="w-6 icon-filter-yellow"
+                    />
+                  </button>
+                  <button
+                    onClick={() => setSignupModalOpen(true)}
+                    className=" cursor-pointer flexCenter"
+                  >
+                    <img
+                      src={assets.signup}
+                      alt=""
+                      className="w-6 icon-filter-yellow"
+                    />
+                  </button>
+                </div>
               )}
             </div>
           </div>
         </div>
       </header>
-      {/* 🔥 MODAL KONTAK */}
+      {/* MODAL KONTAK */}
       {contactOpened && (
         <div
           className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
@@ -174,6 +155,38 @@ const Header = () => {
           >
             {/* Konten Modal */}
             <KontakKami onClose={() => setContactOpened(false)} />
+          </div>
+        </div>
+      )}
+
+      {/* MODAL LOGIN */}
+      {loginModalOpen && (
+        <div
+          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
+          onClick={() => setLoginModalOpen(false)}
+        >
+          <div
+            className="bg-transparent p-6 rounded-lg shadow-xl w-11/12 md:w-1/2 relative"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Konten Modal */}
+            <LoginModal onClose={() => setLoginModalOpen(false)} />
+          </div>
+        </div>
+      )}
+
+      {/* MODAL SIGNUP */}
+      {signupModalOpen && (
+        <div
+          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
+          onClick={() => setSignupModalOpen(false)}
+        >
+          <div
+            className="bg-transparent p-6 rounded-lg shadow-xl w-11/12 md:w-1/2 relative"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Konten Modal */}
+            <SignupModal onClose={() => setSignupModalOpen(false)} />
           </div>
         </div>
       )}

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useAppContext } from "../../context/AppContext";
 import { assets } from "../../assets/data";
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
-import { UserButton } from "@clerk/clerk-react";
 
 const Sidebar = () => {
   const { navigate, isAdmin, user } = useAppContext();
@@ -226,24 +225,21 @@ const Sidebar = () => {
           </div>
           {/* User */}
           <div className="hidden md:flex items-center gap-3 md:bg-secondary rounded-b-xl p-3 pl-4 md:mt-10 border-t border-[#49535d]">
-            <UserButton
-              appearance={{
-                elements: {
-                  userButtonAvatarBox: {
-                    width: "36px",
-                    height: "36px",
-                  },
-                },
-              }}
-            />
-            <div className="flex flex-col gap-2">
-              <div className="text-sm font-bold text-solidThree capitalize">
-                {user?.firstName} {user?.lastName}
+            {user ? (
+              <div className="flex items-center gap-3">
+                <img src={user.profilePic} className="w-9 h-9 rounded-full" />
+                <div className="flex flex-col gap-2">
+                  <div className="text-sm font-bold text-solidThree capitalize">
+                    {user.fullName}
+                  </div>
+                  <small className="text-xs font-medium text-textColor">
+                    {user.email}
+                  </small>
+                </div>
               </div>
-              <small className="text-xs font-medium text-textColor">
-                {user?.primaryEmailAddress?.emailAddress}
-              </small>
-            </div>
+            ) : (
+              <button onClick={() => navigate("/login")}>Login</button>
+            )}
           </div>
         </div>
         <div className="flex-1 overflow-y-auto mr-3 pb-20 md:pb-0">
@@ -285,16 +281,21 @@ const Sidebar = () => {
               isProfileActive ? "border-t-2 border-solidThree" : ""
             }`}
           >
-            <UserButton
-              appearance={{
-                elements: {
-                  userButtonAvatarBox: {
-                    width: "25px",
-                    height: "25px",
-                  },
-                },
-              }}
-            />
+            {user ? (
+              <div className="flex items-center gap-3">
+                <img src={user.profilePic} className="w-9 h-9 rounded-full" />
+                <div className="flex flex-col gap-2">
+                  <div className="text-sm font-bold text-solidThree capitalize">
+                    {user.fullName}
+                  </div>
+                  <small className="text-xs font-medium text-textColor">
+                    {user.email}
+                  </small>
+                </div>
+              </div>
+            ) : (
+              <button onClick={() => navigate("/login")}>Login</button>
+            )}
           </div>
         </div>
 
