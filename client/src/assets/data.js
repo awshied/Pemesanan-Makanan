@@ -3,6 +3,7 @@ import search from "./search.png";
 import user from "./user-profile.png";
 import login from "./login.png";
 import signup from "./signup.png";
+import logout from "./logout.png";
 import menu from "./menu.png";
 import menuClose from "./menu-close.png";
 import makanan from "./makanan.png";
@@ -36,6 +37,7 @@ import all from "./all.png";
 import addMenu from "./add-menu.png";
 import location from "./location.png";
 import locationEdit from "./location-edit.png";
+import profileEdit from "./profile-edit.png";
 import starBlack from "./star-black.svg";
 import emptyCart from "./empty-cart.png";
 import emptyOrder from "./empty-order.png";
@@ -85,10 +87,10 @@ import send from "./send.png";
 import report from "./report.png";
 import textArea from "./text-area.png";
 import down from "./down.png";
+import defaultAvatar from "./default-avatar.png";
 import features1 from "./features1.png";
 import features2 from "./features2.png";
 import features3 from "./features3.png";
-import userImg from "./user.png";
 import user1 from "./user1.png";
 import user2 from "./user2.png";
 import user3 from "./user3.png";
@@ -179,6 +181,7 @@ export const assets = {
   user,
   login,
   signup,
+  logout,
   menu,
   menuClose,
   makanan,
@@ -212,6 +215,7 @@ export const assets = {
   all,
   location,
   locationEdit,
+  profileEdit,
   starBlack,
   emptyCart,
   emptyOrder,
@@ -260,8 +264,8 @@ export const assets = {
   report,
   textArea,
   down,
+  defaultAvatar,
   sliders,
-  userImg,
   user1,
   user2,
   user3,

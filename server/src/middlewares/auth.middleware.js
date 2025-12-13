@@ -19,6 +19,17 @@ export const protectRoute = async (req, res, next) => {
     if (!user)
       return res.status(404).json({ message: "Yaaahh, penggunanya gada!" });
 
+    const adminEmail = process.env.ADMIN_EMAIL;
+    const newRole = adminEmail && user.email === adminEmail ? "admin" : "user";
+
+    if (user.role !== newRole) {
+      user = await User.findByIdAndUpdate(
+        decoded.userId,
+        { role: newRole },
+        { new: true }
+      );
+    }
+
     req.user = user;
     next();
   } catch (error) {

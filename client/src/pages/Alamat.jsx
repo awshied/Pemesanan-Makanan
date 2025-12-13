@@ -5,12 +5,12 @@ import toast from "react-hot-toast";
 import { useAppContext } from "../context/AppContext";
 import FloatingInput from "../components/floatingInput";
 import { assets } from "../assets/data";
+import { useAuthStore } from "../store/useAuthStore";
 
 const Alamat = () => {
-  const { navigate, user } = useAppContext();
+  const { navigate } = useAppContext();
   const [address, setAddress] = useState({
-    firstName: "",
-    lastName: "",
+    fullName: "",
     email: "",
     street: "",
     village: "",
@@ -20,6 +20,7 @@ const Alamat = () => {
     province: "",
     phone: "",
   });
+  const { authUser } = useAuthStore();
 
   const onChangeHandler = (e) => {
     const name = e.target.name;
@@ -29,7 +30,7 @@ const Alamat = () => {
   };
 
   useEffect(() => {
-    if (!user) {
+    if (!authUser) {
       navigate("/keranjang");
     }
   }, []);
@@ -40,35 +41,30 @@ const Alamat = () => {
         <form className="flex flex-col gap-6 animate-fadeIn">
           <Title
             title1={"Alamat"}
-            title2={"Pengiriman"}
+            title2={"Profil"}
             titleStyles={"pb-5 tracking-wide"}
-            para={"Ayo, ganti lokasi pengirimanmu dulu sebelum memesan."}
+            para={
+              "Ayo, ganti profil dan lokasi pengirimanmu dulu sebelum memesan."
+            }
           />
 
           <div className="flex gap-5">
             <FloatingInput
               label="Nama"
-              name="firstName"
-              value={address.firstName}
+              name="fullName"
+              value={address.fullName}
               onChange={onChangeHandler}
               icon={assets.user}
             />
             <FloatingInput
-              label="Nama"
-              name="lastName"
-              value={address.lastName}
+              label="Email"
+              name="email"
+              type="email"
+              value={address.email}
               onChange={onChangeHandler}
-              icon={assets.user}
+              icon={assets.email}
             />
           </div>
-          <FloatingInput
-            label="Email"
-            name="email"
-            type="email"
-            value={address.email}
-            onChange={onChangeHandler}
-            icon={assets.email}
-          />
 
           <FloatingInput
             label="Telepon"
@@ -130,10 +126,10 @@ const Alamat = () => {
 
           <button
             type="submit"
-            className="active:scale-95 transition bg-secondary border border-gray-500/20 text-textColor hover:bg-[#262b32] text-sm font-medium rounded-md cursor-pointer flexCenter w-full mt-4 py-4 gap-2"
+            className="active:scale-95 transition bg-secondary border border-gray-500/20 text-textColor hover:bg-[#262b32] text-lg font-medium rounded-md cursor-pointer flexCenter w-full mt-4 py-4 gap-2"
           >
             <img src={assets.locationEdit} width={18} />
-            Ubah Alamat
+            Ganti
           </button>
         </form>
 

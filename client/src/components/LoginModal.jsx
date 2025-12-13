@@ -1,11 +1,39 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { assets } from "../assets/data";
 import FloatingInput from "./floatingInput";
+import { useAuthStore } from "../store/useAuthStore";
+import { LoaderIcon } from "lucide-react";
 
 const LoginModal = ({ onClose }) => {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+  const { login, isLoggingIn } = useAuthStore();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const success = await login(formData);
+
+    if (success) {
+      onClose();
+    }
+  };
+
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, []);
+
   return (
     <div className="w-full flex justify-center py-20 px-4 animate-fadeIn">
-      <form className="flex flex-col py-8 w-full max-w-xl items-center text-sm bg-primary shadow-md rounded-xl relative">
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col py-8 w-full max-w-xl items-center text-sm bg-primary shadow-md rounded-xl relative"
+      >
         <button
           onClick={onClose}
           className="absolute top-6 right-6 cursor-pointer"
@@ -28,20 +56,37 @@ const LoginModal = ({ onClose }) => {
             name="email"
             type="email"
             icon={assets.email}
+            value={formData.email}
+            onChange={(e) =>
+              setFormData({ ...formData, email: e.target.value })
+            }
           />
           <FloatingInput
             label="Password"
             name="password"
             type="password"
             icon={assets.password}
+            value={formData.password}
+            onChange={(e) =>
+              setFormData({ ...formData, password: e.target.value })
+            }
           />
           {/* Submit */}
           <button
             type="submit"
             className="active:scale-95 transition bg-secondary border border-gray-500/20 text-textColor hover:bg-[#262b32] text-sm font-medium rounded-md cursor-pointer flexCenter w-full mt-4 py-4 gap-2"
+            disabled={isLoggingIn}
           >
-            <img src={assets.login} width={18} />
-            Masuk
+            {isLoggingIn ? (
+              <span className="text-textColor font-medium text-sm">
+                Tunggu...
+              </span>
+            ) : (
+              <div className="flexCenter gap-2">
+                <img src={assets.login} width={18} />
+                <span className="text-sm font-medium">Masuk</span>
+              </div>
+            )}
           </button>
         </div>
       </form>

@@ -2,7 +2,6 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 import { dummyProducts } from "../assets/data";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import { useAuthStore } from "../store/useAuthStore";
 const AppContext = createContext();
 
 export const AppContextProvider = ({ children }) => {
@@ -14,8 +13,6 @@ export const AppContextProvider = ({ children }) => {
   const navigate = useNavigate();
   const currency = import.meta.env.VITE_CURRENCY;
   const delivery_charges = 5;
-
-  const { authUser } = useAuthStore();
 
   const fetchProducts = () => {
     setProducts(dummyProducts);
@@ -62,7 +59,6 @@ export const AppContextProvider = ({ children }) => {
   }, []);
 
   const value = {
-    authUser,
     products,
     searchQuery,
     setSearchQuery,

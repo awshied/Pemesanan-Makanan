@@ -30,7 +30,18 @@ const Menu = () => {
     "13 - 16 Menit",
     "17 - 20 Menit",
   ];
-  const menuRating = ["5", "4", "3", "2", "1"];
+  const menuRating = [
+    "5",
+    "4.5",
+    "4",
+    "3.5",
+    "3",
+    "2.5",
+    "2",
+    "1.5",
+    "1",
+    "0.5",
+  ];
 
   const handleSelectedTime = (time) => {
     setEstimatedTimeSelected(time);
@@ -190,7 +201,7 @@ const Menu = () => {
           </div>
 
           {/* Estimasi Waktu dan Rating */}
-          <div className="grid grid-cols-[2fr_1fr] gap-3 px-4 mt-6 rounded-xl">
+          <div className="grid grid-cols-2 gap-3 px-4 mt-6 rounded-xl">
             {/* Estimasi Waktu */}
             <div className="flex flex-col">
               <h5 className="mb-4">Estimasi Waktu</h5>
@@ -275,7 +286,7 @@ const Menu = () => {
                   />
                 </button>
                 {isRatingOpen && (
-                  <ul className="w-full bg-secondary rounded-xl absolute top-10 shadow-xl mt-1 py-2">
+                  <ul className="w-full grid grid-cols-2 bg-secondary rounded-xl absolute top-10 shadow-xl mt-1 py-2">
                     {menuRating.map((rate) => (
                       <li
                         key={rate}
@@ -287,10 +298,10 @@ const Menu = () => {
                       >
                         <img
                           src={assets.fullStar}
-                          alt="estimated-time"
+                          alt="menu-rating"
                           width={16}
                         />
-                        {rate}
+                        {Number(rate).toFixed(1)}
                       </li>
                     ))}
                   </ul>

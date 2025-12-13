@@ -91,13 +91,13 @@ const Item = ({ product }) => {
             </small>
           </div>
           <div className="flex gap-2 mr-4">
+            <button className="btn-solid rounded p-2">
+              <img src={assets.eye} alt="see-details" width={22} />
+            </button>
             <button
               onClick={() => tambahKeranjang(product._id, size)}
               className="btn-solid rounded p-2"
             >
-              <img src={assets.eye} alt="see-details" width={22} />
-            </button>
-            <button className="btn-solid rounded p-2">
               <img src={assets.cartAdd} alt="add-to-cart" width={22} />
             </button>
           </div>

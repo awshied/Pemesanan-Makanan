@@ -80,7 +80,9 @@ const SignupModal = ({ onClose }) => {
             disabled={isSigningUp}
           >
             {isSigningUp ? (
-              <LoaderIcon className="w-full h-5 animate-spin text-center" />
+              <span className="text-textColor font-medium text-sm">
+                Tunggu...
+              </span>
             ) : (
               <div className="flexCenter gap-2">
                 <img src={assets.signup} width={18} />

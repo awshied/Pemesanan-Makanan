@@ -24,14 +24,12 @@ import { useAuthStore } from "./store/useAuthStore";
 import PageLoader from "./components/PageLoader";
 
 const App = () => {
-  const { checkAuth, isCheckingAuth, authUser } = useAuthStore();
+  const { checkAuth, isCheckingAuth } = useAuthStore();
   const isAdminPath = useLocation().pathname.includes("admin");
 
   useEffect(() => {
     checkAuth();
   }, [checkAuth]);
-
-  console.log({ authUser });
 
   if (isCheckingAuth) return <PageLoader />;
 

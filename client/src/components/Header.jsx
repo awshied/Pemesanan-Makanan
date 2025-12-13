@@ -6,13 +6,18 @@ import KontakKami from "./KontakKami";
 import { useAppContext } from "../context/AppContext";
 import LoginModal from "./LoginModal";
 import SignupModal from "./SignupModal";
+import { useAuthStore } from "../store/useAuthStore";
 
 const Header = () => {
   const [menuOpened, setMenuOpened] = useState(false);
-  const { navigate, user, hitunganKeranjang } = useAppContext();
+  const { navigate, hitunganKeranjang } = useAppContext();
   const [contactOpened, setContactOpened] = useState(false);
+  const [profileOpen, setProfileOpen] = useState(false);
+  const [signinOpen, setSigninOpen] = useState(false);
   const [loginModalOpen, setLoginModalOpen] = useState(false);
   const [signupModalOpen, setSignupModalOpen] = useState(false);
+
+  const { authUser, logout } = useAuthStore();
 
   const toggleMenu = () => setMenuOpened((prev) => !prev);
 
@@ -109,16 +114,93 @@ const Header = () => {
             </div>
             {/* Profil Pengguna */}
             <div>
-              {user ? (
-                <img
-                  src={user.profilePic}
-                  className="w-9 h-9 rounded-full cursor-pointer"
-                  onClick={() => navigate("/profile")}
-                />
-              ) : (
-                <div className="flex items-center gap-x-8">
+              {authUser ? (
+                <div className="flex flex-col relative">
                   <button
-                    onClick={() => setLoginModalOpen(true)}
+                    onClick={() => {
+                      setProfileOpen(!profileOpen);
+                    }}
+                    className="flexCenter gap-1 cursor-pointer focus:outline-none"
+                  >
+                    <div className="flex flex-col items-end justify-center gap-0.5 pr-2 py-2">
+                      <small
+                        className="text-textColor text-xs font-medium"
+                        style={{
+                          fontFamily: "var(--font-poppins)",
+                        }}
+                      >
+                        Selamat Datang,
+                      </small>
+                      <span
+                        className="text-solidThree text-sm font-bold"
+                        style={{
+                          fontFamily: "var(--font-poppins)",
+                        }}
+                      >
+                        {authUser.fullName}
+                      </span>
+                    </div>
+                    <img
+                      src={assets.defaultAvatar}
+                      alt="profile-picture"
+                      className="w-11 h-11 rounded-full cursor-pointer"
+                    />
+                    <img
+                      src={assets.down}
+                      className={`ml-1 transition-transform duration-300 ${
+                        profileOpen ? "rotate-180" : ""
+                      }`}
+                      width={16}
+                    />
+                  </button>
+                  {profileOpen && (
+                    <div className="w-56 bg-secondary rounded-xl absolute -right-2 top-12 shadow-xl mt-1 py-2">
+                      <button
+                        className="flex w-full gap-3 px-3 py-2 hover:bg-[#262b32] text-textColor font-medium cursor-pointer"
+                        style={{
+                          fontFamily: "var(--font-poppins)",
+                        }}
+                      >
+                        <img
+                          src={assets.profileEdit}
+                          alt="profile"
+                          width={16}
+                        />
+                        <span className="text-sm font-semibold">
+                          Foto Profil
+                        </span>
+                      </button>
+                      <button
+                        onClick={() => navigate("/alamat")}
+                        className="flex w-full gap-3 px-3 py-2 hover:bg-[#262b32] text-textColor font-medium cursor-pointer"
+                        style={{
+                          fontFamily: "var(--font-poppins)",
+                        }}
+                      >
+                        <img src={assets.user} alt="profile" width={16} />
+                        <span className="text-sm font-semibold">
+                          Identitas dan Alamat
+                        </span>
+                      </button>
+                      <button
+                        onClick={logout}
+                        className="flex w-full gap-3 px-3 py-2 hover:bg-[#262b32] text-textColor font-medium cursor-pointer"
+                        style={{
+                          fontFamily: "var(--font-poppins)",
+                        }}
+                      >
+                        <img src={assets.logout} alt="logout" width={16} />
+                        <span className="text-sm font-semibold">Keluar</span>
+                      </button>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <div className="flex flex-col relative">
+                  <button
+                    onClick={() => {
+                      setSigninOpen(!signinOpen);
+                    }}
                     className=" cursor-pointer flexCenter"
                   >
                     <img
@@ -126,17 +208,38 @@ const Header = () => {
                       alt=""
                       className="w-6 icon-filter-yellow"
                     />
-                  </button>
-                  <button
-                    onClick={() => setSignupModalOpen(true)}
-                    className=" cursor-pointer flexCenter"
-                  >
                     <img
-                      src={assets.signup}
-                      alt=""
-                      className="w-6 icon-filter-yellow"
+                      src={assets.down}
+                      className={`ml-2 transition-transform duration-300 ${
+                        signinOpen ? "rotate-180" : ""
+                      }`}
+                      width={16}
                     />
                   </button>
+                  {signinOpen && (
+                    <div className="w-40 bg-secondary rounded-xl absolute -right-10 top-12 shadow-xl mt-1 py-2">
+                      <button
+                        onClick={() => setLoginModalOpen(true)}
+                        className="flex w-full gap-3 px-3 py-2 hover:bg-[#262b32] text-textColor font-medium cursor-pointer"
+                        style={{
+                          fontFamily: "var(--font-poppins)",
+                        }}
+                      >
+                        <img src={assets.login} alt="profile" width={16} />
+                        <span className="text-sm font-semibold">Login</span>
+                      </button>
+                      <button
+                        onClick={() => setSignupModalOpen(true)}
+                        className="flex w-full gap-3 px-3 py-2 hover:bg-[#262b32] text-textColor font-medium cursor-pointer"
+                        style={{
+                          fontFamily: "var(--font-poppins)",
+                        }}
+                      >
+                        <img src={assets.signup} alt="signup" width={16} />
+                        <span className="text-sm font-semibold">Signup</span>
+                      </button>
+                    </div>
+                  )}
                 </div>
               )}
             </div>

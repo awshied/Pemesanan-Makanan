@@ -2,8 +2,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-
 :root {
   --gradient: radial-gradient(circle, #e5e5e5 0%, #fff 100%);
 }
