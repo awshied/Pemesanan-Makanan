@@ -12,6 +12,8 @@ import menuRouter from "./routes/menu.route.js";
 import { connectDB } from "./lib/db.js";
 import cloudinary from "./lib/cloudinary.js";
 import alamatRouter from "./routes/alamat.route.js";
+import keranjangRouter from "./routes/keranjang.route.js";
+import pesananRouter from "./routes/pesanan.route.js";
 
 const app = express();
 const __dirname = path.resolve();
@@ -25,6 +27,8 @@ app.use(cookieParser());
 app.use("/api/auth", authRoutes);
 app.use("/api/menus", menuRouter);
 app.use("/api/alamat", alamatRouter);
+app.use("/api/keranjang", keranjangRouter);
+app.use("/api/pesanan", pesananRouter);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../client/dist")));

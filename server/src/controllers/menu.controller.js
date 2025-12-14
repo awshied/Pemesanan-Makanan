@@ -15,7 +15,7 @@ export const createMenu = async (req, res) => {
       })
     );
 
-    await Menu.create({ ...menuData, images: imagesUrl });
+    await Menu.create({ ...menuData, images: imageUrl });
 
     res.json({ success: true, message: "Menu telah dibuat" });
   } catch (error) {
