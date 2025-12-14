@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { assets } from "../assets/data";
 import Navbar from "./Navbar";
@@ -10,16 +10,31 @@ import { useAuthStore } from "../store/useAuthStore";
 
 const Header = () => {
   const [menuOpened, setMenuOpened] = useState(false);
-  const { navigate, hitunganKeranjang } = useAppContext();
   const [contactOpened, setContactOpened] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
   const [signinOpen, setSigninOpen] = useState(false);
   const [loginModalOpen, setLoginModalOpen] = useState(false);
   const [signupModalOpen, setSignupModalOpen] = useState(false);
+  const [selectedImg, setSelectedImg] = useState(null);
 
-  const { authUser, logout } = useAuthStore();
+  const { navigate, hitunganKeranjang } = useAppContext();
+  const { authUser, logout, updateProfile } = useAuthStore();
 
+  const fileInputRef = useRef(null);
   const toggleMenu = () => setMenuOpened((prev) => !prev);
+  const handleImageUpload = (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+
+    reader.onloadend = async () => {
+      const base64Image = reader.result;
+      setSelectedImg(base64Image);
+      await updateProfile({ profilePic: base64Image });
+    };
+  };
 
   return (
     <>
@@ -141,9 +156,13 @@ const Header = () => {
                       </span>
                     </div>
                     <img
-                      src={assets.defaultAvatar}
+                      src={
+                        selectedImg ||
+                        authUser.profilePic ||
+                        assets.defaultAvatar
+                      }
                       alt="profile-picture"
-                      className="w-11 h-11 rounded-full cursor-pointer"
+                      className="w-11 h-11 rounded-full"
                     />
                     <img
                       src={assets.down}
@@ -160,6 +179,7 @@ const Header = () => {
                         style={{
                           fontFamily: "var(--font-poppins)",
                         }}
+                        onClick={() => fileInputRef.current.click()}
                       >
                         <img
                           src={assets.profileEdit}
@@ -170,6 +190,13 @@ const Header = () => {
                           Foto Profil
                         </span>
                       </button>
+                      <input
+                        type="file"
+                        accept="image/*"
+                        ref={fileInputRef}
+                        onChange={handleImageUpload}
+                        className="hidden"
+                      />
                       <button
                         onClick={() => navigate("/alamat")}
                         className="flex w-full gap-3 px-3 py-2 hover:bg-[#262b32] text-textColor font-medium cursor-pointer"

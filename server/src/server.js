@@ -1,5 +1,8 @@
 import express from "express";
 import dotenv from "dotenv";
+
+dotenv.config();
+
 import cookieParser from "cookie-parser";
 import path from "path";
 import cors from "cors";
@@ -7,17 +10,13 @@ import cors from "cors";
 import authRoutes from "./routes/auth.route.js";
 import menuRouter from "./routes/menu.route.js";
 import { connectDB } from "./lib/db.js";
-import connectCloudinary from "./lib/cloudinary.js";
+import cloudinary from "./lib/cloudinary.js";
 import alamatRouter from "./routes/alamat.route.js";
-
-dotenv.config();
 
 const app = express();
 const __dirname = path.resolve();
 
 const PORT = process.env.PORT || 3000;
-
-await connectCloudinary();
 
 app.use(express.json({ limit: "5mb" }));
 app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));

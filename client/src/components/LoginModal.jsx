@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { assets } from "../assets/data";
 import FloatingInput from "./floatingInput";
 import { useAuthStore } from "../store/useAuthStore";
-import { LoaderIcon } from "lucide-react";
 
 const LoginModal = ({ onClose }) => {
   const [formData, setFormData] = useState({
