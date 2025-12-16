@@ -3,16 +3,35 @@ import { upload } from "../middlewares/multer.js";
 import { protectRoute } from "../middlewares/auth.middleware.js";
 import {
   createMenu,
-  listMenu,
-  singleMenu,
+  getAdminMenu,
+  getUserMenu,
+  getMenuDetail,
   toggleStock,
+  updateMenu,
+  deleteMenu,
 } from "../controllers/menu.controller.js";
 
-const menuRouter = express.Router();
+const router = express.Router();
 
-menuRouter.post("/", upload.array("images", 4), protectRoute, createMenu);
-menuRouter.get("/", listMenu);
-menuRouter.get("/single", singleMenu);
-menuRouter.post("/toggle-stock", protectRoute, toggleStock);
+// Bagian Admin
+router.post(
+  "/admin/kelola-menu",
+  upload.array("images", 4),
+  protectRoute,
+  createMenu
+);
+router.get("/admin/kelola-menu", protectRoute, getAdminMenu);
+router.patch("/admin/kelola-menu/:id", protectRoute, toggleStock);
+router.put(
+  "/kelola-menu/:id",
+  upload.array("images", 4),
+  protectRoute,
+  updateMenu
+);
+router.delete("/admin/kelola-menu/:id", protectRoute, deleteMenu);
 
-export default menuRouter;
+// Bagian User
+router.get("/menu", protectRoute, getUserMenu);
+router.get("/menu/:id", protectRoute, getMenuDetail);
+
+export default router;

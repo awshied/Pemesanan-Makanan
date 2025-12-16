@@ -11,9 +11,11 @@ import ChartPenjualanMenu from "../../components/admin/ChartPenjualanMenu";
 import ChartPendapatanTahunan from "../../components/admin/ChartPendapatanTahunan";
 import ChartPertumbuhanPembeli from "../../components/admin/ChartPertumbuhanPembeli";
 import { formatPendapatan } from "../../utils/formatNumber";
+import { useAuthStore } from "../../store/useAuthStore";
 
 const Dashboard = () => {
-  const { user, currency } = useAppContext();
+  const { currency } = useAppContext();
+  const { authUser } = useAuthStore();
 
   const [dashboardData, setDashboardData] = useState({
     orders: [],
@@ -43,12 +45,12 @@ const Dashboard = () => {
   };
 
   useEffect(() => {
-    if (user) {
+    if (authUser) {
       getDashboardData();
       getTopMenu();
       getCustomerStatus();
     }
-  }, [user]);
+  }, [authUser]);
 
   const filteredTopMenu = topMenu.filter(
     (item) =>
@@ -63,7 +65,7 @@ const Dashboard = () => {
         <small className="text-sm leading-relaxed">
           Halo,{" "}
           <span className="text-solidThree font-medium">
-            {user?.firstName} {user?.lastName}
+            {authUser?.fullName}
           </span>
           . Selamat datang kembali di Mang TekTek.
         </small>

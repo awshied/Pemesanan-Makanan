@@ -8,15 +8,17 @@ import {
   updateStatus,
 } from "../controllers/pesanan.controller.js";
 
-const pesananRouter = express.Router();
+const router = express.Router();
 
 // Pembayaran
-pesananRouter.post("/cod", protectRoute, pesananCOD);
-pesananRouter.post("/stripe", protectRoute, pesananStripe);
-// Admin Panel
-pesananRouter.get("/", protectRoute, semuaPesanan);
-pesananRouter.post("/status", protectRoute, updateStatus);
-// User
-pesananRouter.post("/pesanan-pelanggan", protectRoute, pesananPelanggan);
+router.post("/cod", protectRoute, pesananCOD);
+router.post("/stripe", protectRoute, pesananStripe);
 
-export default pesananRouter;
+// Admin Panel
+router.get("/admin/kelola-pesanan", protectRoute, semuaPesanan);
+router.patch("/admin/:id/status", protectRoute, updateStatus);
+
+// User
+router.get("/pesanan", protectRoute, pesananPelanggan);
+
+export default router;

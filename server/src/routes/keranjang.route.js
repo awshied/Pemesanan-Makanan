@@ -5,9 +5,9 @@ import {
   updateKeranjang,
 } from "../controllers/keranjang.controller.js";
 
-const keranjangRouter = express.Router();
+const router = express.Router();
 
-keranjangRouter.post("/tambah", protectRoute, tambahKeranjang);
-keranjangRouter.get("/", protectRoute, updateKeranjang);
+router.post("/keranjang/tambah", protectRoute, tambahKeranjang);
+router.put("/keranjang/update", protectRoute, updateKeranjang);
 
-export default keranjangRouter;
+export default router;

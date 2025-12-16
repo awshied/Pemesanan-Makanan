@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useAppContext } from "../../context/AppContext";
 import { assets } from "../../assets/data";
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
+import { useAuthStore } from "../../store/useAuthStore";
 
 const Sidebar = () => {
-  const { navigate, isAdmin, user } = useAppContext();
+  const { navigate, isAdmin } = useAppContext();
+  const { authUser } = useAuthStore();
   const [menuOpen, setMenuOpen] = useState(false);
   const [animate, setAnimate] = useState(false);
   const [submenuAnimClass, setSubmenuAnimClass] = useState("");
@@ -225,15 +227,18 @@ const Sidebar = () => {
           </div>
           {/* User */}
           <div className="hidden md:flex items-center gap-3 md:bg-secondary rounded-b-xl p-3 pl-4 md:mt-10 border-t border-[#49535d]">
-            {user ? (
+            {authUser ? (
               <div className="flex items-center gap-3">
-                <img src={user.profilePic} className="w-9 h-9 rounded-full" />
-                <div className="flex flex-col gap-2">
+                <img
+                  src={authUser.profilePic}
+                  className="w-10 h-10 rounded-full"
+                />
+                <div className="flex flex-col gap-0.5">
                   <div className="text-sm font-bold text-solidThree capitalize">
-                    {user.fullName}
+                    {authUser.fullName}
                   </div>
                   <small className="text-xs font-medium text-textColor">
-                    {user.email}
+                    {authUser.email}
                   </small>
                 </div>
               </div>
@@ -281,15 +286,18 @@ const Sidebar = () => {
               isProfileActive ? "border-t-2 border-solidThree" : ""
             }`}
           >
-            {user ? (
+            {authUser ? (
               <div className="flex items-center gap-3">
-                <img src={user.profilePic} className="w-9 h-9 rounded-full" />
-                <div className="flex flex-col gap-2">
+                <img
+                  src={authUser.profilePic}
+                  className="w-9 h-9 rounded-full"
+                />
+                <div className="flex flex-col">
                   <div className="text-sm font-bold text-solidThree capitalize">
-                    {user.fullName}
+                    {authUser.fullName}
                   </div>
                   <small className="text-xs font-medium text-textColor">
-                    {user.email}
+                    {authUser.email}
                   </small>
                 </div>
               </div>

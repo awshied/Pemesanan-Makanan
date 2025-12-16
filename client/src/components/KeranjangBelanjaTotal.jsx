@@ -7,6 +7,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { useAuthStore } from "../store/useAuthStore";
 
 const KeranjangBelanjaTotal = () => {
   const {
@@ -17,11 +18,12 @@ const KeranjangBelanjaTotal = () => {
     delivery_charges,
     hitunganKeranjang,
     hitunganJumlah,
-    user,
     cartItems,
     setCartItems,
     products,
   } = useAppContext();
+
+  const { authUser } = useAuthStore();
 
   const [addresses, setAddresses] = useState(dummyAddress);
 

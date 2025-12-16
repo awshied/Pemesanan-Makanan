@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import Title from "../components/Title";
 import { useAppContext } from "../context/AppContext";
 import { assets, dummyOrdersData } from "../assets/data";
+import { useAuthStore } from "../store/useAuthStore";
 
 const Pesanan = () => {
-  const { currency, user } = useAppContext();
+  const { currency } = useAppContext();
+  const { authUser } = useAuthStore();
   const [orders, setOrders] = useState([]);
 
   const loadOrderData = () => {
@@ -12,10 +14,10 @@ const Pesanan = () => {
   };
 
   useEffect(() => {
-    if (user) {
+    if (authUser) {
       loadOrderData();
     }
-  }, [user]);
+  }, [authUser]);
 
   return (
     <div className="max-padd-container pb-16 pt-28 bg-primary">

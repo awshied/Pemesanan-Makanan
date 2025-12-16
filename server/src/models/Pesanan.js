@@ -3,20 +3,21 @@ import mongoose from "mongoose";
 const pesananSchema = new mongoose.Schema(
   {
     userId: {
-      type: String,
+      type: mongoose.Schema.Types.ObjectId,
       required: true,
       ref: "User",
     },
     items: [
       {
         menu: {
-          type: String,
+          type: mongoose.Schema.Types.ObjectId,
           required: true,
           ref: "Menu",
         },
         quantity: {
           type: Number,
           required: true,
+          min: 1,
         },
         size: {
           type: String,
@@ -29,21 +30,28 @@ const pesananSchema = new mongoose.Schema(
       required: true,
     },
     alamat: {
-      type: String,
+      type: mongoose.Schema.Types.ObjectId,
       required: true,
       ref: "Alamat",
     },
     status: {
       type: String,
+      enum: [
+        "Pesanan Diterima",
+        "Diproses",
+        "Dikirim",
+        "Selesai",
+        "Dibatalkan",
+      ],
       default: "Pesanan Diterima",
     },
     metodePembayaran: {
       type: String,
       required: true,
+      enum: ["Transfer", "COD"],
     },
-    idPaid: {
+    isPaid: {
       type: Boolean,
-      required: true,
       default: false,
     },
   },

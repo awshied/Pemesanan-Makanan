@@ -15,20 +15,9 @@ export const protectRoute = async (req, res, next) => {
         .status(401)
         .json({ message: "Gada izin - Tokennya ga valid, maaf ya :(" });
 
-    let user = await User.findById(decoded.userId).select("-password");
+    const user = await User.findById(decoded.userId).select("-password");
     if (!user)
       return res.status(401).json({ message: "Yaaahh, penggunanya gada!" });
-
-    const adminEmail = process.env.ADMIN_EMAIL;
-    const newRole = adminEmail && user.email === adminEmail ? "admin" : "user";
-
-    if (user.role !== newRole) {
-      user = await User.findByIdAndUpdate(
-        decoded.userId,
-        { role: newRole },
-        { new: true }
-      ).select("-password");
-    }
 
     req.user = user;
     next();
@@ -36,4 +25,18 @@ export const protectRoute = async (req, res, next) => {
     console.error("Ada kesalahan di middleware protectRoute:", error);
     res.status(500).json({ message: "Servernya lagi error 🗿" });
   }
+};
+
+export const adminOnly = (req, res, next) => {
+  if (!req.user) {
+    return res
+      .status(401)
+      .json({ message: "Gada izin - Penggunanya ga tersedia, maaf yaa :(" });
+  }
+
+  if (req.user.email !== process.env.ADMIN_EMAIL) {
+    return res.status(403).json({ message: "Hanya admin yang bisa akses" });
+  }
+
+  next();
 };

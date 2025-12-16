@@ -5,6 +5,7 @@ const menuSchema = new mongoose.Schema(
     title: {
       type: String,
       required: true,
+      trim: true,
     },
     description: {
       type: String,
@@ -13,9 +14,10 @@ const menuSchema = new mongoose.Schema(
     price: {
       type: Object,
       required: true,
+      min: 0,
     },
     sizes: {
-      type: String,
+      type: [String],
       required: true,
     },
     images: {
@@ -30,6 +32,11 @@ const menuSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    ingredients: [
+      {
+        type: String,
+      },
+    ],
     popular: {
       type: Boolean,
       required: false,
@@ -38,21 +45,40 @@ const menuSchema = new mongoose.Schema(
       type: Boolean,
       required: true,
     },
+    salesCount: {
+      type: Number,
+      default: 0,
+    },
     sizeMeans: {
       type: Object,
       required: true,
     },
     rating: {
-      type: String,
-      required: true,
+      type: Number,
+      default: 0,
+      min: 0,
+      max: 5,
     },
     starsTotal: {
-      type: String,
-      required: true,
+      type: Number,
+      default: 0,
+    },
+    nutritionalInfo: {
+      calories: Number,
+      protein: Number,
+      carbs: Number,
+      fat: Number,
     },
     estimatedTime: {
       type: String,
       required: true,
+      enum: [
+        "1 - 4 Menit",
+        "5 - 8 Menit",
+        "9 - 12 Menit",
+        "13 - 16 Menit",
+        "17 - 20 Menit",
+      ],
     },
   },
   {

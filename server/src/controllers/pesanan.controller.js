@@ -7,20 +7,26 @@ const currency = "Rp";
 const ongkir = 5;
 const persentasePajak = 0.06;
 
+// User - Pembayaran COD
 export const pesananCOD = async (req, res) => {
   try {
     const { items, alamat } = req.body;
-    const { userId } = req.auth();
+    const userId = req.user;
 
     if (!items || items.length === 0) {
-      return res.json({ success: false, message: "Pilih Menunya Dulu" });
+      return res.json({
+        success: false,
+        message: "Keranjang Kosong, silahkan pilih menunya dulu",
+      });
     }
 
     let subtotal = 0;
-    for (const item in items) {
+    const orderItems = [];
+
+    for (const item of items) {
       const menu = await Menu.findById(item.menu);
-      if (!menu) {
-        return res.json({ success: false, message: "Menu tidak ditemukan" });
+      if (!menu || !menu.inStock) {
+        return res.json({ success: false, message: "Menu tidak tersedia" });
       }
 
       const unitPrice = menu.price[item.size];
@@ -32,14 +38,21 @@ export const pesananCOD = async (req, res) => {
       }
 
       subtotal += unitPrice + item.quantity;
+
+      orderItems.push({
+        menu: menu._id,
+        quantity: item.quantity,
+        size: item.size,
+        price,
+      });
     }
 
     const taxAmount = subtotal * persentasePajak;
     const totalAmount = subtotal + taxAmount + ongkir;
 
-    const pesanan = await Pesanan.create({
-      userId,
-      items,
+    await Pesanan.create({
+      user: userId,
+      items: orderItems,
       amount: totalAmount,
       alamat,
       metodePembayaran: COD,
@@ -54,6 +67,7 @@ export const pesananCOD = async (req, res) => {
   }
 };
 
+// User - Pembayaran Stripe (Kosongin Dulu untuk Sekarang)
 export const pesananStripe = async (req, res) => {
   try {
     res.json({ success: true, message: "Pesanan Diterima" });
@@ -63,13 +77,11 @@ export const pesananStripe = async (req, res) => {
   }
 };
 
+// User - Tinjau Riwayat Pesanan
 export const pesananPelanggan = async (req, res) => {
   try {
     const { userId } = req.auth();
-    const pesanan = await Pesanan.find({
-      userId,
-      $or: [{ metodePembayaran: COD }, { isPaid: true }],
-    })
+    const pesanan = await Pesanan.find({ user: userId })
       .populate("items.menu alamat")
       .sort({ createdAt: -1 });
     res.json({ success: true, pesanan });
@@ -79,11 +91,10 @@ export const pesananPelanggan = async (req, res) => {
   }
 };
 
+// Admin - Tinjau Semua Pesanan Pelanggan
 export const semuaPesanan = async (req, res) => {
   try {
-    const orders = await Pesanan.find({
-      $or: [{ metodePembayaran: COD }, { isPaid: true }],
-    })
+    const pesanan = await Pesanan.find({ user: userId })
       .populate("items.menu alamat")
       .sort({ createdAt: -1 });
 
@@ -95,7 +106,7 @@ export const semuaPesanan = async (req, res) => {
 
     res.json({
       success: true,
-      dashboardData: { totalPesanan, totalPendapatan, orders },
+      dashboardData: { totalPesanan, totalPendapatan, pesanan },
     });
   } catch (error) {
     console.log(error.message);
@@ -103,6 +114,7 @@ export const semuaPesanan = async (req, res) => {
   }
 };
 
+// Admin - Memperbarui Status
 export const updateStatus = async (req, res) => {
   try {
     const { orderId, status } = req.body;

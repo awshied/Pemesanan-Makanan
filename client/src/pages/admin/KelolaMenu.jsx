@@ -3,9 +3,11 @@ import { useAppContext } from "../../context/AppContext";
 import { adminMenuCategories, assets } from "../../assets/data";
 import TambahMenu from "../../components/admin/TambahMenu";
 import EditMenu from "../../components/admin/EditMenu";
+import { useAuthStore } from "../../store/useAuthStore";
 
 const KelolaMenu = () => {
-  const { user, products, currency, fetchProducts } = useAppContext();
+  const { products, currency, fetchProducts } = useAppContext();
+  const { authUser } = useAuthStore();
   const { searchQuery, setSearchQuery } = useAppContext();
   const [activeCategory, setActiveCategory] = useState("all");
   const [addMenuOpen, setAddMenuOpen] = useState(false);
@@ -20,7 +22,7 @@ const KelolaMenu = () => {
           <small className="text-sm leading-relaxed">
             Halo,{" "}
             <span className="text-solidThree font-medium">
-              {user?.firstName} {user?.lastName}
+              {authUser?.fullName}
             </span>
             . Selamat datang kembali di Mang TekTek.
           </small>
