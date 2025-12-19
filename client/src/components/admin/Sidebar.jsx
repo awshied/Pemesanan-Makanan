@@ -60,12 +60,6 @@ const Sidebar = () => {
   ];
 
   useEffect(() => {
-    if (!isAdmin) {
-      navigate("/");
-    }
-  }, [isAdmin]);
-
-  useEffect(() => {
     if (menuOpen) {
       // Tahap 1: pasang state awal
       setSubmenuAnimClass("submenu-enter");

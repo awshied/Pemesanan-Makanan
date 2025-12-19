@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import Beranda from "./pages/Beranda";
 import Menu from "./pages/Menu";
 import Blog from "./pages/Blog";
@@ -13,7 +13,6 @@ import PusatBantuan from "./pages/PusatBantuan";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { Toaster } from "react-hot-toast";
-import Sidebar from "./components/admin/Sidebar";
 import Dashboard from "./pages/admin/Dashboard";
 import KelolaMenu from "./pages/admin/KelolaMenu";
 import KelolaPengguna from "./pages/admin/KelolaPengguna";
@@ -22,6 +21,8 @@ import Laporan from "./pages/admin/Laporan";
 import BlogAdmin from "./pages/admin/BlogAdmin";
 import { useAuthStore } from "./store/useAuthStore";
 import PageLoader from "./components/PageLoader";
+import AdminLayout from "./layout/AdminLayout";
+import Login from "./pages/admin/Login";
 
 const App = () => {
   const { checkAuth, isCheckingAuth } = useAuthStore();
@@ -49,7 +50,9 @@ const App = () => {
         <Route path="/syarat-layanan" element={<SyaratLayanan />} />
         <Route path="/tentang-kami" element={<TentangKami />} />
         <Route path="/pusat-bantuan" element={<PusatBantuan />} />
-        <Route path="/admin" element={<Sidebar />}>
+        <Route path="/admin/login" element={<Login />} />
+
+        <Route path="/admin" element={<AdminLayout />}>
           <Route index element={<Dashboard />} />
           <Route path="/admin/blog" element={<BlogAdmin />} />
           <Route path="/admin/kelola-menu" element={<KelolaMenu />} />
