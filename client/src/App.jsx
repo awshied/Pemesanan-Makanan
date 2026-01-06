@@ -23,14 +23,23 @@ import { useAuthStore } from "./store/useAuthStore";
 import PageLoader from "./components/PageLoader";
 import AdminLayout from "./layout/AdminLayout";
 import Login from "./pages/admin/Login";
+import AdminRoute from "./components/admin/AdminRoute";
 
 const App = () => {
   const { checkAuth, isCheckingAuth } = useAuthStore();
   const isAdminPath = useLocation().pathname.includes("admin");
+  const location = useLocation();
 
   useEffect(() => {
-    checkAuth();
-  }, [checkAuth]);
+    const skipAuthCheckPaths = ["/admin/login"];
+
+    if (!skipAuthCheckPaths.includes(location.pathname)) {
+      checkAuth();
+    } else {
+      // penting: hentikan loader
+      useAuthStore.setState({ isCheckingAuth: false });
+    }
+  }, [location.pathname, checkAuth]);
 
   if (isCheckingAuth) return <PageLoader />;
 
@@ -52,13 +61,20 @@ const App = () => {
         <Route path="/pusat-bantuan" element={<PusatBantuan />} />
         <Route path="/admin/login" element={<Login />} />
 
-        <Route path="/admin" element={<AdminLayout />}>
+        <Route
+          path="/admin"
+          element={
+            <AdminRoute>
+              <AdminLayout />
+            </AdminRoute>
+          }
+        >
           <Route index element={<Dashboard />} />
-          <Route path="/admin/blog" element={<BlogAdmin />} />
-          <Route path="/admin/kelola-menu" element={<KelolaMenu />} />
-          <Route path="/admin/kelola-pengguna" element={<KelolaPengguna />} />
-          <Route path="/admin/kelola-pesanan" element={<KelolaPesanan />} />
-          <Route path="/admin/laporan" element={<Laporan />} />
+          <Route path="blog" element={<BlogAdmin />} />
+          <Route path="kelola-menu" element={<KelolaMenu />} />
+          <Route path="kelola-pengguna" element={<KelolaPengguna />} />
+          <Route path="kelola-pesanan" element={<KelolaPesanan />} />
+          <Route path="laporan" element={<Laporan />} />
         </Route>
       </Routes>
       {!isAdminPath && <Footer />}

@@ -5,7 +5,7 @@ import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import { useAuthStore } from "../../store/useAuthStore";
 
 const Sidebar = () => {
-  const { navigate, isAdmin } = useAppContext();
+  const { navigate } = useAppContext();
   const { authUser } = useAuthStore();
   const [menuOpen, setMenuOpen] = useState(false);
   const [animate, setAnimate] = useState(false);
@@ -220,18 +220,20 @@ const Sidebar = () => {
             </div>
           </div>
           {/* User */}
-          <div className="hidden md:flex items-center gap-3 md:bg-secondary rounded-b-xl p-3 pl-4 md:mt-10 border-t border-[#49535d]">
+          <div className="hidden md:flex items-center md:bg-secondary rounded-b-xl p-3 md:mt-10 border-t border-[#49535d]">
             {authUser ? (
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2">
                 <img
-                  src={authUser.profilePic}
+                  src={authUser?.profilePic || assets.defaultAvatar}
+                  alt="profile"
                   className="w-10 h-10 rounded-full"
                 />
+
                 <div className="flex flex-col gap-0.5">
                   <div className="text-sm font-bold text-solidThree capitalize">
                     {authUser.fullName}
                   </div>
-                  <small className="text-xs font-medium text-textColor">
+                  <small className="text-[11px] font-medium text-textColor">
                     {authUser.email}
                   </small>
                 </div>
@@ -249,6 +251,7 @@ const Sidebar = () => {
             item.hasChildren ? (
               // Untuk item dengan submenu — tetap pakai button untuk membuka popup
               <button
+                key={item.label}
                 onClick={openMobileSubmenu}
                 className={`flex flex-col items-center px-3 py-2 ${
                   kelolaActive
@@ -276,24 +279,17 @@ const Sidebar = () => {
             )
           )}
           <div
-            className={`flex flex-col items-center px-3 py-2 ${
+            className={`flex flex-col items-center py-2 ${
               isProfileActive ? "border-t-2 border-solidThree" : ""
             }`}
           >
             {authUser ? (
-              <div className="flex items-center gap-3">
+              <div className="flex items-center">
                 <img
-                  src={authUser.profilePic}
-                  className="w-9 h-9 rounded-full"
+                  src={authUser?.profilePic || assets.defaultAvatar}
+                  alt="profile"
+                  className="w-8 h-8 rounded-full -translate-y-1"
                 />
-                <div className="flex flex-col">
-                  <div className="text-sm font-bold text-solidThree capitalize">
-                    {authUser.fullName}
-                  </div>
-                  <small className="text-xs font-medium text-textColor">
-                    {authUser.email}
-                  </small>
-                </div>
               </div>
             ) : (
               <button onClick={() => navigate("/login")}>Login</button>

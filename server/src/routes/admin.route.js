@@ -1,5 +1,5 @@
 import express from "express";
-import { protectRoute } from "../middlewares/auth.middleware.js";
+import { adminOnly, protectRoute } from "../middlewares/auth.middleware.js";
 import {
   getSemuaPelanggan,
   getLatestOnline,
@@ -21,7 +21,7 @@ router.get(
 );
 router.delete("/admin/dashboard/pelanggan/:id", protectRoute, deletePelanggan);
 
-router.get("/admin/dashboard", protectRoute, getDashboardData);
+router.get("/admin/dashboard", protectRoute, adminOnly, getDashboardData);
 router.get(
   "/admin/dashboard/revenue-expense",
   protectRoute,

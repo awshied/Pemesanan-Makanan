@@ -106,7 +106,7 @@ const ChartPenjualanMenu = () => {
       </div>
       <div className="flexCenter md:hidden gap-2 w-full">
         <button
-          className={`text-xs font-semibold py-1.5 px-3 rounded-md cursor-pointer ${
+          className={`text-[10px] md:text-xs font-semibold py-1.5 px-3 rounded-md cursor-pointer ${
             filter === "harian" ? "bg-gray-600 font-bold" : "bg-primary"
           }`}
           onClick={() => setFilter("harian")}
@@ -115,7 +115,7 @@ const ChartPenjualanMenu = () => {
         </button>
 
         <button
-          className={`text-xs font-semibold py-1.5 px-3 rounded-md cursor-pointer ${
+          className={`text-[10px] md:text-xs font-semibold py-1.5 px-3 rounded-md cursor-pointer ${
             filter === "mingguan" ? "bg-gray-600 font-bold" : "bg-primary"
           }`}
           onClick={() => setFilter("mingguan")}
@@ -123,7 +123,7 @@ const ChartPenjualanMenu = () => {
           Mingguan
         </button>
         <button
-          className={`text-xs font-semibold py-1.5 px-3 rounded-md cursor-pointer ${
+          className={`text-[10px] md:text-xs font-semibold py-1.5 px-3 rounded-md cursor-pointer ${
             filter === "bulanan" ? "bg-gray-600 font-bold" : "bg-primary"
           }`}
           onClick={() => setFilter("bulanan")}
@@ -131,7 +131,7 @@ const ChartPenjualanMenu = () => {
           Bulanan
         </button>
         <button
-          className={`text-xs font-semibold py-1.5 px-3 rounded-md cursor-pointer ${
+          className={`text-[10px] md:text-xs font-semibold py-1.5 px-3 rounded-md cursor-pointer ${
             filter === "tahunan" ? "bg-gray-600 font-bold" : "bg-primary"
           }`}
           onClick={() => setFilter("tahunan")}

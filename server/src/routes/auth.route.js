@@ -20,5 +20,6 @@ router.get("/check", protectRoute, (req, res) =>
 );
 
 router.get("/admin", protectRoute, adminOnly);
+router.post("/admin/login", login);
 
 export default router;

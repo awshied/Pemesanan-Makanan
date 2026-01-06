@@ -7,16 +7,20 @@ export const useAuthStore = create((set) => ({
   isCheckingAuth: true,
   isSigningUp: false,
   isLoggingIn: false,
+  isAdmin: false,
 
   checkAuth: async () => {
     try {
       const res = await axiosInstance.get("/auth/check");
-      set({ authUser: res.data });
+      set({
+        authUser: res.data,
+        isAdmin: res.data.role === "admin",
+      });
     } catch (error) {
       if (error.response?.status !== 401) {
         console.error("Auth error:", error);
       }
-      set({ authUser: null });
+      set({ authUser: null, isAdmin: false });
     } finally {
       set({ isCheckingAuth: false });
     }
@@ -39,11 +43,40 @@ export const useAuthStore = create((set) => ({
     }
   },
 
+  loginAdmin: async (data) => {
+    set({ isLoggingIn: true });
+
+    try {
+      const res = await axiosInstance.post("/auth/login", data);
+
+      if (res.data.role !== "admin") {
+        toast.error("Akun ini bukan admin");
+        return false;
+      }
+
+      set({
+        authUser: res.data,
+        isAdmin: true,
+      });
+
+      toast.success("Selamat datang Admin 👑");
+      return true;
+    } catch (error) {
+      toast.error(error.response?.data?.message || "Login admin gagal");
+      return false;
+    } finally {
+      set({ isLoggingIn: false });
+    }
+  },
+
   login: async (data) => {
     set({ isLoggingIn: true });
     try {
       const res = await axiosInstance.post("/auth/login", data);
-      set({ authUser: res.data });
+      set({
+        authUser: res.data,
+        isAdmin: res.data.role === "admin",
+      });
 
       toast.success("Oke, enjoy2 yaaa ✔️");
       return true;
@@ -60,7 +93,7 @@ export const useAuthStore = create((set) => ({
   logout: async () => {
     try {
       await axiosInstance.post("/auth/logout");
-      set({ authUser: null });
+      set({ authUser: null, isAdmin: false });
       toast.success("Jangan lupa mampir lagi kapan2 🥹");
     } catch (error) {
       toast.error("Waduh, ga bisa logout bre ⚠️");

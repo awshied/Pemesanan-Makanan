@@ -91,6 +91,7 @@ import defaultAvatar from "./default-avatar.png";
 import features1 from "./features1.png";
 import features2 from "./features2.png";
 import features3 from "./features3.png";
+import administrator from "./administrator.png";
 import user1 from "./user1.png";
 import user2 from "./user2.png";
 import user3 from "./user3.png";
@@ -272,6 +273,7 @@ export const assets = {
   user4,
   user5,
   user6,
+  administrator,
   features1,
   features2,
   features3,

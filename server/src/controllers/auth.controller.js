@@ -46,6 +46,7 @@ export const signup = async (req, res) => {
         _id: newUser._id,
         fullName: newUser.fullName,
         email: newUser.email,
+        role: user.role,
         profilePic: newUser.profilePic,
       });
     } else {
@@ -73,6 +74,9 @@ export const login = async (req, res) => {
         .status(400)
         .json({ message: "Ga valid, coba pikirin lagi! 😩" });
 
+    if (user.role !== "admin")
+      return res.status(403).json({ message: "Bukan admin" });
+
     const isPasswordCorrect = await bcrypt.compare(password, user.password);
     if (!isPasswordCorrect)
       return res
@@ -85,6 +89,7 @@ export const login = async (req, res) => {
       _id: user._id,
       fullName: user.fullName,
       email: user.email,
+      role: user.role,
       profilePic: user.profilePic,
     });
   } catch (error) {
